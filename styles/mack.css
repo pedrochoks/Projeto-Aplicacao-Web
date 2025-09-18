@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+ 
+}
+
+header {
+   height: 15vh;
+   background-color: #892D25;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   
+}
+
+.Logo-raiozinho {
+   height: 80%;
+}
+
+.navegacao {
+   display: flex;
+   align-items: center;
+   gap: 15vh;
+}
+
+.botao-login {
+   color: white;
+   background-color: #F8AB1E;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 50%;
+   width: 10%;
+   border: 0;
+   border-radius: 15px;
+   font-size: 1.5rem;
+}
+
+.texto-nav {
+   color: white;
+   text-decoration: none;
+   font-size: 1.5rem;
+}
+
+.banner-mack {
+   height: 60vh;
+   background-color: aqua;
+}
+

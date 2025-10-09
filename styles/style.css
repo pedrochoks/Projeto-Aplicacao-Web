@@ -2,8 +2,11 @@ body{
     margin: 0;
     padding: 0;
 }
+
 .navegacao{
     background-color: red;
+    height: 7vh;
     display: flex;
     justify-content: space-around;
+    align-items: center; 
 }

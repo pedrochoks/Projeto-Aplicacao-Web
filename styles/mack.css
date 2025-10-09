@@ -13,7 +13,6 @@ header {
    display: flex;
    justify-content: space-around;
    align-items: center;
-   
 }
 
 .Logo-raiozinho {
@@ -47,6 +46,46 @@ header {
 
 .banner-mack {
    height: 60vh;
-   background-color: aqua;
+   background-image: linear-gradient(to right, #72271F 0%, #E32C1A 88%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.mack-banner {
+   margin-right: 90px;
+}
+
+.texto-banner {
+   color: #F8AB1E;
+   font-size: 10vh;
+   margin: 90px;
+}
+
+.area-produto {
+   padding: 30px;
+   width: 100%;
+}
+
+.lista-produtos {
+   width: 70vw;
+}
+
+.produto {
+   display: flex;
+   align-items: center;
+   margin: 10px;
+   background-color: #72271f;
+   border-radius: 10px;
+   height: 40vh;
+}
+
+.imagem-produto {
+   margin-left: 30px;
+}
+
+.informacoes-produto {
+   display: flex;
+   flex-direction: column;
 }
 

@@ -2,11 +2,33 @@ body{
     margin: 0;
     padding: 0;
 }
-
-.navegacao{
+.cabecalho{
     background-color: red;
-    height: 7vh;
+    height: 20vh;
     display: flex;
-    justify-content: space-around;
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
 }
+.navegacao{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    text-decoration: none;
+    
+}
+.navegacao a{
+    text-decoration: none;
+    color: white;
+}
+.esquerda{
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    text-align: left;
+}
+.botao-entrar{
+    background-color: #F8AB1E;
+    width: 10%;
+    height: 35%;
+}
+   

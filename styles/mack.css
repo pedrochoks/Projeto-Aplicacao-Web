@@ -133,15 +133,34 @@ main {
    justify-content: space-around;
 }
 
-footer {
+.footer {
    display: flex;
-   background-color: #260707;
    color: white;
    list-style: none;
    justify-content: space-around;
    align-items: center;
 }
 
+footer {
+   display: flex;
+   flex-direction: column;
+   background-color: #260707;
+   
+}
+
 .logo-footer {
    margin-bottom: 10px;
+}
+
+.linha-footer {
+   height: 2px;
+   width: 90%;
+   margin-bottom: 20px;
+   background-color: white;
+   align-self: center;
+}
+.copyright {
+   color: white;
+   align-self: center;
+   margin-bottom: 20px;
 }

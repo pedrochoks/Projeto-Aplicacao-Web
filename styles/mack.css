@@ -15,6 +15,10 @@ header {
    align-items: center;
 }
 
+main {
+   background-image: linear-gradient(to bottom, #72271F, #260707 95%);
+}
+
 .Logo-raiozinho {
    height: 80%;
 }
@@ -50,6 +54,7 @@ header {
    display: flex;
    align-items: center;
    justify-content: center;
+   
 }
 
 .mack-banner {
@@ -63,14 +68,18 @@ header {
 }
 
 .area-produto {
-   padding: 30px;
+   padding: 30px 0    30px 30px;
    width: 100%;
+   display: flex
 }
 
 .lista-produtos {
    width: 70vw;
 }
 
+.pecas-caminhao {
+   color: #F8AB1E;
+}
 .produto {
    display: flex;
    align-items: center;
@@ -78,6 +87,7 @@ header {
    background-color: #72271f;
    border-radius: 10px;
    height: 40vh;
+   width: 65vw;
 }
 
 .imagem-produto {
@@ -87,5 +97,51 @@ header {
 .informacoes-produto {
    display: flex;
    flex-direction: column;
+   align-items: first baseline;
+   margin-top: 14.5%;
+
 }
 
+.botao-carrinho {
+   background-color: #F8AB1E;
+   color: #FFF;
+   display: flex;
+   align-items: center;
+   font-size: 1.5em;
+   font-weight: 700;
+   border: none;
+   border-radius: 10px;
+   margin: 30px;
+}
+
+.icone-carrinho{
+   width: 10%;
+   margin: 10px;
+}
+
+.filtro {
+   width: 35vw;
+   height: 70vh;
+   margin-top: 47px; 
+   display: flex;
+   flex-direction: column;
+   margin-left: 10px;
+   background-color: #72271f;
+   border-radius: 10px;
+   color: white;
+   align-items: center;
+   justify-content: space-around;
+}
+
+footer {
+   display: flex;
+   background-color: #260707;
+   color: white;
+   list-style: none;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.logo-footer {
+   margin-bottom: 10px;
+}

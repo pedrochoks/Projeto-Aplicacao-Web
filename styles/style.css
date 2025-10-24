@@ -1,9 +1,13 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
     padding: 0;
+    background: linear-gradient(to bottom, #5a0000, #a10000);
 }
 .cabecalho{
-    background-color: red;
+    
     height: 20vh;
     display: flex;
     justify-content: space-between;
@@ -27,8 +31,31 @@ body{
     text-align: left;
 }
 .botao-entrar{
+    margin-right: 2%;
     background-color: #F8AB1E;
-    width: 10%;
+    width: 20%;
     height: 35%;
+    border-radius: 10px;
+
 }
-   
+.principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imagem{
+    width: 80vw;
+    height: 80vh;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+}
+.cima{
+    display: flex;
+    justify-content: space-around;
+}
+.baixo{
+    display: flex;
+    justify-content: space-around;
+}

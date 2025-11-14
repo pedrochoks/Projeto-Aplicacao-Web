@@ -1,0 +1,233 @@
+/* -------------------------------------------
+  GERAL
+-------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url("/img-ramon/Group\ 78.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------------------------
+  CABEÇALHO
+-------------------------------------------- */
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #38138D, #E32C1A);
+  padding: 15px 30px;
+  height: 20vh;
+}
+
+.logo {
+  height: 80%;
+}
+
+.menu {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 35px;
+}
+
+.botao-entrar {
+  background-color: #F8AB1E;
+  color: white;
+  border: none;
+  padding: 1px 2px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 550;
+  font-size: 2rem;
+  width: 10%;
+  height: 35%;
+}
+
+/* -------------------------------------------
+  BANNER
+-------------------------------------------- */
+
+.banner {
+  height: 100vh;
+  background-image: url('/img-ramon/bannerC.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.banner::after {
+  content: "";
+  position: sticky;
+  top: 0;
+  display: block;
+  height: 90vh;
+  background: linear-gradient(to bottom, transparent 10%, rgba(50, 2, 88, 0.9) 100%, rgb(51, 4, 95) 100%);
+  mix-blend-mode: lighten;
+}
+
+/* -------------------------------------------
+  LAYOUT PRINCIPAL
+-------------------------------------------- */
+
+.conteudo {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 60px;
+  padding: 30px;
+}
+
+/* -------------------------------------------
+  PRODUTOS (PADRONIZADO)
+-------------------------------------------- */
+
+.produtos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* CARD DO PRODUTO */
+.produto {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background-color: #3B3561;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+/* IMAGENS DOS PRODUTOS (TAMANHO PADRÃO) */
+.produto img {
+  width: 400px;
+  height: 280px; 
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* TEXTO DO PRODUTO */
+.info {
+  flex: 1;
+}
+
+.produto h3 {
+  font-size: 2.3em;
+  color: #f5f5f5;
+  margin-bottom: 15px;
+}
+
+.produto p {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #f5f5f5;
+}
+
+.preco {
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #f5a623;
+}
+
+.parcelamento {
+  color: #ddd;
+  font-size: 1.1em;
+}
+
+/* BOTÃO CARRINHO */
+.botao-carrinho {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.botao-carrinho:hover {
+  background-color: #e69400;
+}
+
+/* -------------------------------------------
+  FILTROS
+-------------------------------------------- */
+
+.filtros {
+  width: 95%;
+  background-color: #3c2b57;
+  padding: 40px;
+  border-radius: 20px;
+  height: 60%;
+  position: sticky;
+  top: 30px;
+}
+
+.filtros h2 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: #f7f7f7;
+}
+
+.filtro-preco,
+.filtro-categorias {
+  margin-bottom: 25px;
+  color: #f7f7f7;
+}
+
+.filtro-preco h3,
+.filtro-categorias h3 {
+  font-size: 2.3rem;
+}
+
+.filtros input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  height: 60px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+#filtrar {
+  background-color: #f5a623;
+  border: none;
+  padding: 25px 10px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.3rem;
+}
+
+/* -------------------------------------------
+  RODAPÉ
+-------------------------------------------- */
+
+.rodape {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  margin-top: 40px;
+}

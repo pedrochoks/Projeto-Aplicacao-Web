@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+
+    --cabecalho: linear-gradient(to bottom, #8D1313 0%, #2C2C2C 150%, #8D1313 200%);
+    --cor-texto: #E1A91A;
+    --cor-kachau: linear-gradient(to right, #8d1313 0%, #e1a91a 100%);
+    --background: linear-gradient(to bottom, #8D1313 0%, #2C2C2C 90%);
+    --banner: linear-gradient(to right, #e1a91a -70%, #8d1313 60%, #e1a91a 190%);
+    --texto-botao: #FFFFFF;
+    --footer: #260707;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    background: var(--background);
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Logo-raiozinho {
+    height: 100%;
+}
+
+.botao-login {
+    color: white;
+    background-color: #F8AB1E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 10%;
+    border: 0;
+    border-radius: 15px;
+    font-size: 1.5rem;
+}
+
+.texto-nav {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.botao-login:hover {
+    background-color: var(--texto-botao);
+    color: var(--cor-texto);
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    gap: 15vh;
+}
+
+.banner {
+    display: flex;
+    background: var(--banner);
+    height: 60vh;
+}
+
+.mcqueen-banner {
+    display: flex;
+    position: absolute;
+    width: 95vh;
+    height: 70vh;
+    margin-right: 5%;
+    margin-left: 50%;
+}
+
+
+.texto-banner {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--cor-texto);
+    font-size: 4rem;
+    font-weight: 700;
+    width: 40%;
+    margin-right: 10%;
+    margin-left: 5%;
+
+}
+
+main {
+    width: 100%;
+    height: auto;
+}
+
+.background {
+    display: flex;
+    background: var(--background);
+    height: 150%;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 40px 0;
+    gap: 40px;
+}
+
+.pecas-esportivas {
+
+    display: flex;
+    color: #E1A91A;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.lista-produtos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.produto {
+    background: var(--cor-kachau);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 15px;
+    gap: 25px;
+    width: 85%;
+}
+
+.mcqueen-produto {
+    display: flex;
+    width: 200px;
+    height: auto;
+    margin: 2%;
+}
+
+p {
+    padding: 0px 30px 10px 30px;
+}
+
+.titulo-produto {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 0px 30px 10px 30px;
+}
+
+.botao-carrinho {
+    display: flex;
+    background-color: #E1A91A;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    margin: 20px 30px 30px 30px;
+    gap: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+
+}
+
+.botao-carrinho:hover {
+    background-color: #E1A91A;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.icone-carrinho {
+    width: 30px;
+    height: auto;
+}
+
+.filtro {
+    width: 50vw;
+    height: 90vh;
+    margin-top: 20vw;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    background: var(--cor-kachau);
+    border-radius: 10px;
+    color: #000;
+    align-items: center;
+    justify-content: space-around;
+
+}
+h3 {
+    margin-left: 10px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #242323;
+
+}
+
+.footer {
+    display: flex;
+    color: white;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 70px;
+}
+
+
+.logo-footer {
+    margin-bottom: 10px;
+}
+
+.linha-footer {
+    height: 2px;
+    width: 90%;
+    margin-bottom: 20px;
+    background-color: white;
+    align-self: center;
+}
+
+.copyright {
+    color: white;
+    align-self: center;
+    margin-bottom: 20px;
+}

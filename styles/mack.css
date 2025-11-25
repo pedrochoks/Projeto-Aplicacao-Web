@@ -4,7 +4,7 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
- 
+
 }
 
 header {
@@ -54,7 +54,7 @@ main {
    display: flex;
    align-items: center;
    justify-content: center;
-   
+
 }
 
 .mack-banner {
@@ -68,7 +68,7 @@ main {
 }
 
 .area-produto {
-   padding: 30px 0    30px 30px;
+   padding: 30px 0 30px 30px;
    width: 100%;
    display: flex
 }
@@ -80,6 +80,7 @@ main {
 .pecas-caminhao {
    color: #F8AB1E;
 }
+
 .produto {
    display: flex;
    align-items: center;
@@ -114,7 +115,7 @@ main {
    margin: 30px;
 }
 
-.icone-carrinho{
+.icone-carrinho {
    width: 10%;
    margin: 10px;
 }
@@ -122,7 +123,7 @@ main {
 .filtro {
    width: 35vw;
    height: 70vh;
-   margin-top: 47px; 
+   margin-top: 47px;
    display: flex;
    flex-direction: column;
    margin-left: 10px;
@@ -145,7 +146,7 @@ footer {
    display: flex;
    flex-direction: column;
    background-color: #260707;
-   
+
 }
 
 .logo-footer {
@@ -159,6 +160,7 @@ footer {
    background-color: white;
    align-self: center;
 }
+
 .copyright {
    color: white;
    align-self: center;

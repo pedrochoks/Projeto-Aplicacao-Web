@@ -4,11 +4,10 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
-
+   font-family: 'Poppins', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 header {
-   height: 15vh;
    background-color: #892D25;
    display: flex;
    justify-content: space-around;
@@ -24,9 +23,16 @@ main {
 }
 
 .navegacao {
+   
+}
+
+.container-navegacao {
+   gap: 100px;
    display: flex;
    align-items: center;
-   gap: 15vh;
+   width: 90%;
+   max-width: 1440px;
+   margin: 0 auto;
 }
 
 .botao-login {
@@ -49,22 +55,27 @@ main {
 }
 
 .banner-mack {
-   height: 60vh;
+   padding: 50px;
    background-image: linear-gradient(to right, #72271F 0%, #E32C1A 88%);
+   
+}
+
+.container-banner{
    display: flex;
    align-items: center;
    justify-content: center;
-
+   width: 90%;
+   max-width: 1440px;
+   margin: 0 auto;
 }
 
 .mack-banner {
-   margin-right: 90px;
+
 }
 
 .texto-banner {
    color: #F8AB1E;
-   font-size: 10vh;
-   margin: 90px;
+   font-size: 70px;
 }
 
 .area-produto {
@@ -79,6 +90,7 @@ main {
 
 .pecas-caminhao {
    color: #F8AB1E;
+   margin-left: 17px;
 }
 
 .produto {
@@ -121,9 +133,9 @@ main {
 }
 
 .filtro {
-   width: 35vw;
+   width: 30%;
    height: 70vh;
-   margin-top: 47px;
+   margin-top: 57px;
    display: flex;
    flex-direction: column;
    margin-left: 10px;
@@ -165,4 +177,51 @@ footer {
    color: white;
    align-self: center;
    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px){
+   .texto-banner {
+      font-size: 50px;
+   }
+
+   .mack-banner{
+      width: 300px;
+   }
+
+}
+
+@media screen and (max-width: 390px)
+{
+   .navegacao {
+      grid-template-columns: 1fr;
+   }
+
+   .container-navegacao {
+      display: none;
+   }
+
+   .botao-login {
+      width: 30%;
+   }
+
+   .container-banner {
+      flex-direction: column;
+   }
+
+   .mack-banner {
+      display: none;
+   }
+   
+   .texto-banner {
+      height: 20vh;
+      font-size: 30px;
+   }
+
+   .pecas-caminhao {
+      font-size: 22px;
+   }
+
+   .imagem-produto {
+      height: 50%;
+   }
 }

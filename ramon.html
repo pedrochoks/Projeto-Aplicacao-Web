@@ -11,99 +11,24 @@
 
 <body>
 
-  <!-- 🟥 TOPO -->
   <header class="cabecalho">
     <img class="logo" src="img-ramon/-B3EBF2 (1) 1.png" alt="Logo Katchau">
-
     <nav class="menu">
       <a href="#">Pneus</a>
       <a href="#">Caminhões</a>
       <a href="#">Esportivos</a>
       <a href="#">Customizações</a>
     </nav>
-
     <button class="botao-entrar">Entrar</button>
   </header>
 
-  <!-- 🟦 BANNER -->
   <section class="banner"></section>
 
-  <!-- 🟩 CONTEÚDO PRINCIPAL -->
   <main class="conteudo">
 
-    <section class="produtos">
-
-      <!-- PRODUTO 1 -->
-      <div class="produto">
-        <img src="img-ramon/fusca led verde.png" alt="Produto 1">
-        <div class="info">
-          <h3>TINTA AZUL BRILHANTE</h3>
-          <p>
-            Um azul vibrante que não passa despercebido. Esta cor perolizada
-            combina intensidade e profundidade, criando um efeito quase
-            tridimensional sob a luz. Ideal para carros que querem transmitir
-            energia, estilo e personalidade.
-          </p>
-          <p class="preco">R$ 95,50</p>
-          <p class="parcelamento">6x de R$ 15,61</p>
-          <button class="botao-carrinho">🛒 Adicionar ao Carrinho</button>
-        </div>
-      </div>
-
-      <!-- PRODUTO 2 -->
-      <div class="produto">
-        <img src="img-ramon/sistema lowrider.png" alt="produto2">
-        <div class="info">
-          <h3>Pump Street Kit Black Magic Hydraulics</h3>
-          <p>
-            O 4 Pump 1/2″ Street Kit da Black Magic Hydraulics é um dos sistemas
-            mais completos e robustos para projetos de low rider. Com quatro
-            bombas independentes de alta performance, permite movimentos clássicos
-            e avançados como three wheel, front hop e ajustes individuais.
-          </p>
-          <p class="preco">R$ 3.700,56</p>
-          <p class="parcelamento">8x de R$ 462,57</p>
-          <button class="botao-carrinho">🛒 Adicionar ao Carrinho</button>
-        </div>
-      </div>
-
-      <!-- PRODUTO 3 -->
-      <div class="produto">
-        <img src="img-ramon/mercedes rick morty.png" alt="produto3">
-        <div class="info">
-          <h3>Adesivo Anime</h3>
-          <p>
-            Deixe seu carro com personalidade com o Adesivo de Anime!
-            Feito em material resistente e à prova d’água, garante cores
-            vibrantes, alta durabilidade e fácil aplicação. Ideal para quem
-            ama cultura pop.
-          </p>
-          <p class="preco">R$ 140,65</p>
-          <p class="parcelamento">3x de R$ 46,80</p>
-          <button class="botao-carrinho">🛒 Adicionar ao Carrinho</button>
-        </div>
-      </div>
-
-      <!-- PRODUTO 4 -->
-      <div class="produto">
-        <img src="img-ramon/brz branco.png" alt="produto4">
-        <div class="info">
-          <h3>LED Automotivo Roxo</h3>
-          <p>
-            Transforme o visual do seu carro com o LED Automotivo Roxo.
-            Com iluminação intensa e durável, ele oferece um toque moderno
-            e esportivo ao veículo. Ideal para uso interno ou externo, com
-            baixo consumo e alta resistência.
-          </p>
-          <p class="preco">R$ 357,00</p>
-          <p class="parcelamento">5x de R$ 71,40</p>
-          <button class="botao-carrinho">🛒 Adicionar ao Carrinho</button>
-        </div>
-      </div>
-
+    <section class="produtos" id="lista-produtos">
     </section>
 
-    <!-- 🟫 FILTRO -->
     <aside class="filtros">
       <h2>Filtros</h2>
 
@@ -117,15 +42,13 @@
       </div>
 
       <div class="filtro-grupo">
-
-        <div class="filtro-categorias">
+        <div class="filtro-categorias" id="opcoes-categorias">
           <h3>Categorias</h3>
           <label><input type="checkbox" value="Low Rider"> Low Rider</label><br>
           <label><input type="checkbox" value="Adesivos"> Adesivos</label><br>
           <label><input type="checkbox" value="LEDs"> LEDs</label><br>
           <label><input type="checkbox" value="Tintas"> Tintas</label>
         </div>
-
       </div>
 
       <button id="filtrar">Aplicar Filtros</button>
@@ -133,11 +56,11 @@
 
   </main>
 
-  <!-- 🟫 RODAPÉ -->
   <footer class="rodape">
     <p>© 2025 Projeto Katchau</p>
   </footer>
 
-</body>
+  <script src="scripts/scripts.js"></script>
 
+</body>
 </html>

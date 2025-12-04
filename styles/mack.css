@@ -23,7 +23,7 @@ main {
 }
 
 .navegacao {
-   
+
 }
 
 .container-navegacao {
@@ -57,7 +57,7 @@ main {
 .banner-mack {
    padding: 50px;
    background-image: linear-gradient(to right, #72271F 0%, #E32C1A 88%);
-   
+
 }
 
 .container-banner{
@@ -85,7 +85,7 @@ main {
 }
 
 .lista-produtos {
-   width: 70vw;
+   width: 70%;
 }
 
 .pecas-caminhao {
@@ -99,7 +99,7 @@ main {
    margin: 10px;
    background-color: #72271f;
    border-radius: 10px;
-   height: 40vh;
+   height: 40%;
    width: 65vw;
 }
 
@@ -211,7 +211,7 @@ footer {
    .mack-banner {
       display: none;
    }
-   
+
    .texto-banner {
       height: 20vh;
       font-size: 30px;
@@ -222,6 +222,22 @@ footer {
    }
 
    .imagem-produto {
-      height: 50%;
+      height: 80px;
+   }
+
+   .produto{
+      height: 20vh;
+   }
+
+   .botao-carrinho {
+      font-size: 0.5em;
+      margin: 10px 15px;
+   }
+   .filtro {
+      display: none;
+   }
+
+   footer {
+      display: none;
    }
 }

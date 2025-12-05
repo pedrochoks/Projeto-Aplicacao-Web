@@ -1,103 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;  
- }
-
- main {
-    display: flex;
- }
-
-.lado-esquerdo {
-    margin: 30px;
-    background-color: #892D25;
-    width: 40vw;
-    height: 90vh;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.logo-lado-esquerdo{
-margin-top: 100px;
-}
-
-.descricao {
-    color: white;
-    font-size: 3em;
-    margin-left: 35px;
-    margin-right: 35px;
+header {
+    background-color: #8D1313;
     display: flex;
     justify-content: center;
+    height: 10vh;
+    border-bottom: 3px solid #F8AB1E;
 }
 
-.cadastrar {
-    color: #FED609;
-    font-size: 2.5rem;
-    font-weight: bold;
+
+body {
+    background-image: url("../icon/Imagem-bgc.png"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
-.lado-direito{
+.alinhar-fundo {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+.fundo-login {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width: 60vw;
-    height: 90vh;
+    background-color: #8D1313;
+    width: 40%;
     align-items: center;
+    height: 80vh;
+    border-radius: 15px;
+    border: 3px solid #F8AB1E;
     
 }
 
-.texto-cabecalho{
-font-size: 2.0rem;
-}
-
-.frase-cabecalho {
-    margin-top: 10px;
-}
-
-.informacoes {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 50px;
+.logo-completa {
+    margin-top: 2%;
 }
 
 .input-info {
-    display: flex;
-    flex-direction: column;
-    width: 25vw;
+    width: 90%;
+    max-width: 1440px;
+}
+.input-fundo {
+    color: #F8AB1E;
 }
 
 input {
-    height: 5vh;
     border-radius: 10px;
-    
+    border-color: #F8AB1E;
+    width: 100%;
+    height: 7vh;
 }
 
-.botao-entrar {
-    background-color: #892D25;
-    color: #FED609;
-    height: 5vh;
-    border-radius: 10px;
-}
-
-.esqueci-senha {
+.botoes {
     display: flex;
-    justify-content: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: black;
+    flex-direction: column;
 }
 
-.linha-esqueci-senha {
-    height: 2px;
-    width: 90%;
-    margin-bottom: 20px;
-    background-color: white;
-    align-self: center;
+
+.esqueceu-senha {
+    background-color: #8D1313;
+    border: none;
+    color: #F8AB1E;
+}
+
+.login {
+    background-color: #F8AB1E;
+    border: none;
+    border-radius: 10px;
+    width: 80%;
 }

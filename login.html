@@ -1,48 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="Pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/login.CSS">
 </head>
 
 <body>
+    <header>
+        <img src="icon/Logo-raiozinho.png" alt="">
+    </header>
     <main>
-        <aside class="lado-esquerdo">
-            <img src="icon/Logo-completo.png" alt="" class="logo-lado-esquerdo">
-            <div>
-                <p class="descricao">Site de peças automotivas </p>
-                <p class="descricao">e</p>
-                <p class="descricao">customização </p>
-            </div>
-
-            <a href="" class="cadastrar">Cadastre-se</a>
-        </aside>
-
-        <section class="lado-direito">
-            <div class="texto-cabecalho">
-                <h1 class="bem-vindo">Bem vindo(a)!</h1>
-                <p class="frase-cabecalho">Venha fazer parte da rota 66</p>
-            </div>
-            <div class="informacoes">
-                <div class="input-info">
-                    <label for="Email">Email:</label>
-                    <input type="Email" name="" id="" placeholder="  email@email.com">
+        <div class="alinhar-fundo">
+            <div class="fundo-login">
+                <div class="logo-completa">
+                    <img src="icon/Logo-completo-marrom.png" alt="">
                 </div>
                 <div class="input-info">
-                    <label for="">Senha:</label>
-                    <input type="password" name="" id="Senha" required placeholder="  ********">
-
+                    <div class="input-fundo">
+                        <h3 class="tipo-input">E-mail:</h3>
+                        <input type="email" placeholder="email@email.com">
+                    </div>
+                    <div class="input-fundo">
+                        <h3 class="tipo-input">Senha:</h3>
+                        <input type="password" placeholder="**********">
+                    </div>
                 </div>
-                <button class="botao-entrar ">Entrar</button>
-                <div>
-                    <a href="" class="esqueci-senha">Esqueceu sua senha?</a>
-                    <span class="linha-esqueci-senha"></span>
+                <button class="esqueceu-senha "><u>Esqueceu sua senha?</u></button>
+                <button class="login ">Login</button>
+                <div class="linha-fundo">
+                    <span class="linha"></span>
+                    <p>Ou</p>
+                    <span class="linha"></span>
                 </div>
+                <button class="Cadastro"><u>Cadastre-se</u></button>
             </div>
-        </section>
+        </div>
     </main>
 </body>
 

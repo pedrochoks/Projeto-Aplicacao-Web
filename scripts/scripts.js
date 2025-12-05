@@ -40,10 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
             descricao: "Tinta especial de alta cobertura e brilho intenso.",
             preco: 220.00,
             parcelamento: "4x de R$ 55,00",
-            imagem: "img-ramon/placeholder.png" 
+            imagem: "img-ramon/brz-led-vermelho.png" 
         },
         {
-            nome: "A"
+            nome: "Adesivo Samurai Lendário",
+            categoria: "Adesivos",
+            descricao: "Adesivo para aqueles que nunca quebram seu código de conduta e sempre mantem a honra acima de tudo.Não desbota ou estraga.",
+            preco: 300.00,
+            parcelamento: "5x de R$ 60,00",
+            imagem: "img-ramon/lancer-samurai.png"
         }
     ];
 

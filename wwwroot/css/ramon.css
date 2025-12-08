@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('/img-ramon/Group 78.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  overflow-x: hidden; /* Evita rolagem lateral indesejada */
+}
+
+/* ===========================
+   CABEÇALHO
+=========================== */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #38138D, #E32C1A);
+  padding: 15px 30px;
+  min-height: 100px; /* Melhor que vh fixo*/
+  flex-wrap: wrap; /* Evita quebra bruta */
+}
+
+.logo {
+  height: 70px; 
+  width: auto;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #F8AB1E;
+}
+
+.botao-entrar {
+  background-color: #F8AB1E;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+
+.botao-entrar:hover {
+  transform: scale(1.05);
+}
+
+/* ===========================
+   BANNER
+=========================== */
+.banner {
+  width: 100%;
+  height: 85vh; /* 100vh as vezes esconde o conteúdo inicial */
+  background-image: url('/img-ramon/bannerC.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax no PC */
+  position: relative;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, rgba(50, 2, 88, 0.9));
+}
+
+/* ===========================
+   LAYOUT PRINCIPAL
+=========================== */
+.conteudo {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   PRODUTOS
+=========================== */
+.produtos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.produto {
+  display: flex;
+  background-color: #3B3561;
+  border-radius: 12px;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+}
+
+.produto img {
+  width: 380px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0; /* Garante que a imagem não seja esmagada */
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.info p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.preco {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #f5a623;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.botao-carrinho {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: fit-content;
+}
+
+.botao-carrinho:hover {
+  background-color: #e69400;
+}
+
+/* ===========================
+   FILTROS
+=========================== */
+.filtros {
+  background-color: #3c2b57;
+  padding: 30px;
+  border-radius: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.filtros h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #F8AB1E;
+}
+
+.filtros h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.filtros input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+#filtrar {
+  background-color: #f5a623;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+#filtrar:hover {
+  background-color: #d4880b;
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+.rodape {
+  text-align: center;
+  padding: 30px;
+  color: #fff;
+  margin-top: 40px;
+  background: rgba(0,0,0,0.2);
+}
+
+/* ===========================
+   RESPONSIVIDADE (MEDIA QUERIES)
+=========================== */
+
+/* --- Tablet / Notebook Pequeno --- */
+@media (max-width: 1024px) {
+  .conteudo {
+    grid-template-columns: 1fr; /* Coluna única */
+    gap: 30px;
+  }
+
+  .filtros {
+    position: static; /* Remove o sticky */
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+  }
+  
+  .filtros div {
+     flex: 1; /* Distribui os inputs igualmente */
+  }
+}
+
+/* --- Tablet Retrato / Celular Grande --- */
+@media (max-width: 768px) {
+  .cabecalho {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .menu a {
+    font-size: 1.2rem;
+  }
+
+  /* Fix essencial para Banner no celular */
+  .banner {
+    height: 50vh; /* Banner menor no mobile */
+    background-attachment: scroll; /* EVITA BUG DE ZOOM NO IPHONE */
+    background-position: center;
+  }
+
+  .produto {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .produto img {
+    width: 100%;
+    max-width: 400px;
+    height: auto; /* Mantém a proporção */
+    aspect-ratio: 16/9;
+  }
+  
+  .info {
+    width: 100%;
+    align-items: center;
+  }
+  
+  .botao-carrinho {
+    width: 100%;
+  }
+  
+  .filtros {
+    display: block; /* Volta a empilhar no mobile */
+  }
+}
+
+/* --- Celular Pequeno --- */
+@media (max-width: 480px) {
+  .logo {
+    height: 50px;
+  }
+
+  .menu a {
+    font-size: 1.1rem;
+  }
+
+  .info h3 {
+    font-size: 1.4rem;
+  }
+
+  .botao-entrar {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .conteudo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .banner {
+    height: 40vh;
+  }
+
+  .filtros h2 {
+    font-size: 1.8rem;
+  }
+}

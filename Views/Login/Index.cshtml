@@ -1,0 +1,75 @@
+@{
+   Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="~/css/login.css">
+</head>
+
+<body>
+    <main>
+        <aside class="lado-esquerdo">
+            <img src="~/icon/Logo-completo.png" alt="" class="logo-lado-esquerdo">
+            <div>
+                <p class="descricao">Site de peças automotivas </p>
+                <p class="descricao">e</p>
+                <p class="descricao">customização </p>
+            </div>
+
+            <a href="" class="cadastrar">Cadastre-se</a>
+        </aside>
+
+        <section class="lado-direito">
+            <div class="texto-cabecalho">
+                <h1 class="bem-vindo">Bem vindo(a)!</h1>
+                <p class="frase-cabecalho">Venha fazer parte da rota 66</p>
+            </div>
+
+            <div class="informacoes">
+
+                @if (TempData["Erro"] != null)
+                {
+                    <p class="erro-tempdata">@TempData["Erro"]</p>
+                }
+
+                <form asp-controller="Login" asp-action="Login" method="post">
+
+                    <div class="input-info">
+                        <label for="EmailLogin">Email:</label>
+                        <input type="email"
+                               id="EmailLogin"
+                               name="EmailLogin"
+                               placeholder="  email@email.com"
+                               required>
+                    </div>
+
+                    <div class="input-info">
+                        <label for="SenhaLogin">Senha:</label>
+                        <input type="password"
+                               id="SenhaLogin"
+                               name="SenhaLogin"
+                               placeholder="  ********"
+                               required>
+                    </div>
+
+                    <button type="submit" class="botao-entrar">Entrar</button>
+
+                    <div>
+                        <a href="" class="esqueci-senha">Esqueceu sua senha?</a>
+                        <span class="linha-esqueci-senha"></span>
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

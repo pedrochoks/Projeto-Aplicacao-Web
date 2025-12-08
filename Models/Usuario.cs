@@ -25,7 +25,7 @@ public partial class Usuario
 
     public string? Email { get; set; }
 
-    public string? Senha { get; set; }
+    public byte[]? Senha { get; set; }
 
     public virtual ICollection<Carrinho> Carrinhos { get; set; } = new List<Carrinho>();
 }

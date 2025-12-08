@@ -312,3 +312,5 @@ C:\Users\42344828893\Desktop\Katchau Back\obj\Debug\net9.0\refint\Katchau Back.d
 C:\Users\42344828893\Desktop\Katchau Back\obj\Debug\net9.0\Katchau Back.pdb
 C:\Users\42344828893\Desktop\Katchau Back\obj\Debug\net9.0\Katchau Back.genruntimeconfig.cache
 C:\Users\42344828893\Desktop\Katchau Back\obj\Debug\net9.0\ref\Katchau Back.dll
+C:\Users\42344828893\Desktop\Katchau Back\obj\Debug\net9.0\Katchau Back.sourcelink.json
+C:\Users\42344828893\Desktop\Katchau Back\obj\Debug\net9.0\compressed\2i21gz6gq8-x74eagjklz.gz

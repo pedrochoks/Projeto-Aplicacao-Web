@@ -9,7 +9,7 @@ namespace Katchau_Back.Services
 {
     public class HashService
     {
-        public static string GerarHashBytes(string senha)
+        public static byte[] GerarHashBytes(string senha)
         {
             using (SHA256 sha = SHA256.Create())
             {

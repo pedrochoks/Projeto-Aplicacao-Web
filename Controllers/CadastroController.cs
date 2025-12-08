@@ -45,10 +45,10 @@ namespace Katchau_Back.Controllers
             }
             if (await _context.Usuarios.AnyAsync(usuario => usuario.CPF == CPFUsuario))
             {
-                TempData["UsuarioCadastrado"] = "CPF ja cadastrado";
+                TempData["Erro"] = "CPF ja cadastrado";
                 return RedirectToAction("Index", "Login");
             }
-            var hash = HashService.GerarHashBytes(SenhaUsuario);
+            byte[] hash = HashService.GerarHashBytes(SenhaUsuario);
             Usuario usuario = new Usuario
             {
                 Nome = NomeUsuario,

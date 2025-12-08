@@ -1,0 +1,608 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    margin: 0%;
+    font-family: Poppins;
+}
+
+
+/******************HEADER*********************/
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to bottom, #4F2E25, #2E1C18);
+    height: 20vh;
+}
+
+
+
+.logo-raio{
+    height: 126px;
+    width: 69px;
+}
+
+.lista-nav{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+
+}
+.img menu {display none}
+li{
+    display: flex;
+    list-style-type: none;
+    color: #807A7A;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+}
+
+.botao-entrar{
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #F8AB1E;
+    font-size: 2rem;
+    font-family: poppins;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.botao-entrar:hover{
+    background-color: #D19425;
+}
+
+.container-banner{
+    display: flex;
+    background-color: #2E1C18;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 300px;
+}
+
+.texto-banner{
+    display: flex;
+    font-family: Poppins;
+    color:#F8AB1E;
+    font-size: 15rem;
+    font-weight: 800;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.Kat{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 180px;
+}
+
+.Chau{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.logo-banner{
+    width: 120px;
+    height: 220px;
+}
+
+.botao-vermais{
+    background-color: #F8AB1E;
+    border-radius: 10px;
+    width: 300px;
+    height: 70px;
+    color: white;
+    font-family: Poppins;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.botao-vermais:hover{
+    background-color: #D19425;
+}
+
+.a-vermais{
+    text-decoration: none;
+    color: white;
+}
+
+.imagemm-banner{
+    width: 100;
+}
+
+
+/******************SECAO PRODUTOS***************************/
+
+main{
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to bottom, #4F2E25, #2E1C18);
+}
+
+.titulo-produtos{
+    color: white;
+    font-size: 3rem;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+
+.produtos{
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    flex: 3;
+    margin-left: 60px;
+    padding-bottom: 50px;
+    padding-top: 35px;
+}
+
+.produto{
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to right, #4F2E25, #2E1C18);
+    border-radius: 20px;
+    width: 55vw;
+    height: 250px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    gap: 15px;
+}
+
+.imagem-produto{
+    display: flex;
+    height: 231px;
+    width: 215px;
+    border-radius: 10px;
+}
+
+.Descricao-produto{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.preco-produto{
+    display: flex;
+    font-weight: 700;
+}
+
+.parcela-produto{
+    display: flex;
+    font-size: 1rem;
+    color: #F8AB1E;
+}
+
+.botao-carrinho{
+    font-family: Poppins;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #F8AB1E;
+    border-color: #F8AB1E;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.botao-carrinho:hover{
+    background-color: #D19425;
+}
+
+.imagem-carrinho{
+    height: 30px;
+    width: 30px;
+}
+
+
+/********************FILTRO*********************/
+
+aside{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    color: white;
+    /*background-color: #4F2E25; */
+    background: radial-gradient(ellipse at center, #4F2E25, #2E1C18);
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-top: 170px;
+    padding-left: 30px
+}
+
+.filtro-cabecalho{
+    display: flex;
+    flex-direction: column;
+}
+
+.Filtro-titulo{
+    font-size: 3rem;
+    margin-bottom: 0px;
+}
+
+.divisao-filtro{
+    width: 15rem;
+    justify-content: flex-start;
+    margin-left: 0px;
+}
+
+.filtros {
+    width: 95%;
+    background-color: #3c2b57;
+    padding: 40px;
+    border-radius: 20px;
+    height: 60%;
+    position: sticky;
+    top: 30px;
+}
+
+.filtros h2 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #f7f7f7;
+}
+
+.filtro-preco,
+.filtro-categorias {
+    margin-bottom: 25px;
+    color: #f7f7f7;
+}
+
+label{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+input[type="checkbox" i]{
+    box-sizing: 20px;
+}
+
+.filtro-preco h3,
+.filtro-categorias h3 {
+    font-size: 2.3rem;
+}
+
+.filtro-preco input[type="number"] {
+    width: 25%;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.botao-filtro{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.botao-filtro:hover{
+    background-color: #D19425;
+}
+
+#filtrar {
+    background-color: #f5a623;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 90%;
+    font-size: 1.3rem;
+    font-family: Poppins;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/***********************FOOTER******************/
+
+footer{
+    background: linear-gradient(to bottom, #4F2E25, #2E1C18);
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.parte-superior{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.primeira-parte{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.titulos-nav{
+    color: white;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.explore{
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+.suporte{
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+.footer-nav{
+    text-decoration: none;
+    color: #9A9A9A;
+}
+
+.redes-sociais{
+    height: 25px;
+}
+
+.divisao-footer{
+    color: white;
+    width: 100%;
+}
+
+.parte-inferior{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.copyright{
+    color: white;
+}
+
+
+/**************************************************/
+/**************** MEDIA QUERIES *******************/
+/**************************************************/
+
+/* Quebra o layout principal (Produtos/Filtro) */
+@media (max-width: 1024px) {
+    /* MUDANÇA NA SEÇÃO PRINCIPAL (MAIN) */
+    main {
+        flex-direction: column; /* Empilha Filtro e Produtos */
+        padding: 0 20px; /* Adiciona um padding nas laterais */
+    }
+
+    /* FILTRO (ASIDE) */
+    aside {
+        width: 100%; /* Ocupa a largura toda */
+        margin-top: 30px; /* Reduz a margem de cima */
+        padding-left: 10px; /* Remove padding lateral */
+        padding-bottom: 15px;
+    }
+    .filtro-cabecalho {
+        align-items: center; /* Centraliza o título no mobile */
+    }
+    .Filtro-titulo {
+        text-align: center;
+        margin-left: 0;
+    }
+    .divisao-filtro {
+        margin: 0 auto 15px auto; /* Centraliza a divisão */
+    }
+
+    .input-precos{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* PRODUTOS (MAIN CONTENT) */
+    .produtos {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px 0;
+        order: 2; /* Move a lista de produtos para a segunda posição, abaixo do filtro */
+    }
+
+    /* Card de Produto */
+    .produto {
+        width: 95%; /* Ajusta a largura para caber no 100% da tela */
+        height: auto; /* Deixa a altura flexível */
+        flex-direction: column; /* Empilha Imagem e Descrição */
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .imagem-produto {
+        width: 80%; /* Deixa a imagem maior no mobile */
+        height: auto;
+    }
+    
+    .Descricao-produto {
+        align-items: center;
+    }
+
+    /* BANNER */
+    .container-banner {
+        gap: 30px; /* Diminui o espaçamento */
+    }
+    
+    .texto-banner {
+        font-size: 15rem; /* Diminui um pouco o texto */
+    }
+    
+    .logo-banner {
+        width: 80px;
+        height: 150px;
+    }
+}
+
+/* Quebra o layout em telas de celular (Header e Banner menores) */
+@media (max-width: 768px) {
+    /* HEADER (Menu Hambúrguer) */
+    header {
+        justify-content: space-between; /* Ajusta espaçamento para mobile */
+        height: 10vh; /* Diminui a altura */
+        padding: 0 15px;
+    }
+    
+    .lista-nav {
+        /* Esconde a navegação principal (será substituída pelo menu hambúrguer) */
+        display: none; 
+    }
+    
+    .logo-raio {
+        height: 80px; /* Diminui o logo */
+        width: 44px;
+    }
+    
+    .botao-entrar {
+        width: 100px; /* Diminui o botão */
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    /* BANNER */
+    .container-banner {
+        flex-direction: column; /* Empilha Texto e Imagem */
+        padding-top: 50px;
+        padding-bottom: 50px;
+        gap: 30px;
+    }
+
+    .texto-banner {
+        font-size: 6rem; /* Reduz muito o texto para caber */
+    }
+    
+    .Kat, .Chau {
+        height: auto; /* Ajusta a altura */
+    }
+    
+    .logo-banner {
+        width: 50px;
+        height: 90px;
+    }
+    
+    .botao-vermais {
+        width: 200px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .imagemm-banner {
+        width: 90%; /* Garante que a imagem se ajuste à largura */
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 30px 20px;
+    }
+    
+    .parte-superior {
+        flex-direction: column; /* Empilha as partes do footer */
+        gap: 30px;
+    }
+    
+    .primeira-parte {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center; /* Centraliza as colunas de navegação */
+        text-align: center;
+    }
+    
+    .segunda-parte {
+        text-align: center;
+    }
+    
+    .redes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .redes .titulos-nav {
+        display: none; /* Esconde o título Redes */
+    }
+    
+    .titulos-nav, .copyright {
+        font-size: 1.2rem;
+    }
+}
+
+.menu-hamburguer {
+    display: none; /* Escondido por padrão em telas grandes */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icone-menu {
+    width: 40px;
+    height: 40px;
+    /*filter: invert(1); /* Se o ícone for preto e o header escuro */
+}
+
+/* Mostra o ícone em telas pequenas */
+@media (max-width: 768px) {
+    .menu-hamburguer {
+        display: block; /* Mostra o botão do menu hambúrguer */
+        order: 2; /* Posiciona o botão depois do logo */
+    }
+    
+    .botao-entrar {
+        order: 3; /* Posiciona o botão Entrar por último */
+    }
+    
+    .logo-raio {
+        order: 1; /* Posiciona o logo primeiro */
+    }
+    
+    nav {
+        /* A nav inteira também deve ser escondida e mostrada com JS */
+        display: none; 
+    }
+    
+    /* Configuração para quando o menu estiver ABERTO (precisa de JS para adicionar a classe 'menu-aberto') */
+    .menu-aberto {
+        display: flex; /* Mostra a nav */
+        flex-direction: column;
+        position: absolute;
+        top: 10vh; /* Abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: #2E1C18;
+        padding: 20px 0;
+        z-index: 100;
+        /* Estilização dos itens na vertical: */
+        .lista-nav {
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             gap: 15px;
+        }
+    }
+}

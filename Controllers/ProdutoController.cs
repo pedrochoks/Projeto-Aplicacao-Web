@@ -19,7 +19,7 @@ namespace Katchau_Back.Controllers
        }
        public async Task<IActionResult> ListarPodutos(string categoria)
        {
-            var produto = _context.Produtos.
+            var produto = await _context.Produtos.
             Where(p => p.Categoria == categoria)
             .ToListAsync();
 

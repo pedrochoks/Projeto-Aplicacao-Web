@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\58069799897\\Desktop\\Projeto-Aplicacao-Web\\Katchau Back.csproj": {}
+    "C:\\Users\\42344828893\\Desktop\\Katchau Back\\Katchau Back.csproj": {}
   },
   "projects": {
-    "C:\\Users\\58069799897\\Desktop\\Projeto-Aplicacao-Web\\Katchau Back.csproj": {
+    "C:\\Users\\42344828893\\Desktop\\Katchau Back\\Katchau Back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\58069799897\\Desktop\\Projeto-Aplicacao-Web\\Katchau Back.csproj",
+        "projectUniqueName": "C:\\Users\\42344828893\\Desktop\\Katchau Back\\Katchau Back.csproj",
         "projectName": "Katchau Back",
-        "projectPath": "C:\\Users\\58069799897\\Desktop\\Projeto-Aplicacao-Web\\Katchau Back.csproj",
-        "packagesPath": "C:\\Users\\58069799897\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\58069799897\\Desktop\\Projeto-Aplicacao-Web\\obj\\",
+        "projectPath": "C:\\Users\\42344828893\\Desktop\\Katchau Back\\Katchau Back.csproj",
+        "packagesPath": "C:\\Users\\42344828893\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\42344828893\\Desktop\\Katchau Back\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\58069799897\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\42344828893\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"

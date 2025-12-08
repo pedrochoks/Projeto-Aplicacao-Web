@@ -17,41 +17,41 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Katchau_Back
 build_property.RootNamespace = Katchau_Back
-build_property.ProjectDir = C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\
+build_property.ProjectDir = C:\Users\42344828893\Desktop\Katchau Back\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web
+build_property.MSBuildProjectDirectory = C:\Users\42344828893\Desktop\Katchau Back
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/58069799897/Desktop/Projeto-Aplicacao-Web/Views/Cadastro/Index.cshtml]
+[C:/Users/42344828893/Desktop/Katchau Back/Views/Cadastro/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cm9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/58069799897/Desktop/Projeto-Aplicacao-Web/Views/Home/Index.cshtml]
+[C:/Users/42344828893/Desktop/Katchau Back/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/58069799897/Desktop/Projeto-Aplicacao-Web/Views/Login/Index.cshtml]
+[C:/Users/42344828893/Desktop/Katchau Back/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/58069799897/Desktop/Projeto-Aplicacao-Web/Views/Ramon/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFtb25cSW5kZXguY3NodG1s
+[C:/Users/42344828893/Desktop/Katchau Back/Views/Produto/Layuot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xMYXl1b3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/58069799897/Desktop/Projeto-Aplicacao-Web/Views/Ramon/Layuot.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFtb25cTGF5dW90LmNzaHRtbA==
+[C:/Users/42344828893/Desktop/Katchau Back/Views/Produto/Ramon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xSYW1vbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/58069799897/Desktop/Projeto-Aplicacao-Web/Views/_ViewImports.cshtml]
+[C:/Users/42344828893/Desktop/Katchau Back/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/58069799897/Desktop/Projeto-Aplicacao-Web/Views/_ViewStart.cshtml]
+[C:/Users/42344828893/Desktop/Katchau Back/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\49078790830\\Desktop\\Projeto-Aplicacao-Web\\Katchau Back.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\49078790830\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "C:\\Users\\42344828893\\Desktop\\Projeto-Aplicacao-Web\\Katchau Back.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\42344828893\\Desktop\\Projeto-Aplicacao-Web\\Katchau Back.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\42344828893\\Desktop\\Projeto-Aplicacao-Web\\Katchau Back.csproj",
+        "projectName": "Katchau Back",
+        "projectPath": "C:\\Users\\42344828893\\Desktop\\Projeto-Aplicacao-Web\\Katchau Back.csproj",
+        "packagesPath": "C:\\Users\\42344828893\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\42344828893\\Desktop\\Projeto-Aplicacao-Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\42344828893\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 049a3b58ba5136d6a51e5c44ed4915338c342de4
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -84,7 +101,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+>>>>>>> 049a3b58ba5136d6a51e5c44ed4915338c342de4
         }
       }
     }

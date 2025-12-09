@@ -1,4 +1,4 @@
-@{
+@* @{
     Layout = null;
 }
 
@@ -114,4 +114,104 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+</html> *@
+
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<!DOCTYPE html>
+<html lang="Pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="~/css/cadastro.css" />
+</head>
+
+<body>
+    <header class="cabecalho">
+        <img src="~/icon/Logo-raiozinho.png" alt="">
+    </header>
+
+    <main>
+        <div class="alinhar-fundo">
+            <div class="fundo-cadastro">
+
+                <img src="~/icon/Logo-completo-marrom.png" alt="">
+                <p class="texto-cadastro">Cadastre-se e venha fazer parte da rota 66</p>
+
+                @* MENSAGEM DE ERRO *@
+                @if (TempData["Erro"] != null)
+                {
+                    <div class="alert alert-danger" style="margin-bottom: 20px;">
+                        @TempData["Erro"]
+                    </div>
+                }
+
+                <form asp-controller="Cadastro" asp-action="Cadastro" method="post" asp-antiforgery="true">
+
+                    <div class="divisao-inputs">
+
+                        <section class="input-esquerda">
+
+                            <div class="input">
+                                <h3>Nome de Usuário:</h3>
+                                <input type="text" name="NomeUsuario" required />
+                            </div>
+
+                            <div class="input">
+                                <h3>CPF:</h3>
+                                <input type="text" name="CPFUsuario" required />
+                            </div>
+
+                            <div class="input">
+                                <h3>Rua:</h3>
+                                <input type="text" name="RuaUsuario" required />
+                            </div>
+
+                            <div class="input">
+                                <h3>Senha:</h3>
+                                <input type="password" name="SenhaUsuario" placeholder="********" required />
+                            </div>
+
+                        </section>
+
+                        <aside class="input-direita">
+
+                            <div class="input">
+                                <h3>E-mail:</h3>
+                                <input type="email" name="EmailUsuario" required />
+                            </div>
+
+                            <div class="input">
+                                <h3>Telefone:</h3>
+                                <input type="text" name="TelefoneUsuario" required />
+                            </div>
+
+                            <div class="input">
+                                <h3>Cidade:</h3>
+                                <input type="text" name="CidadeUSuario" required />
+                            </div>
+
+                            <div class="input">
+                                <h3>Confirme sua Senha:</h3>
+                                <input type="password" name="SenhaConfirmada" required />
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                    <button type="submit" class="cadastrar">Cadastrar</button>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+
 </html>

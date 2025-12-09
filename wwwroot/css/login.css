@@ -55,7 +55,7 @@ body {
     color: #F8AB1E;
 }
 
-input {
+.caixa-texto {
     border-radius: 10px;
     border-color: #F8AB1E;
     width: 100%;

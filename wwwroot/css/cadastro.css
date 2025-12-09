@@ -67,7 +67,7 @@ body {
 
 input {
     width:70%;
-    border-radius: 10px;
+            border-radius: 10px;
     border: 3px solid #F8AB1E;
     display: flex;
     height: 5vh;

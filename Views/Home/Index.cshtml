@@ -1,68 +1,73 @@
 ﻿@{
     Layout = null;
+    var usuarioLogado = Context.Session.GetInt32("id_usuario") != null;
 }
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vindo</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            background: linear-gradient(135deg, #0d6efd, #6610f2);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .card {
-            border-radius: 16px;
-            padding: 30px;
-        }
-        h2 {
-            font-weight: bold;
-        }
-    </style>
+    <title>Projeto KATCHAU</title>
+    <link rel="stylesheet" href="~/css/main.css">
 </head>
 
 <body>
 
-    <div class="container">
-
-        <div class="row justify-content-center">
-            <div class="col-md-5">
-
-                <div class="card shadow-lg text-center bg-white">
-
-                    <h2 class="mb-4">Bem-vindo ao Katchau!</h2>
-                    <p class="text-muted">Selecione uma opção para continuar</p>
-
-                    <div class="d-grid gap-3 mt-4">
-
-                        <a href="/Login" class="btn btn-primary btn-lg">
-                            Login
-                        </a>
-
-                        <a href="/Cadastro" class="btn btn-success btn-lg">
-                            Cadastro
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
+    <header class="cabecalho">
+        <div class="esquerda">
+            <a asp-controller="Home" asp-action="Index">
+                <img src="~/Imgs/Icones/Logo_Raio.png" class="logo">
+            </a>
         </div>
 
-    </div>
+        <nav class="navegacao">
+            <a asp-controller="Produtos" asp-action="Pneus">Pneus</a>
+            <a asp-controller="Produtos" asp-action="Caminhoes">Caminhões</a>
+            <a asp-controller="Produtos" asp-action="Esportivas">Esportivas</a>
+            <a asp-controller="Produtos" asp-action="Produto">Customizações</a>
+        </nav>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        @if (!usuarioLogado)
+        {
+            <button class="botao-entrar" onclick="location.href='@Url.Action("Index","Login")'">
+                Entrar
+            </button>
+        }
+    </header>
+
+    <main class="principal">
+
+        <img src="~/Imgs/Icones/teste.png" class="banner">
+
+        <div class="container-personagens">
+
+            <div class="linha-cima">
+                <div class="item mcqueen-card">
+                    <img src="~/Imgs/McQueen.png">
+                </div>
+                <div class="item mate-card">
+                    <img src="~/Imgs/mate.png">
+                </div>
+            </div>
+
+            <div class="linha-baixo">
+                <div class="item ramone-card">
+                    <img src="~/Imgs/Ramone.png">
+                </div>
+
+                <div class="item mack-card">
+                    <img src="~/Imgs/mack.png">
+                </div>
+
+                <div class="item luigi-card">
+                    <img src="~/Imgs/Luigi.png">
+                </div>
+            </div>
+
+        </div>
+
+    </main>
 
 </body>
-</html>

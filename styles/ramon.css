@@ -253,11 +253,22 @@ footer {
     justify-content: space-around;
     margin-top: 25px;
 }
-
-.logo-footer{
-  justify-content: flex-start;
+.div-esquerda{
+  display: contents;
+  justify-content: space-between;
+  margin: 5px;
+  font-size: 0.7rem
 }
-
+.div-esquerda img{
+  align-items: center;
+  margin-bottom: 20px;
+}
+.redes{
+      display: grid;
+    align-items: center;
+    font-size: 0.7rem;
+    margin: bottom 10px;;
+}
 .linha-footer {
     height: 2px;
     width: 95%;

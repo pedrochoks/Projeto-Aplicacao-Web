@@ -55,6 +55,9 @@ body {
 .menu a:hover {
   color: #F8AB1E;
 }
+.tres-barrinhas{
+  display: none;
+}
 
 .botao-entrar {
   background-color: #F8AB1E;
@@ -236,12 +239,37 @@ body {
 /* ===========================
    RODAPÉ
 =========================== */
-.rodape {
-  text-align: center;
-  padding: 30px;
-  color: #fff;
-  margin-top: 40px;
-  background: rgba(0,0,0,0.2);
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #431578d2;
+
+}
+
+.footer {
+    display: flex;
+    color: white;
+    list-style: none;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.logo-footer{
+  justify-content: flex-start;
+}
+
+.linha-footer {
+    height: 2px;
+    width: 95%;
+    margin-bottom: 30px;
+    background-color: white;
+    align-self: center;
+}
+
+.copyright {
+    color: white;
+    align-self: center;
+    margin-bottom: 20px;
 }
 
 /* ===========================
@@ -328,8 +356,8 @@ body {
     height: 50px;
   }
 
-  .menu a {
-    font-size: 1.1rem;
+  .menu {
+    display: none;
   }
 
   .info h3 {

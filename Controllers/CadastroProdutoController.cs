@@ -12,7 +12,7 @@ namespace Katchau_Back.Controllers
     {
         private readonly AppDbContext _context;
 
-        public CadastroProdutoController (AppDbContext context)
+        public CadastroProdutoController(AppDbContext context)
         {
             _context = context;
         }
@@ -23,33 +23,35 @@ namespace Katchau_Back.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CadastrarProduto(string nomeProduto, string? descricaoProduto, double precoProduto, string categoria, int qt_CliqueProduto, string fotoProduto)
+        public async Task<IActionResult> CadastrarProduto(string nomeProduto, string? descricaoProduto, double precoProduto, string categoria, IFormFile fotoProduto)
         {
             if (string.IsNullOrWhiteSpace(nomeProduto) || string.IsNullOrWhiteSpace(categoria) || precoProduto <= 0)
             {
                 TempData["Erro"] = "Preencha todos os campos corretamente";
                 return View("Index");
             }
-            if (fotoProduto == null)
-            {
-                fotoProduto = "/imagens/fotoProdutoBase.jpeg";
-            }
+            
             Produto produto = new Produto
             {
                 Nome = nomeProduto,
                 Descricao = descricaoProduto,
                 Preco = precoProduto,
                 Categoria = categoria,
-                Qt_Clique = qt_CliqueProduto,
-                foto = fotoProduto
-                
-
+            
             };
+
+            using (var ms = new MemoryStream())
+            {
+                fotoProduto.CopyTo(ms);
+                produto.foto = ms.ToArray();
+            }
 
             await _context.AddAsync(produto);
             await _context.SaveChangesAsync();
-            
+
             return RedirectToAction("Index", "Home");
         }
+
+        
     }
 }

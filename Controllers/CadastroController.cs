@@ -21,7 +21,7 @@ namespace Katchau_Back.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Cadastro(String NomeUsuario, String CPFUsuario, String RuaUsuario, String BairroUsuario, String CidadeUSuario, String EstadoUsuario, String NumeroCasaUsuario, String TelefoneUsuario, String EmailUsuario, String SenhaUsuario, String SenhaConfirmada)
+        public async Task<IActionResult> Cadastro(String NomeUsuario, String CPFUsuario, String RuaUsuario, String BairroUsuario, String CidadeUSuario, String EstadoUsuario, String NumeroCasaUsuario, String TelefoneUsuario, String EmailUsuario, String SenhaUsuario, String SenhaConfirmada, int idRegra)
         {
             if (string.IsNullOrWhiteSpace(NomeUsuario) || 
             string.IsNullOrEmpty(CPFUsuario) || 
@@ -60,7 +60,8 @@ namespace Katchau_Back.Controllers
                 NumeroCasa = NumeroCasaUsuario,
                 Telefone = TelefoneUsuario,
                 Email = EmailUsuario,
-                Senha = hash
+                Senha = hash,
+                id_Regra = 2
             };
 
             await _context.AddAsync(usuario);

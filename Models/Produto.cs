@@ -16,7 +16,7 @@ public partial class Produto
     public string? Categoria { get; set; }
 
     public int? Qt_Clique { get; set; }
-    public string? foto{get; set;}
+    public byte[]? foto{get; set;}
 
     public virtual ICollection<Carrinho> Carrinhos { get; set; } = new List<Carrinho>();
 }

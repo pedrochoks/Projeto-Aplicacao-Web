@@ -23,7 +23,7 @@ namespace Katchau_Back.Controllers
             if (string.IsNullOrWhiteSpace(EmailLogin) || string.IsNullOrEmpty(SenhaLogin))
             {
                 TempData["Erro"] = "Preencha todos os campos";
-                return View("Index");
+                return RedirectToAction("Index");
             }
 
             byte[] hash = HashService.GerarHashBytes(SenhaLogin);
@@ -33,8 +33,10 @@ namespace Katchau_Back.Controllers
             if (usuario == null || usuario.Senha != hash)
             {
                 TempData["Erro"] = "Email ou senha invalidos";
-                return View("Index");
+                return RedirectToAction("Index");
             }
+            HttpContext.Session.SetString("UsuarioNome", usuario.Nome);
+            HttpContext.Session.SetInt32("UsuarioId", usuario.id_usuario);
             
             return RedirectToAction ("Index", "Produtos");
 

@@ -34,6 +34,9 @@ body {
   height: 70px; /* Altura fixa em px é mais seguro que % aqui */
   width: auto;
 }
+.icone-menu{
+  display: none;
+}
 
 .menu {
   display: flex;
@@ -193,7 +196,7 @@ body {
 .filtros h2 {
   font-size: 2.2rem;
   margin-bottom: 20px;
-  color: #F8AB1E;
+  color: #ffffff;
 }
 
 .filtros h3 {
@@ -276,15 +279,12 @@ body {
     padding: 20px;
     text-align: center;
   }
+  
 
   .menu {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-  }
-
-  .menu a {
-    font-size: 1.2rem;
   }
 
   /* Fix essencial para Banner no celular */
@@ -299,6 +299,7 @@ body {
     align-items: center;
     text-align: center;
   }
+  .logo
 
   .produto img {
     width: 100%;

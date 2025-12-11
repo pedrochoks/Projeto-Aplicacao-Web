@@ -23,10 +23,11 @@
         </div>
 
         <nav class="navegacao">
-            <a asp-controller="Produtos" asp-action="Pneus">Pneus</a>
-            <a asp-controller="Produtos" asp-action="Caminhoes">Caminhões</a>
-            <a asp-controller="Produtos" asp-action="Esportivas">Esportivas</a>
-            <a asp-controller="Produtos" asp-action="Produto">Customizações</a>
+            <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Pneus">Pneus</a>
+
+            <a asp-controller="Produto" asp-action="Caminhoes">Caminhões</a>
+            <a asp-controller="Produto" asp-action="Esportivas">Esportivas</a>
+            <a asp-controller="Produto" asp-action="Produto">Customizações</a>
         </nav>
 
         @if (!usuarioLogado)

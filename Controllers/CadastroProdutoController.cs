@@ -40,7 +40,6 @@ namespace Katchau_Back.Controllers
                 Descricao = descricaoProduto,
                 Preco = precoProduto,
                 Categoria = categoria,
-                Qt_Clique = qt_CliqueProduto,
                 foto = fotoProduto
                 
 

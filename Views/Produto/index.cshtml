@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/mcqueen.css">
+
+
+    <title>Mcqueen</title>
+</head>
+
+<body>
+    <header>
+        <img src="Imagens/Group 92.png" class="menu-navegacao" alt="Menu navegacao">
+        <img src="Imagens/logoRaio.svg" alt="Logo raio" class="Logo-raiozinho">
+        <nav class="navegacao">
+            <a href="" class="texto-nav">Pneus</a>
+            <a href="" class="texto-nav">Peças Diversas</a>
+            <a href="" class="texto-nav">Esportivos</a>
+            <a href="" class="texto-nav">Customização</a>
+        </nav>
+        <button class="botao-login">Entrar</button>
+    </header>
+
+    <div class="banner">
+        <div class="texto-banner">
+            <p class="titulo-banner"> Venha conhecer a velocidade </p>
+        </div>
+        <img class="mcqueen-banner" src="Imagens/McqueenBanner.png" alt="">
+    </div>
+
+    <main class="background">
+        <section class="lista-produtos">
+            <h1 class="pecas-esportivas">Peças Esportivas</h1>
+            <button class="alfabeto">
+                <img class="seta" src="Imagens/Design sem nome (10).png"></button>
+            <div class="produto">
+                <img class="mcqueen-produto" src="Imagens/Kit turbo.png" alt="" class="imagem-produto">
+                <div class="produto-texto">
+                    <h1 class="titulo-produto"> Leve seu motor a outro nível com o Kit Turbo! </h1>
+                    <p class="texto-produto" > Projetado para quem busca mais potência, torque e um som marcante, este kit é a escolha ideal
+                        para quem valoriza desempenho e emoção ao dirigir.
+                        Com turbina de alto rendimento e sistema de alimentação otimizado, você conquista aceleração
+                        superior, resposta imediata e máxima eficiência — tudo isso sem abrir mão da durabilidade e
+                        confiabilidade.
+                        Fácil de instalar e pronto para transformar qualquer veículo em uma verdadeira máquina de
+                        performance.</p>
+                    <button class="botao-carrinho">
+                        <img src="Imagens/icone-carrinho.svg" alt="" class="icone-carrinho">
+                        Adicionar ao Carrinho | R$ 1500,00</button>
+                </div>
+            </div>
+            <div class="produto">
+                <img class="mcqueen-produto" src="Imagens/Escape.png" alt="">
+                <div class="produto-texto">
+                    <h1 class="titulo-produto"> Desperte o verdadeiro som da potência com o Escape Esportivo! </h1>
+                    <p class="texto-produto" >Sinta a diferença a cada aceleração. O escape esportivo foi desenvolvido para quem busca
+                        desempenho, estilo e aquele som inconfundível de potência pura.
+                        Fabricado com materiais de alta qualidade, oferece fluxo de gases otimizado, melhor resposta do
+                        motor e um visual que impõe respeito.
+                        Mais do que um acessório, é a assinatura de quem vive a paixão por dirigir com intensidade e
+                        personalidade.</p>
+                    <button class="botao-carrinho">
+                        <img src="Imagens/icone-carrinho.svg" alt="" class="icone-carrinho">
+                        Adicionar ao Carrinho | R$ 850,00</button>
+                </div>
+            </div>
+            <div class="produto">
+                <img class="mcqueen-produto" src="Imagens/Escape.png" alt="">
+                <div class="produto-texto">
+                    <h1 class="titulo-produto">Filtro de ar </h1>
+                    <p class="texto-produto" >Sinta a diferença a cada aceleração. O escape esportivo foi desenvolvido para quem busca
+                        desempenho, estilo e aquele som inconfundível de potência pura.
+                        Fabricado com materiais de alta qualidade, oferece fluxo de gases otimizado, melhor resposta do
+                        motor e um visual que impõe respeito.
+                        Mais do que um acessório, é a assinatura de quem vive a paixão por dirigir com intensidade e
+                        personalidade.</p>
+                    <button class="botao-carrinho">
+                        <img src="Imagens/icone-carrinho.svg" alt="" class="icone-carrinho">
+                        Adicionar ao Carrinho | R$ 300,00</button>
+                </div>
+            </div>
+            <div class="produto">
+                <img class="mcqueen-produto" src="Imagens/Escape.png" alt="">
+                <div class="produto-texto">
+                    <h1 class="titulo-produto"> Kit turbo 2.0 </h1>
+                    <p class="texto-produto" >Sinta a diferença a cada aceleração. O escape esportivo foi desenvolvido para quem busca
+                        desempenho, estilo e aquele som inconfundível de potência pura.
+                        Fabricado com materiais de alta qualidade, oferece fluxo de gases otimizado, melhor resposta do
+                        motor e um visual que impõe respeito.
+                        Mais do que um acessório, é a assinatura de quem vive a paixão por dirigir com intensidade e
+                        personalidade.</p>
+                    <button class="botao-carrinho">
+                        <img src="Imagens/icone-carrinho.svg" alt="" class="icone-carrinho">
+                        Adicionar ao Carrinho | R$ 4500,00</button>
+                </div>
+            </div>
+        </section>
+        <aside class="filtro">
+            <h1 class="titulo-filtro">Filtros</h1>
+
+            <section class="preco" id="preco-filtro">
+                <h3 class="subtitulo-divisoes">Preco</h3>
+                <p class="texto-filtro">Maior que <input class="input-valor" id="precoMax" type="number"
+                        placeholder="Adicionar Valor"></p>
+                <p class="texto-filtro">Menor que <input class="input-valor" id="precoMin" type="number"
+                        placeholder="Adicionar Valor"></p>
+            </section>
+
+            <section class="categoria">
+                <h3 class="subtitulo-divisoes">Categorias</h3>
+                <input class="checkbox" type="checkbox" id="filtro-motor" value="Motor">
+                <label class="texto-filtro" for="filtro1">Motor</label><br>
+                <input class="checkbox" type="checkbox" id="filtro-escapamento" value="Escapamento">
+                <label class="texto-filtro" for="filtro2">Escapamento</label><br>
+                <input class="checkbox" type="checkbox" id="filtro-filtros" value="Filtros">
+                <label class="texto-filtro" for="filtro3">Filtros</label><br>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <div class="footer">
+            <img src="Imagens/-B3EBF2 2.svg" alt="" class="logo-footer">
+            <div class="explore">
+                <li>Home</li>
+                <li>Pecas Esportivas</li>
+                <li>Pecas Diversas</li>
+                <li>Customizacao</li>
+            </div>
+            <div class="suporte">
+                <li>Obtenha Ajuda</li>
+                <li>Registro e Garantia</li>
+                <li>Fale Conosco</li>
+            </div>
+            <div class="redes">
+                <h1 class="rede">Redes</h1>
+                <img class="midia" src="Imagens/mdi--youtube (1).svg" alt="">
+                <img class="midia" src="Imagens/mdi--instagram (1).svg" alt="">
+                <img class="midia" src="Imagens/ic--baseline-tiktok (1).svg" alt="">
+                <img class="midia" src="Imagens/ic--baseline-whatsapp (1).svg" alt="">
+                <img class="midia" src="Imagens/ic--baseline-facebook (1).svg" alt="">
+            </div>
+        </div>
+        <span class="linha-footer"></span>
+        <p class="copyright">Copyright © 2025 Katchau Inc. All rights reserved.</p>
+    </footer>
+    </div>
+    </div>
+    <script src="script/mcqueen.js"></script>
+</body>
+
+</html>

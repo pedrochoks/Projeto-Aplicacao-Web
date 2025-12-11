@@ -27,6 +27,12 @@
     gap: 100px;
 }
 
+.texto-nav {
+    color: #F8AB1E;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
 .botao-entrar {
     background-color: #F8AB1E;
     border: none;
@@ -39,4 +45,67 @@
 
 .tres-barrinhas {
     display: none;
+}
+
+.banner {
+    display: flex;
+    background-color: #6FB1E5;
+    justify-content: space-around;
+}
+
+.conteudo {
+    width: 100%;
+    display: flex;
+}
+
+.lista-produtos {
+    width: 75%;
+}
+ 
+ .produto {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    background-color: #72271f;
+    border-radius: 10px;
+    height: 40%;
+    width: 65vw;
+ }
+ 
+ .imagem-produto {
+    margin-left: 30px;
+ }
+ 
+ .informacoes-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    margin-top: 14.5%;
+ 
+ }
+ 
+ .botao-carrinho {
+    background-color: #F8AB1E;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    margin: 30px;
+ }
+ 
+ .icone-carrinho {
+    width: 10%;
+    margin: 10px;
+ }
+
+.filtros {
+    width: 25%;
+    background-image:radial-gradient(circle, #6FB1E5, #2073B3)
+}
+
+body {
+    background-image: linear-gradient(to bottom, #FED353,#FED353 41%, #D19425 100%);
 }

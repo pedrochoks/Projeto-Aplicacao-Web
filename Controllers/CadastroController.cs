@@ -42,11 +42,18 @@ namespace Katchau_Back.Controllers
             if (SenhaUsuario != SenhaConfirmada)
             {
                 TempData["Erro"] = "As senhas nao conferem";
+                return View("Index");
             }
             if (await _context.Usuarios.AnyAsync(usuario => usuario.CPF == CPFUsuario))
             {
                 TempData["Erro"] = "CPF ja cadastrado";
                 return RedirectToAction("Index", "Login");
+            }
+
+            if (await _context.Usuarios.AnyAsync(usuario => usuario.Email == EmailUsuario))
+            {
+                TempData["Erro"] = "Email ja cadastrado";
+                return RedirectToAction("Index", "Produto");
             }
             byte[] hash = HashService.GerarHashBytes(SenhaUsuario);
             Usuario usuario = new Usuario

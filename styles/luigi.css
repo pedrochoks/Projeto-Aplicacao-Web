@@ -7,6 +7,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+    background-image: linear-gradient(to bottom, #FED353, #FED353 41%, #D19425 100%);
+}
+
+
 .cabecalho {
     background-image: linear-gradient(to bottom, #6FB1E5, #2073B3 95%);
     display: flex;
@@ -56,35 +61,36 @@
 .conteudo {
     width: 100%;
     display: flex;
+    margin-bottom: 4%;
 }
 
 .lista-produtos {
     width: 75%;
 }
- 
- .produto {
+
+.produto {
     display: flex;
     align-items: center;
     margin: 10px;
-    background-color: #72271f;
+    background-image: linear-gradient(to right, #2073B3 58%, #6FB1E5 100%);
     border-radius: 10px;
     height: 40%;
     width: 65vw;
- }
- 
- .imagem-produto {
+}
+
+.imagem-produto {
     margin-left: 30px;
- }
- 
- .informacoes-produto {
+}
+
+.informacoes-produto {
     display: flex;
     flex-direction: column;
     align-items: first baseline;
     margin-top: 14.5%;
- 
- }
- 
- .botao-carrinho {
+
+}
+
+.botao-carrinho {
     background-color: #F8AB1E;
     color: #FFF;
     display: flex;
@@ -94,18 +100,63 @@
     border: none;
     border-radius: 10px;
     margin: 30px;
- }
- 
- .icone-carrinho {
+}
+
+.icone-carrinho {
     width: 10%;
     margin: 10px;
- }
+}
 
 .filtros {
     width: 25%;
-    background-image:radial-gradient(circle, #6FB1E5, #2073B3)
+    margin: 10px;
+    border-radius: 10px;
+    background-image: radial-gradient(circle, #6FB1E5, #2073B3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
 }
 
-body {
-    background-image: linear-gradient(to bottom, #FED353,#FED353 41%, #D19425 100%);
+.botao-filtro{
+    background-color: #F8AB1E;
+    border: none;
+    width: 90%;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    height: 10%;
+}
+
+footer {
+    background-color: #2073b3;
+    
+}
+
+.logo-footer {
+    margin-top: 20px;
+}
+
+.rodape {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2073B3;
+    color: white;
+}
+
+.linha-footer {
+    height: 2px;
+    width: 90%;
+    margin-bottom: 20px;
+    background-color: white;
+    align-self: center;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 0;
+    color: white;
 }

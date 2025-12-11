@@ -1,7 +1,2 @@
 bin/
 obj/
-.vscode/
-*.user
-*.suo
-*.cache
-*.log

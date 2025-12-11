@@ -328,18 +328,22 @@ footer {
 /* --- Tablet Retrato / Celular Grande --- */
 @media (max-width: 768px) {
   .cabecalho {
-    flex-direction: column;
-    height: auto;
-    gap: 15px;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    
   }
+  .botao-entrar{
+    
+  }
+ 
   
 
   .menu {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    display: none;
+  }
+  .tres-barrinhas{
+    display: flex;
+    justify-content: space-between;
   }
 
   /* Fix essencial para Banner no celular */

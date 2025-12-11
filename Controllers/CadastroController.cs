@@ -21,7 +21,7 @@ namespace Katchau_Back.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Cadastro(String NomeUsuario, String CPFUsuario, String RuaUsuario, String BairroUsuario, String CidadeUSuario, String EstadoUsuario, String NumeroCasaUsuario, String TelefoneUsuario, String EmailUsuario, String SenhaUsuario, String SenhaConfirmada)
+        public async Task<IActionResult> Cadastro(String NomeUsuario, String CPFUsuario, String RuaUsuario, String BairroUsuario, String CidadeUSuario, String EstadoUsuario, String NumeroCasaUsuario, String TelefoneUsuario, String EmailUsuario, String SenhaUsuario, String SenhaConfirmada, int idRegra)
         {
             if (string.IsNullOrWhiteSpace(NomeUsuario) || 
             string.IsNullOrEmpty(CPFUsuario) || 
@@ -42,11 +42,18 @@ namespace Katchau_Back.Controllers
             if (SenhaUsuario != SenhaConfirmada)
             {
                 TempData["Erro"] = "As senhas nao conferem";
+                return View("Index");
             }
             if (await _context.Usuarios.AnyAsync(usuario => usuario.CPF == CPFUsuario))
             {
                 TempData["Erro"] = "CPF ja cadastrado";
                 return RedirectToAction("Index", "Login");
+            }
+
+            if (await _context.Usuarios.AnyAsync(usuario => usuario.Email == EmailUsuario))
+            {
+                TempData["Erro"] = "Email ja cadastrado";
+                return RedirectToAction("Index", "Produto");
             }
             byte[] hash = HashService.GerarHashBytes(SenhaUsuario);
             Usuario usuario = new Usuario
@@ -60,7 +67,8 @@ namespace Katchau_Back.Controllers
                 NumeroCasa = NumeroCasaUsuario,
                 Telefone = TelefoneUsuario,
                 Email = EmailUsuario,
-                Senha = hash
+                Senha = hash,
+                id_Regra = 2
             };
 
             await _context.AddAsync(usuario);

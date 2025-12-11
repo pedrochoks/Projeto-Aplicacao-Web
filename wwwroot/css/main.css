@@ -1,0 +1,129 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #5a0000, #a10000);
+    font-family: Arial, sans-serif;
+}
+
+.cabecalho {
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3%;
+    background-color: #8A0000;
+}
+
+.logo {
+    width: 60px;
+}
+
+.navegacao {
+    display: flex;
+    gap: 35px;
+}
+
+.navegacao a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.botao-entrar {
+    background-color: #F8AB1E;
+    color: black;
+    width: 130px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.banner {
+    width: 85vw;
+    height: auto;
+    border-radius: 8px;
+}
+
+.container-personagens {
+    width: 85vw;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.linha-cima,
+.linha-baixo {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.item {
+    width: 300px;
+    height: 260px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.mcqueen-card {
+    background-color: #FF3B3B;
+}
+
+.mate-card {
+    background-color: #E29245;
+}
+
+.ramone-card {
+    background-color: #C85BFF;
+}
+
+.mack-card {
+    background-color: #FF6F5C;
+}
+
+.luigi-card {
+    background-color: #FFEF4A;
+}
+
+
+@media (max-width: 600px) {
+    .item {
+        width: 90%;
+        height: 220px;
+    }
+
+    .banner {
+        width: 95vw;
+    }
+}

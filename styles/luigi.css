@@ -6,19 +6,13 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-html{
-    scroll-behavior: smooth;
+
+.cabecalho {
+    background-image: linear-gradient(to bottom, #6FB1E5, #2073B3 95%);
 }
-header {
-    background: var(--background);
-    height: 20vh;
+
+.container-cabecalho {
+    max-width: 1440px;
+    width: 90%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.cabecalho{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to botom, #6fb1e5,#2073b3)
 }

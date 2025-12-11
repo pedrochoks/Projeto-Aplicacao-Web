@@ -1,75 +1,72 @@
 @{
-   Layout = null;
+    Layout = null;
+    ViewBag.Title = "Login";
 }
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="Pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="~/css/login.css">
+    <link rel="stylesheet" href="~/css/login.css" />
 </head>
 
 <body>
+    <header>
+        <img src="~/icon/Logo-raiozinho.png" alt="">
+    </header>
+
     <main>
-        <aside class="lado-esquerdo">
-            <img src="~/Imgs/icon/Logo-completo.png" alt="" class="logo-lado-esquerdo">
-            <div>
-                <p class="descricao">Site de peças automotivas </p>
-                <p class="descricao">e</p>
-                <p class="descricao">customização </p>
-            </div>
+        <div class="alinhar-fundo">
+            <div class="fundo-login">
 
-            <a href="/Cadastro/Index" class="cadastrar">Cadastre-se</a>
-        </aside>
+                <div class="logo-completa">
+                    <img src="~/icon/Logo-completo-marrom.png" alt="">
+                </div>
 
-        <section class="lado-direito">
-            <div class="texto-cabecalho">
-                <h1 class="bem-vindo">Bem vindo(a)!</h1>
-                <p class="frase-cabecalho">Venha fazer parte da rota 66</p>
-            </div>
-
-            <div class="informacoes">
-
+                <!-- Exibir erro -->
                 @if (TempData["Erro"] != null)
                 {
-                    <p class="erro-tempdata">@TempData["Erro"]</p>
+                    <div style="color: red; margin-bottom: 10px; text-align:center;">
+                        @TempData["Erro"]
+                    </div>
                 }
 
-                <form asp-controller="Login" asp-action="Login" method="post">
-
+                <!-- FORMULÁRIO DE LOGIN -->
+                <form asp-action="Login" asp-controller="Login" method="post">
                     <div class="input-info">
-                        <label for="EmailLogin">Email:</label>
-                        <input type="email"
-                               id="EmailLogin"
-                               name="EmailLogin"
-                               placeholder="  email@email.com"
-                               required>
+
+                        <div class="input-fundo">
+                            <h3 class="tipo-input">E-mail:</h3>
+                            <input class="caixa-texto" type="email" name="EmailLogin" placeholder="email@email.com" required />
+                        </div>
+
+                        <div class="input-fundo">
+                            <h3 class="tipo-input">Senha:</h3>
+                            <input class="caixa-texto" type="password" name="SenhaLogin" placeholder="**********" required />
+                        </div>
+
                     </div>
 
-                    <div class="input-info">
-                        <label for="SenhaLogin">Senha:</label>
-                        <input type="password"
-                               id="SenhaLogin"
-                               name="SenhaLogin"
-                               placeholder="  ********"
-                               required>
-                    </div>
+                    <button type="button" class="esqueceu-senha">
+                        <u>Esqueceu sua senha?</u>
+                    </button>
 
-                    <button type="submit" class="botao-entrar">Entrar</button>
+                    <button type="submit" class="login">Login</button>
 
-                    <div>
-                        <a href="" class="esqueci-senha">Esqueceu sua senha?</a>
-                        <span class="linha-esqueci-senha"></span>
-                    </div>
-
+                    <p>Ou</p>
+                    <a href="/Cadastro/Index" class="cadastro" >Cadastre-se</a>
+                    @* <button type="button" class="cadastro" >
+                        <u>Cadastre-se</u>
+                    </button> *@
                 </form>
 
             </div>
-        </section>
+        </div>
     </main>
+
 </body>
 
 </html>

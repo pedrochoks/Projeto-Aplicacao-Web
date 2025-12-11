@@ -1,79 +1,3 @@
-@*
-@{
-Layout = null;
-}
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
-<link rel="stylesheet" href="~/css/login.css">
-</head>
-
-<body>
-<main>
-<aside class="lado-esquerdo">
-<img src="~/icon/Logo-completo.png" alt="" class="logo-lado-esquerdo">
-<div>
-<p class="descricao">Site de peças automotivas </p>
-<p class="descricao">e</p>
-<p class="descricao">customização </p>
-</div>
-
-<a href="" class="cadastrar">Cadastre-se</a>
-</aside>
-
-<section class="lado-direito">
-<div class="texto-cabecalho">
-<h1 class="bem-vindo">Bem vindo(a)!</h1>
-<p class="frase-cabecalho">Venha fazer parte da rota 66</p>
-</div>
-
-<div class="informacoes">
-
-@if (TempData["Erro"] != null)
-{
-<p class="erro-tempdata">@TempData["Erro"]</p>
-}
-
-<form asp-controller="Login" asp-action="Login" method="post">
-
-<div class="input-info">
-<label for="EmailLogin">Email:</label>
-<input type="email"
-id="EmailLogin"
-name="EmailLogin"
-placeholder=" email@email.com"
-required>
-</div>
-
-<div class="input-info">
-<label for="SenhaLogin">Senha:</label>
-<input type="password"
-id="SenhaLogin"
-name="SenhaLogin"
-placeholder=" ********"
-required>
-</div>
-
-<button type="submit" class="botao-entrar">Entrar</button>
-
-<div>
-<a href="" class="esqueci-senha">Esqueceu sua senha?</a>
-<span class="linha-esqueci-senha"></span>
-</div>
-
-</form>
-
-</div>
-</section>
-</main>
-</body>
-
-</html> *@
 @{
     Layout = null;
     ViewBag.Title = "Login";
@@ -86,7 +10,6 @@ required>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-
     <link rel="stylesheet" href="~/css/login.css" />
 </head>
 
@@ -96,44 +19,23 @@ required>
     </header>
 
     <main>
-<<<<<<< HEAD
         <div class="alinhar-fundo">
             <div class="fundo-login">
 
                 <div class="logo-completa">
                     <img src="~/icon/Logo-completo-marrom.png" alt="">
                 </div>
-=======
-        <aside class="lado-esquerdo">
-            <img src="~/Imgs/icon/Logo-completo.png" alt="" class="logo-lado-esquerdo">
-            <div>
-                <p class="descricao">Site de peças automotivas </p>
-                <p class="descricao">e</p>
-                <p class="descricao">customização </p>
-            </div>
 
-            <a href="/Cadastro/Index" class="cadastrar">Cadastre-se</a>
-        </aside>
-
-        <section class="lado-direito">
-            <div class="texto-cabecalho">
-                <h1 class="bem-vindo">Bem vindo(a)!</h1>
-                <p class="frase-cabecalho">Venha fazer parte da rota 66</p>
-            </div>
-
-            <div class="informacoes">
->>>>>>> 049a3b58ba5136d6a51e5c44ed4915338c342de4
-
-                @* MENSAGEM DE ERRO *@
+                <!-- Exibir erro -->
                 @if (TempData["Erro"] != null)
                 {
-                    <div class="alert alert-danger" style="margin-bottom: 15px;">
+                    <div style="color: red; margin-bottom: 10px; text-align:center;">
                         @TempData["Erro"]
                     </div>
                 }
 
-                <form asp-controller="Login" asp-action="Login" method="post" asp-antiforgery="true">
-
+                <!-- FORMULÁRIO DE LOGIN -->
+                <form asp-action="Login" asp-controller="Login" method="post">
                     <div class="input-info">
 
                         <div class="input-fundo">
@@ -148,14 +50,17 @@ required>
 
                     </div>
 
-                    <button type="button" class="esqueceu-senha"><u>Esqueceu sua senha?</u></button>
+                    <button type="button" class="esqueceu-senha">
+                        <u>Esqueceu sua senha?</u>
+                    </button>
 
                     <button type="submit" class="login">Login</button>
 
                     <p>Ou</p>
-
-                    <a href="~/Cadastro/Index" class="cadastro"><u>Cadastre-se</u></a>
-
+                    <a href="/Cadastro/Index" class="cadastro" >Cadastre-se</a>
+                    @* <button type="button" class="cadastro" >
+                        <u>Cadastre-se</u>
+                    </button> *@
                 </form>
 
             </div>

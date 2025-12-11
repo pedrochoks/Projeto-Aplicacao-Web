@@ -98,3 +98,10 @@ p {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

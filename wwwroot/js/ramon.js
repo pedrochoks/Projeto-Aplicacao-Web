@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. DADOS DOS PRODUTOS (Preços devem ser números, sem "R$")
     const produtos = [
         { 
             nome: "LED Automotivo Neon Green", 

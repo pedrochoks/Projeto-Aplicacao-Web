@@ -1110,7 +1110,6 @@ C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\scopedcss\bu
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\bh884c1chh-bfqw8245hh.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\2i21gz6gq8-e9eui85hbg.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\roowmrczl8-0dmi4rrjhb.gz
-C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\vcfwzjdqbg-shslmze7wp.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\ciku3j256b-gjr4or7xi0.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\rhn38ssxhg-b9sayid5wm.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\746kvcjnyh-61n19gt1b8.gz
@@ -1134,3 +1133,4 @@ C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\Katchau Back
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\ref\Katchau Back.dll
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\rctu6g02gb-lf0x3q7ir4.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\z3120g5vzb-c18888w6cu.gz
+C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\vcfwzjdqbg-w17g06lbck.gz

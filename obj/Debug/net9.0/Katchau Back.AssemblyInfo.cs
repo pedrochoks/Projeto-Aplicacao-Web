@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Katchau Back")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3608c2afcec9d3da52b611ea30d87699ab07b936")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d3664dc7de251f56c3d43bef1ea0a7d5668d3b1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Katchau Back")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Katchau Back")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

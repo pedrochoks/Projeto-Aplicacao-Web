@@ -22,6 +22,11 @@ body {
     min-height: 100vh;
 }
 
+.logo-completo{
+    width: 50%;
+    height: auto;
+}
+
 .alinhar-fundo {
     display: flex;
     justify-content: center;
@@ -34,7 +39,7 @@ body {
     background-color: #8D1313;
     width: 70%;
     align-items: center;
-    height: 80vh;
+    height: fit-content;
     border-radius: 15px;
     border: 3px solid #F8AB1E;
     margin: 3% 0;
@@ -42,6 +47,13 @@ body {
 
 .texto-cadastro {
     color: #fff;
+    font-size: 2vw;
+}
+
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .divisao-inputs {
@@ -77,16 +89,26 @@ input {
 .cadastrar {
     background-color: #F8AB1E;
     border: none;
-    margin-top: 5%;
+    margin: 4vw 0 4vw;
     color: #FFF;
-    width: 30%;
-    font-size: 1.5rem;
+    width: 18vw;
+    font-size: 2vw;
     font-weight: 600;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: 
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
+.cadastrar:hover {
+    background-color: #000;
+    color: #e1a91a;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
 
 form {
     width: 100%;

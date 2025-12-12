@@ -832,8 +832,6 @@ C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\rjimswa.dswa
 C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\scopedcss\bundle\Katchau Back.styles.css
-C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\bh884c1chh-bfqw8245hh.gz
-C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\2i21gz6gq8-e9eui85hbg.gz
 C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\roowmrczl8-0dmi4rrjhb.gz
 C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\vcfwzjdqbg-shslmze7wp.gz
 C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\ciku3j256b-gjr4or7xi0.gz
@@ -1140,3 +1138,6 @@ C:\Users\23971603823\Desktop\Backend\Projeto-Aplicacao-Web\obj\Debug\net9.0\ref\
 C:\Users\23971603823\Desktop\Backend\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\ttyqfm1pi8-ys2seorolb.gz
 C:\Users\23971603823\Desktop\Backend\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\bh884c1chh-hnyc6prt0x.gz
 C:\Users\23971603823\Desktop\Backend\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\2i21gz6gq8-msz7lji2b0.gz
+C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\bh884c1chh-hnyc6prt0x.gz
+C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\2i21gz6gq8-hjhisbiykb.gz
+C:\Users\42344828893\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\ttyqfm1pi8-ys2seorolb.gz

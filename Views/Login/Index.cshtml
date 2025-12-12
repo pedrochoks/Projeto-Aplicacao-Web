@@ -18,14 +18,11 @@
         <img src="~/icon/Logo-raiozinho.png" alt="">
     </header>
 
-    <main>
+    <main>  
         <div class="alinhar-fundo">
             <div class="fundo-login">
-
-                <div class="logo-completa">
-                    <img src="~/icon/Logo-completo-marrom.png" alt="">
-                </div>
-
+                    <img class="logo-completo" src="~/icon/Logo-completo-marrom.png" alt="">
+            
                 <!-- Exibir erro -->
                 @if (TempData["Erro"] != null)
                 {
@@ -40,12 +37,12 @@
 
                         <div class="input-fundo">
                             <h3 class="tipo-input">E-mail:</h3>
-                            <input class="caixa-texto" type="email" name="EmailLogin" placeholder="email@email.com" required />
+                            <input class="caixa-texto" type="email" name="EmailLogin" placeholder=" email@email.com" required />
                         </div>
 
                         <div class="input-fundo">
                             <h3 class="tipo-input">Senha:</h3>
-                            <input class="caixa-texto" type="password" name="SenhaLogin" placeholder="**********" required />
+                            <input class="caixa-texto" type="password" name="SenhaLogin" placeholder=" **********" required />
                         </div>
 
                     </div>

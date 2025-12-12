@@ -143,3 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Começa mostrando tudo
     renderizar(produtos);
 });
+
+const btnMobile = document.getElementById("btn-mobile");
+const menu = document.getElementById("menu");
+
+btnMobile.addEventListener("click", () => {
+    menu.classList.toggle("lista-aparece");
+});

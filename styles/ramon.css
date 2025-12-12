@@ -14,7 +14,8 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: #fff;
-  overflow-x: hidden; /* Evita rolagem lateral indesejada */
+  overflow-x: hidden;
+  /* Evita rolagem lateral indesejada */
 }
 
 /* ===========================
@@ -26,22 +27,26 @@ body {
   align-items: center;
   background: linear-gradient(to bottom, #38138D, #E32C1A);
   padding: 15px 30px;
-  min-height: 100px; /* Melhor que vh fixo, adapta ao conteúdo */
-  flex-wrap: wrap; /* Evita quebra bruta */
+  min-height: 100px;
+  /* Melhor que vh fixo, adapta ao conteúdo */
+  flex-wrap: wrap;
+  /* Evita quebra bruta */
 }
 
 .logo {
-  height: 70px; /* Altura fixa em px é mais seguro que % aqui */
+  height: 70px;
+  /* Altura fixa em px é mais seguro que % aqui */
   width: auto;
 }
-.icone-menu{
+
+.icone-menu {
   display: none;
 }
 
 .menu {
   display: flex;
   gap: 30px;
-  align-items: center;
+  list-style: none;
 }
 
 .menu a {
@@ -55,8 +60,19 @@ body {
 .menu a:hover {
   color: #F8AB1E;
 }
-.tres-barrinhas{
+
+/*icone tres barrinhas*/
+
+.tres-barrinhas {
   display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.icone-tres-barrinhas {
+  width: 30px;
+  height: 30px;
 }
 
 .botao-entrar {
@@ -80,12 +96,13 @@ body {
 =========================== */
 .banner {
   width: 100%;
-  height: 85vh; /* 100vh as vezes esconde o conteúdo inicial */
+  height: 85vh;
+  /* 100vh as vezes esconde o conteúdo inicial */
   background-image: url('/img-ramon/bannerC.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Parallax no PC */
-  position: relative;
+  background-attachment: fixed;
+  /* Parallax no PC */
 }
 
 .banner::after {
@@ -138,7 +155,8 @@ body {
   height: 260px;
   object-fit: cover;
   border-radius: 10px;
-  flex-shrink: 0; /* Garante que a imagem não seja esmagada */
+  flex-shrink: 0;
+  /* Garante que a imagem não seja esmagada */
 }
 
 .info {
@@ -240,50 +258,55 @@ body {
    RODAPÉ
 =========================== */
 footer {
-    display: flex;
-    flex-direction: column;
-    background-color: #431578d2;
-    padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #431578d2;
+  padding: 30px 20px;
 
 }
 
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    color: white;
-    list-style: none;
-    justify-content: space-around;
-    margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: white;
+  list-style: none;
+  justify-content: space-around;
+  margin-top: 25px;
 }
-.div-esquerda{
+
+.div-esquerda {
   display: contents;
   justify-content: space-between;
   margin: 5px;
   font-size: 0.7rem
 }
-.div-esquerda img{
+
+.div-esquerda img {
   align-items: center;
-  
+
 }
-.redes{
-      display: grid;
-    align-items: center;
-    font-size: 0.7rem;
-    margin-bottom:  10px;;
+
+.redes {
+  display: grid;
+  align-items: center;
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+  ;
 }
+
 .linha-footer {
-    height: 2px;
-    width: 95%;
-    margin-bottom: 30px;
-    background-color: white;
-    align-self: center;
+  height: 2px;
+  width: 95%;
+  margin-bottom: 30px;
+  background-color: white;
+  align-self: center;
 }
 
 .copyright {
-    color: white;
-    align-self: center;
-    margin-bottom: 20px;
+  color: white;
+  align-self: center;
+  margin-bottom: 20px;
 }
 
 /* ===========================
@@ -293,12 +316,14 @@ footer {
 /* --- Tablet / Notebook Pequeno --- */
 @media (max-width: 1024px) {
   .conteudo {
-    grid-template-columns: 1fr; /* Coluna única */
+    grid-template-columns: 1fr;
+    /* Coluna única */
     gap: 30px;
   }
 
   .filtros {
-    position: static; /* Remove o sticky */
+    position: static;
+    /* Remove o sticky */
     width: 100%;
     margin-bottom: 20px;
     display: flex;
@@ -306,50 +331,63 @@ footer {
     gap: 20px;
     align-items: flex-end;
   }
-  
+
   .filtros div {
-     flex: 1; /* Distribui os inputs igualmente */
+    flex: 1;
+    /* Distribui os inputs igualmente */
   }
+
   .footer {
-        justify-content: center;
-        text-align: center;
-    }
+    justify-content: center;
+    text-align: center;
+  }
 
-    .div-esquerda {
-        justify-content: center;
-        text-align: center;
-    }
+  .div-esquerda {
+    justify-content: center;
+    text-align: center;
+  }
 
-    .redes .img {
-        justify-content: center;
-    }
+  .redes .img {
+    justify-content: center;
+  }
 }
 
 /* --- Tablet Retrato / Celular Grande --- */
 @media (max-width: 768px) {
-  .cabecalho {
-    display: flex;
-    justify-content: space-around;
-    
+  .tres-barrinhas {
+    display: block;
   }
-  .botao-entrar{
-    
-  }
- 
-  
 
-  .menu {
-    display: none;
+ .menu {
+    position: absolute;
+        top: 60px;
+        left: 30px;
+        background: #333;
+        width: 200px;
+        flex-direction: column;
+        padding: 15px;
+        display: none;
   }
-  .tres-barrinhas{
+  .menu a{
+    flex-direction: column;
+        gap: 15px;
+  }
+
+  .lista-aparece {
+        display: flex;
+    }
+
+  /* .tres-barrinhas {
     display: flex;
     justify-content: space-between;
-  }
+  } */
 
   /* Fix essencial para Banner no celular */
   .banner {
-    height: 50vh; /* Banner menor no mobile */
-    background-attachment: scroll; /* EVITA BUG DE ZOOM NO IPHONE */
+    height: 50vh;
+    /* Banner menor no mobile */
+    background-attachment: scroll;
+    /* EVITA BUG DE ZOOM NO IPHONE */
     background-position: center;
   }
 
@@ -358,45 +396,48 @@ footer {
     align-items: center;
     text-align: center;
   }
-  .logo
 
-  .produto img {
+  .logo .produto img {
     width: 100%;
     max-width: 400px;
-    height: auto; /* Mantém a proporção */
+    height: auto;
+    /* Mantém a proporção */
     aspect-ratio: 16/9;
   }
-  
+
   .info {
     width: 100%;
     align-items: center;
   }
-  
+
   .botao-carrinho {
     width: 100%;
   }
-  
+
   .filtros {
-    display: block; /* Volta a empilhar no mobile */
+    display: block;
+    /* Volta a empilhar no mobile */
   }
-   .footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
 
-    .div-esquerda {
-        flex-direction: column;
-        align-items: center;
-    }
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .explore, .suporte {
-        align-items: center;
-    }
+  .div-esquerda {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .redes {
-        margin-top: 15px;
-    }
+  .explore,
+  .suporte {
+    align-items: center;
+  }
+
+  .redes {
+    margin-top: 15px;
+  }
 }
 
 /* --- Celular Pequeno --- */
@@ -404,17 +445,17 @@ footer {
   .logo {
     height: 50px;
   }
-
+/* 
   .menu {
     display: none;
-  }
+  } */
 
   .info h3 {
     font-size: 1.4rem;
   }
 
   .botao-entrar {
-    width: 100%;
+    width: auto;
     padding: 10px;
   }
 
@@ -423,7 +464,7 @@ footer {
     display: flex;
     flex-direction: column-reverse;
   }
-  
+
   .banner {
     height: 40vh;
   }

@@ -30,7 +30,7 @@ namespace Katchau_Back.Controllers
 
             var usuario = await _context.Usuarios.FirstOrDefaultAsync(usuario => usuario.Email == EmailLogin);
 
-            if (usuario == null || usuario.Senha.SequenceEqual(hash))
+            if (usuario == null || !usuario.Senha.SequenceEqual(hash))
             {
                 TempData["Erro"] = "Email ou senha invalidos";
                 return RedirectToAction("Index");

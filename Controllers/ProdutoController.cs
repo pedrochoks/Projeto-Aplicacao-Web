@@ -36,21 +36,21 @@ namespace Katchau_Back.Controllers
                 case "Pecas usadas":
                     return View("Mate", produto);
                 default:
-                    return View("Index", produto);  
+                    return View("Index", produto);
             }
         }
 
-        public async Task<IActionResult> FiltrarPorPreco(double FiltroMin, FiltroMax)
+        public async Task<IActionResult> FiltrarPorPreco(double FiltroMin, double FiltroMax)
         {
-            var produto = _context.Produto.Where(p => FiltroMin <= p.Preco && p.Preco <= FiltroMax)
+            var produtos = _context.Produtos.Where(p => FiltroMin <= p.Preco && p.Preco <= FiltroMax)
             .ToListAsync();
-            if(produto == null)
+            if (produtos == null)
             {
                 TempData["Erro"] = "Produto nao Encontrado";
-                return 
+                return RedirectToAction("Index");
             }
+
+            return View("ResultadoFiltro", produtos);
         }
-
-
     }
 }

@@ -13,9 +13,17 @@ body {
     height: 18vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 0 3%;
     background-color: #8A0000;
+}
+
+.container-cabecalho {
+    max-width: 1440px;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .logo {
@@ -24,7 +32,8 @@ body {
 
 .navegacao {
     display: flex;
-    gap: 35px;
+    justify-content: space-around;
+    gap: 60px;
 }
 
 .navegacao a {

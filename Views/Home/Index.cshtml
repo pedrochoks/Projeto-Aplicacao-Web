@@ -14,30 +14,29 @@
 </head>
 
 <body>
-
     <header class="cabecalho">
-        <div class="esquerda">
+        <div class="container-cabecalho">
             <a asp-controller="Home" asp-action="Index">
                 <img src="~/Imgs/Icones/Logo_Raio.png" class="logo">
             </a>
+            <nav class="navegacao">
+                <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Pneus">Pneus</a>
+
+                <a href="/Produto/ListarPodutos?categoria=Pecas%20para%20caminhao">Peças para caminhão</a>
+
+                <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Esportivas">Esportivas</a>
+
+                <a asp-controller="Produto" asp-action="ListarPodutos"
+                    asp-route-categoria="Customizações">Customizações</a>
+            </nav>
+
+            @if (!usuarioLogado)
+            {
+                <button class="botao-entrar" onclick="location.href='@Url.Action("Index", "Login")'">
+                    Entrar
+                </button>
+            }
         </div>
-
-        <nav class="navegacao">
-            <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Pneus">Pneus</a>
-
-            <a href="/Produto/ListarPodutos?categoria=Pecas%20para%20caminhao">Peças para caminhão</a>
-
-            <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Esportivas">Esportivas</a>
-
-            <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Customizações">Customizações</a>
-        </nav>
-
-        @if (!usuarioLogado)
-        {
-            <button class="botao-entrar" onclick="location.href='@Url.Action("Index", "Login")'">
-                Entrar
-            </button>
-        }
     </header>
 
     <main class="principal">

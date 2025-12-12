@@ -38,7 +38,7 @@ namespace Katchau_Back.Controllers
             HttpContext.Session.SetString("UsuarioNome", usuario.Nome);
             HttpContext.Session.SetInt32("UsuarioId", usuario.id_usuario);
             
-            return RedirectToAction ("Index", "Produtos");
+            return RedirectToAction ("Index", "Produto");
 
 
 

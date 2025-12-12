@@ -25,14 +25,16 @@
         <nav class="navegacao">
             <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Pneus">Pneus</a>
 
-            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas para caminhao">Pecas para caminhao</a>
-            <a asp-controller="Produto" asp-action="Index" asp-route-categoria = "Esportivas">Esportivas</a>
-            <a asp-controller="Produto" asp-action="Produto">Customizações</a>
+            <a href="/Produto/ListarPodutos?categoria=Pecas%20para%20caminhao">Peças para caminhão</a>
+
+            <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Esportivas">Esportivas</a>
+
+            <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Customizações">Customizações</a>
         </nav>
 
         @if (!usuarioLogado)
         {
-            <button class="botao-entrar" onclick="location.href='@Url.Action("Index","Login")'">
+            <button class="botao-entrar" onclick="location.href='@Url.Action("Index", "Login")'">
                 Entrar
             </button>
         }
@@ -48,6 +50,7 @@
                 <div class="item mcqueen-card">
                     <img src="~/Imgs/McQueen.png">
                 </div>
+
                 <div class="item mate-card">
                     <img src="~/Imgs/mate.png">
                 </div>
@@ -72,3 +75,5 @@
     </main>
 
 </body>
+
+</html>

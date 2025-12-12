@@ -40,5 +40,17 @@ namespace Katchau_Back.Controllers
             }
         }
 
+        public async Task<IActionResult> FiltrarPorPreco(double FiltroMin, FiltroMax)
+        {
+            var produto = _context.Produto.Where(p => FiltroMin <= p.Preco && p.Preco <= FiltroMax)
+            .ToListAsync();
+            if(produto == null)
+            {
+                TempData["Erro"] = "Produto nao Encontrado";
+                return 
+            }
+        }
+
+
     }
 }

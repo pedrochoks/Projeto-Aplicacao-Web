@@ -23,18 +23,20 @@ namespace Katchau_Back.Controllers
             if (string.IsNullOrWhiteSpace(EmailLogin) || string.IsNullOrEmpty(SenhaLogin))
             {
                 TempData["Erro"] = "Preencha todos os campos";
-                return View("Index");
+                return RedirectToAction("Index");
             }
 
             byte[] hash = HashService.GerarHashBytes(SenhaLogin);
 
             var usuario = await _context.Usuarios.FirstOrDefaultAsync(usuario => usuario.Email == EmailLogin);
 
-            if (usuario == null || usuario.Senha != hash)
+            if (usuario == null || !usuario.Senha.SequenceEqual(hash))
             {
                 TempData["Erro"] = "Email ou senha invalidos";
-                return View("Index");
+                return RedirectToAction("Index");
             }
+            HttpContext.Session.SetString("UsuarioNome", usuario.Nome);
+            HttpContext.Session.SetInt32("UsuarioId", usuario.id_usuario);
             
             return RedirectToAction ("Index", "Produtos");
 

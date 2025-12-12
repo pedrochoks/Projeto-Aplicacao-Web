@@ -18,15 +18,16 @@
     <header class="cabecalho">
         <div class="esquerda">
             <a asp-controller="Home" asp-action="Index">
-                <img src="~/Imgs/Icones/Logo_Raio.png" class="logo">
+                <img src="~/icon/logo-raiozinho.png" class="logo">
             </a>
         </div>
 
         <nav class="navegacao">
-            <a asp-controller="Produtos" asp-action="Pneus">Pneus</a>
-            <a asp-controller="Produtos" asp-action="Caminhoes">Caminhões</a>
-            <a asp-controller="Produtos" asp-action="Esportivas">Esportivas</a>
-            <a asp-controller="Produtos" asp-action="Produto">Customizações</a>
+            <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Pneus">Pneus</a>
+
+            <a asp-controller="Produto" asp-action="Caminhoes">Caminhões</a>
+            <a asp-controller="Produto" asp-action="Esportivas">Esportivas</a>
+            <a asp-controller="Produto" asp-action="Produto">Customizações</a>
         </nav>
 
         @if (!usuarioLogado)
@@ -54,7 +55,7 @@
 
             <div class="linha-baixo">
                 <div class="item ramone-card">
-                    <img src="~/Imgs/Ramone.png">
+                    <img src="~/Imgs/Ramon.png">
                 </div>
 
                 <div class="item mack-card">
@@ -69,5 +70,37 @@
         </div>
 
     </main>
+    <footer>
+    <div class="footer">
+      <div class="div-esquerda">
+        <img src="img-ramon/img-katchau.png" alt="" class="logo-footer">
+        <div class="explore">
+          <h1>Explore</h1>
+          <li>Home</li>
+          <li>Pecas Esportivas</li>
+          <li>Pecas Diversas</li>
+          <li>Customizacao</li>
+        </div>
+        <div class="suporte">
+          <h1>Suporte</h1>
+          <li>Obtenha Ajuda</li>
+          <li>Registro e Garantia</li>
+          <li>Fale Conosco</li>
+        </div>
+      </div>
+      <div class="redes">
+        <h1 class="rede">Redes</h1>
+        <div class="img">
+          <img src="img-ramon/icone-youtube2.png" alt="youtube">
+          <img src="img-ramon/icone-instagram.png" alt="instagram">
+          <img src="img-ramon/icone-tiktiok.png" alt="tiktok">
+          <img src="img-ramon/icone-whatsapp.png" alt="whatsapp">
+          <img src="~/icon/icone-facebook.png" alt="facebook">
+        </div>
+      </div>
+    </div>
+    <span class="linha-footer"></span>
+    <p class="copyright">Copyright © 2025 Katchau Inc. All rights reserved.</p>
+  </footer>
 
 </body>

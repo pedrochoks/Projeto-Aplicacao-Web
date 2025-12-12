@@ -54,7 +54,7 @@ public partial class AppDbContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.Nome).HasMaxLength(255);
-            entity.Property(e => e.Qt_Clique).HasDefaultValue(0);
+            // entity.Property(e => e.Qt_Clique).HasDefaultValue(0);
         });
 
         modelBuilder.Entity<Regra>(entity =>

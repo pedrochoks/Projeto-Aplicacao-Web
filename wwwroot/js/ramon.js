@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // 1. DADOS DOS PRODUTOS (Preços devem ser números, sem "R$")
     const produtos = [
         { 
             nome: "LED Automotivo Neon Green", 
@@ -141,4 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Começa mostrando tudo
     renderizar(produtos);
+});
+
+const btnMobile = document.getElementById("btn-mobile");
+const menu = document.getElementById("menu");
+
+btnMobile.addEventListener("click", () => {
+    menu.classList.toggle("lista-aparece");
 });

@@ -117,6 +117,8 @@ body {
     align-items: center;
     color: white;
     justify-content: space-around;
+    gap: 20px;
+    padding: 10px;
 }
 
 .botao-filtro{

@@ -13,7 +13,6 @@ namespace Katchau_Back.Controllers
         {
             _context = context;
         }
-
         public IActionResult Index()
         {
             int? usuarioID = HttpContext.Session.GetInt32("id_usuario");

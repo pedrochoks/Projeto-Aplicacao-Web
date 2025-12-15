@@ -21,7 +21,7 @@ namespace Katchau_Back.Controllers
             var produto = await _context.Produtos.
             Where(p => p.Categoria == categoria)
             .ToListAsync();
-            if (PrecoMin != null && PrecoMax != null )
+            if (PrecoMin != null && PrecoMax != null)
             {
                 produto = await _context.Produtos.
                 Where(p => p.Categoria == categoria && p.Preco >= PrecoMin && p.Preco <= PrecoMax)
@@ -29,20 +29,20 @@ namespace Katchau_Back.Controllers
 
                 switch (categoria)
                 {
-                     case "Pneus":
-                    return View("Luigi", produto);
+                    case "Pneus":
+                        return View("Luigi", produto);
 
-                case "Pecas para caminhao":
-                    return View("Mack", produto);
+                    case "Pecas para caminhao":
+                        return View("Mack", produto);
 
 
-                case "Customizacao":
-                    return View("Ramon", produto);
+                    case "Customizacao":
+                        return View("Ramon", produto);
 
-                case "Pecas usadas":
-                    return View("Mate", produto);
-                default:
-                    return View("Index", produto);   
+                    case "Pecas usadas":
+                        return View("Mate", produto);
+                    default:
+                        return View("Index", produto);
                 }
             }
             switch (categoria)
@@ -62,9 +62,8 @@ namespace Katchau_Back.Controllers
                 default:
                     return View("Index", produto);
             }
-            
+
         }
 
-        
     }
 }

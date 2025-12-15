@@ -21,12 +21,14 @@
         <button class="tres-barrinhas" id="btn-mobile">
             <img src="~/img-ramon/tres-barrinhas.png" class="icone-tres-barrinhas">
         </button>
-        <img class="logo" src="~/icon/Logo-raiozinho.png" alt="Logo Katchau">
+        <a href="/Home/Index"><img class="logo" src="~/icon/Logo-raiozinho.png" alt="Logo Katchau"></a>
         <nav class="menu" id="menu">
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pneus">Pneus</a>
-            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas para caminhao">Caminhões</a>
+            <a asp-controller="Produto" asp-action="ListarProdutos"
+                asp-route-categoria="Pecas para caminhao">Caminhões</a>
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Customizacao">Esportivos</a>
-            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas usadas">Peças Diversas</a>
+            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas usadas">Peças
+                Diversas</a>
         </nav>
         <button class="botao-entrar">Entrar</button>
     </header>
@@ -41,15 +43,16 @@
             {
                 foreach (var p in Model)
                 {
-                  <li class="produto">
-                            <img src="@p.foto" alt="@p.Descricao" class="imagem-produto" asp-append-version="true">
-                            <div class="informacoes-produto">
-                                <p>@p.Descricao</p>
-                                <button class="botao-carrinho">
-                                    <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho" asp-append-version="true">Adicionar ao carrinho
-                                </button>
-                            </div>
-                        </li>
+                    <li class="produto">
+                        <img src="@p.foto" alt="@p.Descricao" class="imagem-produto" asp-append-version="true">
+                        <div class="informacoes-produto">
+                            <p>@p.Descricao</p>
+                            <button class="botao-carrinho">
+                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho"
+                                    asp-append-version="true">Adicionar ao carrinho
+                            </button>
+                        </div>
+                    </li>
                 }
             }
             else

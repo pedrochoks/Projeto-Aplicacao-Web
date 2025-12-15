@@ -27,28 +27,26 @@ body {
 .alinhar-fundo {
     display: flex;
     justify-content: center;
-    margin-top: 3%;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
 }
 
 .logo-completo{
-    width: 60%;
+    width: 30vw;
     height: auto;
 }
 
 .fundo-login {
     display: flex;
     flex-direction: column;
-    background-color: #8D1313;
-    width: 40%;
     align-items: center;
-    height: fit-content;
+    background-color: #8D1313;
     border-radius: 15px;
     border: 3px solid #F8AB1E;
     padding: 10px;
-}
-
-.logo-completa {
-    margin-top: 2%;
+    width: 50vw;
+    height: 75vh;
 }
 
 .input-info {
@@ -100,7 +98,7 @@ p {
     border: none;
     background-color: #8D1313;
     color: #F8AB1E;
-    font-size: 1.5rem;
+    font-size: 1 vw;
     font-weight: bold;
 }
 
@@ -109,4 +107,22 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (max-width: 1000px){
+
+    .logo-completo{
+        width: 70vw;
+    }
+
+    .fundo-login{
+        width: 80vw;
+        height: fit-content;
+    }
+    
+    .formulario-login{
+        padding: 10px;
+        height: fit-content;
+
+    }
 }

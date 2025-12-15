@@ -34,9 +34,9 @@
 
     <div class="banner">
         <div class="texto-banner">
-            <p class="titulo-banner"> Venha conhecer a velocidade </p>
+        <img class="titulo-banner" src="~/wwwroot/icons/katchau-com-logo.png">
         </div>
-        <img class="mcqueen-banner" src="~/wwwroot/icon/McQueen.png" alt="">
+        <img class="mcqueen-banner" src="~/wwwroot/Imgs/McQueen.png" alt="">
     </div>
 
     <main class="background">
@@ -46,7 +46,6 @@
                 <img class="seta" src="~/wwwroot/icon/Seta-filtro.png">
             </button>
     <div class="produto">
-        <img class="mcqueen-produto" src="Imagens/Kit turbo.png" alt="" class="imagem-produto">
         <div class="produto-texto">
         @if (Model != null)
             {
@@ -58,7 +57,7 @@
                             <p>@p.Descricao</p>
 
                             <button class="botao-carrinho">
-                                <img src="Imagens/icone-carrinho.svg" alt="" class="icone-carrinho">
+                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho">
                                 Adicionar ao Carrinho | R$ 1500,00
                             </button>
                         </div>

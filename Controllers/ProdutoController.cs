@@ -41,6 +41,7 @@ namespace Katchau_Back.Controllers
 
                 case "Pecas usadas":
                     return View("Mate", produto);
+      
                 default:
                     return View("Index", produto);   
                 }

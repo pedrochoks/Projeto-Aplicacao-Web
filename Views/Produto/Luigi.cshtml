@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+    var usuarioLogado = Context.Session.GetString("Id_usuario") != null;
 }
 
 <!DOCTYPE html>
@@ -19,7 +20,7 @@
 <body>
     <header class="cabecalho">
         <div class="container-cabecalho">
-            <img class="logo-raio" src="~/Imgs/Icones/Logo_Raio.png" alt="logo-raio">
+            <img class="logo-raio" src="~/icon/Logo-raiozinho.png" alt="logo-raio">
             <nav class="menu">
                 <a href="/Produto/ListarPodutos?categoria=Pneus" class="texto-nav">Pneus</a>
                 <a href="/Produto/ListarPodutos?categoria=Pecas%20para%20caminhao" class="texto-nav">Caminhões</a>
@@ -27,8 +28,10 @@
                 <a href="/Produto/ListarPodutos?categoria=Pecas%20usadas" class="texto-nav">Peças Diversas</a>
                 <a href="" class="texto-nav">Customizacao</a>
             </nav>
-            <button class="botao-entrar">Entrar</button>
-
+            @if (!usuarioLogado)
+            {
+                <button class="botao-entrar">Entrar</button>
+            }
             <div class="tres-barrinhas">
                 <img src="~/img-luigi/tres-barrinhas.png" alt="menu">
             </div>
@@ -41,8 +44,6 @@
         </div>
         <img class="luigi-banner" src="~/Imgs/luigi-guido.png" alt="Luigi">
     </div>
-
-    <h1 class="pneus">Pneus</h1>
 
     <main class="conteudo">
         <section class="lista-produtos" id="lista-produtos">

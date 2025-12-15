@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,8 +18,10 @@
     <header class="cabecalho">
         <button class="tres-barrinhas" id="btn-mobile">
             <img src="~/icon/tres-barrinhas.png" class="icone-tres-barrinhas" />
+            <img src="~/icon/tres-barrinhas.png" class="icone-tres-barrinhas" />
         </button>
 
+        <img class="logo" src="~/icon/-B3EBF2 (1) 1.png" alt="Logo Katchau" />
         <img class="logo" src="~/icon/-B3EBF2 (1) 1.png" alt="Logo Katchau" />
 
         <nav class="menu" id="menu">
@@ -27,8 +30,10 @@
             <a href="#">Esportivos</a>
             <a href="#">Peças Diversas</a>
         </nav>
-
-        <button class="botao-entrar">Entrar</button>
+        @if (!usuarioLogado)
+        {
+            <button class="botao-entrar">Entrar</button>
+        }
     </header>
 
     <section class="banner"></section>
@@ -81,6 +86,7 @@
         <div class="footer">
             <div class="div-esquerda">
                 <img src="~/icon/img-katchau.png" alt="" class="logo-footer" />
+                <img src="~/icon/img-katchau.png" alt="" class="logo-footer" />
 
                 <div class="explore">
                     <h1>Explore</h1>
@@ -106,6 +112,11 @@
                     <img src="~/icon/icone-tiktiok.png" alt="tiktok" />
                     <img src="~/icon/icone-whatsapp.png" alt="whatsapp" />
                     <img src="~/icon/icone-facebook.png" alt="facebook" />
+                    <img src="~/icon/icone-youtube2.png" alt="youtube" />
+                    <img src="~/icon/icone-instagram.png" alt="instagram" />
+                    <img src="~/icon/icone-tiktiok.png" alt="tiktok" />
+                    <img src="~/icon/icone-whatsapp.png" alt="whatsapp" />
+                    <img src="~/icon/icone-facebook.png" alt="facebook" />
                 </div>
             </div>
         </div>
@@ -117,5 +128,6 @@
     <script src="~/scripts/scripts.js"></script>
 
 </body>
+
 
 </html>

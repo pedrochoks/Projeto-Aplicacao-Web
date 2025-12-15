@@ -243,7 +243,6 @@ C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\rjsmcshtml.d
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\scopedcss\bundle\Katchau Back.styles.css
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\bh884c1chh-hnyc6prt0x.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\ciku3j256b-gjr4or7xi0.gz
-C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\rctu6g02gb-lf0x3q7ir4.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\rhn38ssxhg-b9sayid5wm.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\746kvcjnyh-61n19gt1b8.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\ui67w032i9-kbs3399d4s.gz
@@ -254,7 +253,6 @@ C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\w
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\tzbc03z8jj-nj0h06dii2.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\ttyqfm1pi8-ys2seorolb.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\86mmtkjk84-fuj6d56f2l.gz
-C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\z3120g5vzb-c18888w6cu.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\0gccx6t352-xtxxf3hu2r.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\staticwebassets.build.json.cache
@@ -269,4 +267,6 @@ C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\ref\Katchau 
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\2i21gz6gq8-hjhisbiykb.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\roowmrczl8-ltt4bsftgo.gz
 C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\0qknqg8zd9-rrrymueto6.gz
-C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\vcfwzjdqbg-c5txnjnogh.gz
+C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\vcfwzjdqbg-pxkrtsklai.gz
+C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\rctu6g02gb-gxoj7wla9a.gz
+C:\Users\58069799897\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\z3120g5vzb-71hzl807aa.gz

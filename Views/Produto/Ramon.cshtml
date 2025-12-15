@@ -1,26 +1,25 @@
 @{
-    Layout = null; 
+    Layout = null;
 }
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeto KATCHAU</title>
-
+    <title>Customização</title>
     <link rel="stylesheet" href="~/css/ramon.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-
     <header class="cabecalho">
         <button class="tres-barrinhas" id="btn-mobile">
-            <img src="~/img-ramon/tres-barrinhas.png" class="icone-tres-barrinhas" />
+            <img src="~/icon/tres-barrinhas.png" class="icone-tres-barrinhas" />
         </button>
 
-        <img class="logo" src="~/img-ramon/-B3EBF2 (1) 1.png" alt="Logo Katchau" />
+        <img class="logo" src="~/icon/-B3EBF2 (1) 1.png" alt="Logo Katchau" />
 
         <nav class="menu" id="menu">
             <a href="#">Pneus</a>
@@ -36,34 +35,44 @@
 
     <main class="conteudo">
 
-        <section class="produtos" id="lista-produtos">
-            @* Aqui você pode renderizar produtos com Razor:
-               @foreach (var p in Model.Produtos) { ... } *@
+        <section class="lista-produtos">
+            <h1 class="pecas-custumizacao">Peças para Customização</h1>
+
+            <ul class="produtos">
+                @foreach (var p in Model)
+                {
+                    <li class="produto">
+                        <img src="~/@p.foto" alt="@p.Descricao" class="imagem-produto" />
+
+                        <div class="informacoes-produto">
+                            <p>@p.Descricao</p>
+
+                            <button class="botao-carrinho">
+                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho">
+                                Adicionar ao carrinho
+                            </button>
+                        </div>
+                    </li>
+                }
+            </ul>
         </section>
 
-        <aside class="filtros">
-            <h2>Filtros</h2>
+        <aside class="filtro">
+            <h1 class="Filtros">Filtros</h1>
 
             <div class="filtro-preco">
-                <h3>Preço</h3>
-                <h1>Maior que</h1>
-                <input type="number" id="min-preco" placeholder="R$ 0" />
-
-                <h1>Menor que</h1>
-                <input type="number" id="max-preco" placeholder="R$ 10000" />
+                <h3 class="preco">Preço</h3>
+                <p>Maior que <strong>ADICIONAR FILTRO</strong></p>
+                <p>Menor que <strong>ADICIONAR FILTRO</strong></p>
             </div>
 
-            <div class="filtro-grupo">
-                <div class="filtro-departamentos" id="opcoes-departamentos">
-                    <h3>Departamentos</h3>
-                    <label><input type="checkbox" value="Low Rider" /> Low Rider</label><br />
-                    <label><input type="checkbox" value="Adesivos" /> Adesivos</label><br />
-                    <label><input type="checkbox" value="LEDs" /> LEDs</label><br />
-                    <label><input type="checkbox" value="Tintas" /> Tintas</label>
-                </div>
+            <div class="filtro-categoria">
+                <h3 class="categoria">Categorias</h3>
+                <p>Low Rider <strong>ADICIONAR FILTRO</strong></p>
+                <p>Adesivo <strong>ADICIONAR FILTRO</strong></p>
+                <p>Leds Automotivos<strong>ADICIONAR FILTRO</strong></p>
+                <p>Tintas<strong>ADICIONAR FILTRO</strong></p>
             </div>
-
-            <button id="filtrar">Aplicar Filtros</button>
         </aside>
 
     </main>
@@ -71,7 +80,7 @@
     <footer>
         <div class="footer">
             <div class="div-esquerda">
-                <img src="~/img-ramon/img-katchau.png" alt="" class="logo-footer" />
+                <img src="~/icon/img-katchau.png" alt="" class="logo-footer" />
 
                 <div class="explore">
                     <h1>Explore</h1>
@@ -92,11 +101,11 @@
             <div class="redes">
                 <h1 class="rede">Redes</h1>
                 <div class="img">
-                    <img src="~/img-ramon/icone-youtube2.png" alt="youtube" />
-                    <img src="~/img-ramon/icone-instagram.png" alt="instagram" />
-                    <img src="~/img-ramon/icone-tiktiok.png" alt="tiktok" />
-                    <img src="~/img-ramon/icone-whatsapp.png" alt="whatsapp" />
-                    <img src="~/img-ramon/icone-facebook.png" alt="facebook" />
+                    <img src="~/icon/icone-youtube2.png" alt="youtube" />
+                    <img src="~/icon/icone-instagram.png" alt="instagram" />
+                    <img src="~/icon/icone-tiktiok.png" alt="tiktok" />
+                    <img src="~/icon/icone-whatsapp.png" alt="whatsapp" />
+                    <img src="~/icon/icone-facebook.png" alt="facebook" />
                 </div>
             </div>
         </div>
@@ -108,4 +117,5 @@
     <script src="~/scripts/scripts.js"></script>
 
 </body>
+
 </html>

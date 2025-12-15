@@ -20,14 +20,13 @@ git <html lang="pt-br">
                 <img src="~/icon/logo-raiozinho.png" class="logo">
             </a>
             <nav class="navegacao">
-                <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Pneus">Pneus</a>
+                <a href="/Produto/ListarProdutos?categoria=Pneus">Pneus</a>
 
-                <a href="/Produto/ListarPodutos?categoria=Pecas%20para%20caminhao">Peças para caminhão</a>
+                <a href="/Produto/ListarProdutos?categoria=Pecas%20para%20caminhao">Peças para caminhão</a>
 
-                <a asp-controller="Produto" asp-action="ListarPodutos" asp-route-categoria="Esportivas">Esportivas</a>
+                <a href="/Produto/ListarProdutos?categoria=Esportivas">Esportivas</a>
 
-                <a asp-controller="Produto" asp-action="ListarPodutos"
-                    asp-route-categoria="Customizações">Customizações</a>
+                <a href="/Produto/ListarProdutos?categoria=Customizacao">Customizacao</a>
             </nav>
 
             @if (!usuarioLogado)

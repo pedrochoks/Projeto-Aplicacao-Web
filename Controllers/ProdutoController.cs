@@ -39,11 +39,11 @@ namespace Katchau_Back.Controllers
                     case "Customizacao":
                         return View("Ramon", produto);
 
-                case "Pecas usadas":
-                    return View("Mate", produto);
-      
-                default:
-                    return View("Index", produto);   
+                    case "Pecas usadas":
+                        return View("Mate", produto);
+
+                    default:
+                        return View("Index", produto);
                 }
             }
             switch (categoria)
@@ -53,11 +53,8 @@ namespace Katchau_Back.Controllers
 
                 case "Pecas para caminhao":
                     return View("Mack", produto);
-
-
                 case "Customizacao":
                     return View("Ramon", produto);
-
                 case "Pecas usadas":
                     return View("Mate", produto);
                 default:

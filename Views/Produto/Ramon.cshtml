@@ -1,73 +1,94 @@
+@model List<Katchau_Back.Models.Produto>
+
 @{
     Layout = null;
-    var usuarioLogado = Context.Session.GetString("Id_usuario") != null;
 }
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeto KATCHAU</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customização - KATCHAU</title>
     <link rel="stylesheet" href="~/css/ramon.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <header class="cabecalho">
         <button class="tres-barrinhas" id="btn-mobile">
-            <img src="~/icon/tres-barrinhas.png" class="icone-tres-barrinhas" />
+            <img src="~/img-ramon/tres-barrinhas.png" class="icone-tres-barrinhas">
         </button>
-
-        <img class="logo" src="~/icon/-B3EBF2 (1) 1.png" alt="Logo Katchau" />
-
+        <a href="/Home/Index"><img class="logo" src="~/icon/Logo-raiozinho.png" alt="Logo Katchau"></a>
         <nav class="menu" id="menu">
-            <a href="#">Pneus</a>
-            <a href="#">Caminhões</a>
-            <a href="#">Esportivos</a>
-            <a href="#">Peças Diversas</a>
+            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pneus">Pneus</a>
+            <a asp-controller="Produto" asp-action="ListarProdutos"
+                asp-route-categoria="Pecas para caminhao">Caminhões</a>
+            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Customizacao">Esportivos</a>
+            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas usadas">Peças
+                Diversas</a>
         </nav>
-        @if (!usuarioLogado)
-        {
-            <button class="botao-entrar">Entrar</button>
-        }
+        <button class="botao-entrar">Entrar</button>
     </header>
 
     <section class="banner"></section>
 
     <main class="conteudo">
 
+        <!-- LISTA DE PRODUTOS -->
         <section class="produtos" id="lista-produtos">
-            @* Aqui você pode renderizar produtos com Razor:
-            @foreach (var p in Model.Produtos) { ... } *@
+            @if (Model != null && Model.Any())
+            {
+                foreach (var p in Model)
+                {
+                    <li class="produto">
+                        <img src="@p.foto" alt="@p.Descricao" class="imagem-produto" asp-append-version="true">
+                        <div class="informacoes-produto">
+                            <p>@p.Descricao</p>
+                            <button class="botao-carrinho">
+                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho"
+                                    asp-append-version="true">Adicionar ao carrinho
+                            </button>
+                        </div>
+                    </li>
+                }
+            }
+            else
+            {
+                <p class="nenhum-produto">Nenhum produto encontrado.</p>
+            }
         </section>
 
+        <!-- FILTROS -->
         <aside class="filtros">
             <h2>Filtros</h2>
 
-            <div class="filtro-preco">
-                <h3>Preço</h3>
-                <h1>Maior que</h1>
-                <input type="number" id="min-preco" placeholder="R$ 0" />
+            <form asp-controller="Produto" asp-action="ListarProdutos" method="get">
 
-                <h1>Menor que</h1>
-                <input type="number" id="max-preco" placeholder="R$ 10000" />
-            </div>
+                <input type="hidden" name="categoria" value="Customizacao" />
 
-            <div class="filtro-grupo">
-                <div class="filtro-departamentos" id="opcoes-departamentos">
-                    <h3>Departamentos</h3>
-                    <label><input type="checkbox" value="Low Rider" /> Low Rider</label><br />
-                    <label><input type="checkbox" value="Adesivos" /> Adesivos</label><br />
-                    <label><input type="checkbox" value="LEDs" /> LEDs</label><br />
-                    <label><input type="checkbox" value="Tintas" /> Tintas</label>
+                <div class="filtro-preco">
+                    <h3>Preço</h3>
+
+                    <h1>Maior que</h1>
+                    <input type="number" name="PrecoMin" placeholder="R$ 0">
+
+                    <h1>Menor que</h1>
+                    <input type="number" name="PrecoMax" placeholder="R$ 10000">
                 </div>
-            </div>
 
-            <button id="filtrar">Aplicar Filtros</button>
+                <div class="filtro-grupo">
+                    <h3>Departamentos</h3>
+                    <label><input type="checkbox" name="depart" value="Low Rider"> Low Rider</label><br>
+                    <label><input type="checkbox" name="depart" value="Adesivos"> Adesivos</label><br>
+                    <label><input type="checkbox" name="depart" value="LEDs"> LEDs</label><br>
+                    <label><input type="checkbox" name="depart" value="Tintas"> Tintas</label>
+                </div>
+
+                <button id="filtrar" type="submit">Aplicar Filtros</button>
+            </form>
         </aside>
 
     </main>
@@ -75,16 +96,14 @@
     <footer>
         <div class="footer">
             <div class="div-esquerda">
-                <img src="~/icon/img-katchau.png" alt="" class="logo-footer" />
-
+                <img src="~/img-ramon/img-katchau.png" alt="" class="logo-footer">
                 <div class="explore">
                     <h1>Explore</h1>
                     <li>Home</li>
-                    <li>Peças Esportivas</li>
-                    <li>Peças Diversas</li>
-                    <li>Customização</li>
+                    <li>Pecas Esportivas</li>
+                    <li>Pecas Diversas</li>
+                    <li>Customizacao</li>
                 </div>
-
                 <div class="suporte">
                     <h1>Suporte</h1>
                     <li>Obtenha Ajuda</li>
@@ -96,11 +115,11 @@
             <div class="redes">
                 <h1 class="rede">Redes</h1>
                 <div class="img">
-                    <img src="~/icon/icone-youtube2.png" alt="youtube" />
-                    <img src="~/icon/icone-instagram.png" alt="instagram" />
-                    <img src="~/icon/icone-tiktiok.png" alt="tiktok" />
-                    <img src="~/icon/icone-whatsapp.png" alt="whatsapp" />
-                    <img src="~/icon/icone-facebook.png" alt="facebook" />
+                    <img src="~/icon/icone-youtube2.png" alt="youtube">
+                    <img src="~/icon/icone-instagram.png" alt="instagram">
+                    <img src="~/icon/icone-tiktiok.png" alt="tiktok">
+                    <img src="~/icon/icone-whatsapp.png" alt="whatsapp">
+                    <img src="~/icon/icone-facebook.png" alt="facebook">
                 </div>
             </div>
         </div>

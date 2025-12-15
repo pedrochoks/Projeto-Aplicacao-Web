@@ -17,11 +17,11 @@
 
 <body>
     <header>
-        <img src="~/wwwroot/icon/menu-nav" class="menu-navegacao" alt="Menu navegacao">
-        <img src="~/wwwroot/icon/Logo-raiozinho.png" alt="Logo raio" class="Logo-raiozinho">
+        <img src="~/icon/menu-nav" class="menu-navegacao" alt="Menu navegacao">
+        <img src="~/icon/Logo-raiozinho.png" alt="Logo raio" class="Logo-raiozinho">
         <nav class="navegacao">
             <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pneus</a>
-            <a href="/Produto/ListarProdutos?categoria=Pneus">Pecas para caminhao</a>
+            <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pecas para caminhao</a>
             <a href="/Produto/ListarProdutos?categoria=Pecas%20Usadas" class="texto-nav">Peças Usadas</a>
             <a href="/Produto/ListarProdutos?categoria=Esportivas" class="texto-nav">Esportivos</a>
             <a href="/Produto/ListarProdutos?categoria=Customizacao" class="texto-nav">Customização</a>
@@ -34,19 +34,22 @@
 
     <div class="banner">
         <div class="texto-banner">
-            <p class="titulo-banner"> Venha conhecer a velocidade </p>
+<<<<<<< HEAD
+            <p class="titulo-banner"> KATCHAU </p>
+=======
+        <img class="titulo-banner" src="~/icon/katchau-com-logo.png">
+>>>>>>> 6d504b0e3bfadcdf5ee86b7f65350270d90620ec
         </div>
-        <img class="mcqueen-banner" src="~/wwwroot/icon/McQueen.png" alt="">
+        <img class="mcqueen-banner" src="~/Imgs/McQueen.png" alt="">
     </div>
 
     <main class="background">
         <section class="lista-produtos">
             <h1 class="pecas-esportivas">Peças Esportivas</h1>
             <button class="alfabeto">
-                <img class="seta" src="~/wwwroot/icon/Seta-filtro.png">
+                <img class="seta" src="~/icon/Seta-filtro.png">
             </button>
     <div class="produto">
-        <img class="mcqueen-produto" src="Imagens/Kit turbo.png" alt="" class="imagem-produto">
         <div class="produto-texto">
         @if (Model != null)
             {
@@ -58,7 +61,7 @@
                             <p>@p.Descricao</p>
 
                             <button class="botao-carrinho">
-                                <img src="Imagens/icone-carrinho.svg" alt="" class="icone-carrinho">
+                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho">
                                 Adicionar ao Carrinho | R$ 1500,00
                             </button>
                         </div>
@@ -96,7 +99,7 @@
     </main>
     <footer>
         <div class="footer">
-            <img src="~/wwwroot/icon/Logo-completo-marrom.png" alt="" class="logo-footer">
+            <img src="~/icon/Logo-completo-marrom.png" alt="" class="logo-footer">
             <div class="explore">
                 <li>Home</li>
                 <li>Pecas Esportivas</li>
@@ -110,11 +113,11 @@
             </div>
             <div class="redes">
                 <h1 class="rede">Redes</h1>
-                <img class="midia" src="~/wwwroot/icon/mdi--youtube (1).svg" alt="">
-                <img class="midia" src="~/wwwroot/icon/mdi--instagram (1).svg" alt="">
-                <img class="midia" src="~/wwwroot/icon/ic--baseline-tiktok (1).svg" alt="">
-                <img class="midia" src="~/wwwroot/icon/ic--baseline-whatsapp (1).svg" alt="">
-                <img class="midia" src="~/wwwroot/icon/ic--baseline-facebook (1).svg" alt="">
+                <img class="midia" src="~/icon/mdi--youtube (1).svg" alt="">
+                <img class="midia" src="~/icon/mdi--instagram (1).svg" alt="">
+                <img class="midia" src="~/icon/ic--baseline-tiktok (1).svg" alt="">
+                <img class="midia" src="~/icon/ic--baseline-whatsapp (1).svg" alt="">
+                <img class="midia" src="~/icon/ic--baseline-facebook (1).svg" alt="">
             </div>
         </div>
         <span class="linha-footer"></span>

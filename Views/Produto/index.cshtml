@@ -1,5 +1,7 @@
 @{
     Layout = null;
+    var usuarioLogado = Context.Session.GetString("Id_usuario") != null;
+
 }
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -19,16 +21,24 @@
         <img src="~/icon/Logo-raiozinho.png" alt="Logo raio" class="Logo-raiozinho">
         <nav class="navegacao">
             <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pneus</a>
-            <a href="/Produto/ListarProdutos?categoria=Pecas%20usadas" class="texto-nav">Peças Diversas</a>
+            <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pecas para caminhao</a>
+            <a href="/Produto/ListarProdutos?categoria=Pecas%20Usadas" class="texto-nav">Peças Usadas</a>
             <a href="/Produto/ListarProdutos?categoria=Esportivas" class="texto-nav">Esportivos</a>
             <a href="/Produto/ListarProdutos?categoria=Customizacao" class="texto-nav">Customização</a>
         </nav>
-        <button class="botao-login">Entrar</button>
+        @if (!usuarioLogado)
+        {
+            <button class="botao-login">Entrar</button>
+        }
     </header>
 
     <div class="banner">
         <div class="texto-banner">
+<<<<<<< HEAD
             <p class="titulo-banner"> KATCHAU </p>
+=======
+        <img class="titulo-banner" src="~/icon/katchau-com-logo.png">
+>>>>>>> 6d504b0e3bfadcdf5ee86b7f65350270d90620ec
         </div>
         <img class="mcqueen-banner" src="~/Imgs/McQueen.png" alt="">
     </div>
@@ -40,7 +50,6 @@
                 <img class="seta" src="~/icon/Seta-filtro.png">
             </button>
     <div class="produto">
-        <img class="mcqueen-produto" src="Imagens/Kit turbo.png" alt="" class="imagem-produto">
         <div class="produto-texto">
         @if (Model != null)
             {
@@ -52,7 +61,7 @@
                             <p>@p.Descricao</p>
 
                             <button class="botao-carrinho">
-                                <img src="Imagens/icone-carrinho.svg" alt="" class="icone-carrinho">
+                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho">
                                 Adicionar ao Carrinho | R$ 1500,00
                             </button>
                         </div>

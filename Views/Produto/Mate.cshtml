@@ -1,0 +1,129 @@
+@model List<Katchau_Back.Models.Produto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminhao</title>
+    
+    <link rel="stylesheet" href="~/styles/mate.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="container-cabecalho">
+            <img class="logo-raio" src="~/icon/logo-raio.png" alt="logo-raio" asp-append-version="true">
+            <nav class="menu">
+                <a  class="texto-nav">Pneus</a>
+                <a  class="texto-nav">Caminhões</a>
+                <a  class="texto-nav">Esportivos</a>
+                <a href="/Produto/ListarPodutos?categoria=Pecas%20para%20caminhao" class="texto-nav"></a>
+                <a  class="texto-nav">Customizacao</a>
+            </nav>
+            <button class="botao-entrar">Entrar</button>
+            <div class="tres-barrinhas">
+                <img src="~/icon/tres-barrinhas.png" alt="tres-barrinhas" asp-append-version="true">
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="img-katchau">
+            <img src="~/icon/katchau-com-logo.png" alt="">
+        </div>
+        <img class="mate-banner" src="~/icon/Matepng.webp" alt="" >
+    </div>
+    <h1 class="pneus">Peças Usadas</h1> 
+    
+    <main class="conteudo">
+        <section class="lista-produtos" id="lista-produtos">
+            <ul class="produtos">
+                @if (Model != null)
+                {
+                    @foreach (var p in Model)
+                    {
+                        <li class="produto">
+                            <img src="@p.foto" alt="@p.Descricao" class="imagem-produto" asp-append-version="true">
+                            <div class="informacoes-produto">
+                                <p>@p.Descricao</p>
+                                <button class="botao-carrinho">
+                                    <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho" asp-append-version="true">Adicionar ao carrinho
+                                </button>
+                            </div>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <p>Nenhum produto encontrado na categoria Peças Usadas.</p>
+                }
+            </ul>
+        </section>
+
+        <aside class="filtros">
+            <h2>Filtros</h2>
+            <form asp-controller="Produto" asp-action="ListarProdutos" method="get">
+                <input type="hidden" name="categoria" value="Pecas usadas" /> 
+
+                <div class="filtro-preco">
+                    <h3>Preço</h3>
+                    
+                    <h1>Maior que</h1>
+                    <input type="number" id="min-preco" name="PrecoMin" placeholder="R$ 0">
+
+                    <h1>Menor que</h1>
+                    <input type="number" id="max-preco" name="PrecoMax" placeholder="R$ 10000">
+                </div>
+                
+                <div class="filtro-grupo">
+                    <div class="filtro-departamentos" id="opcoes-departamentos">
+                        <h3>Departamentos</h3>
+                        <label><input type="checkbox" value="Volantes">Volantes</label><br>
+                        <label><input type="checkbox" value="Macaco">Macaco</label><br>
+                        <label><input type="checkbox" value="Multimidia">Multimidia</label><br>
+                        <label><input type="checkbox" value="Bancos">Bancos</label><br>
+                        <label><input type="checkbox" value="Lataria">Lataria</label><br>
+                    </div>
+                </div>
+                @* Este botão agora submeterá o formulário acima *@
+                <button type="submit" id="filtrar" class="botao-filtro">Aplicar Filtros</button>
+            </form>
+        </aside>
+    </main>
+    <footer>
+        <div class="rodape">
+            <img src="~/icon/katchau-rodape.png" alt="" class="logo-footer" asp-append-version="true">
+            <div class="explore">
+                <h1>Explore</h1>
+                <li>Home</li>
+                <li>Pecas Esportivas</li>
+                <li>Pecas Diversas</li>
+                <li>Customizacao</li>
+            </div>
+            <div class="suporte">
+                <h1>Suporte</h1>
+                <li>Obtenha Ajuda</li>
+                <li>Registro e Garantia</li>
+                <li>Fale Conosco</li>
+            </div>
+            <div class="redes">
+                <h1 class="rede">Redes</h1>
+                <img src="~/icon/icone-youtube.png" alt="youtube" asp-append-version="true">
+                <img src="~/icon/icone-instagram.png" alt="instagram" asp-append-version="true">
+                <img src="~/icon/icone-tiktok.png" alt="tiktok" asp-append-version="true">
+                <img src="~/icon/icone-whatsapp.png" alt="whatsapp" asp-append-version="true">
+                <img src="~/icon/icone-facebook.png" alt="facebook" asp-append-version="true">
+            </div>
+        </div>
+        <span class="linha-footer"></span>
+        <p class="copyright">Copyright © 2025 Katchau Inc. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

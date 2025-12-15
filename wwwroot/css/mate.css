@@ -107,17 +107,21 @@ body {
     width: 10%;
     margin: 10px;
 }
-
-.filtros {
-    width: 25%;
-    margin: 10px;
-    border-radius: 10px;
-    background-image: radial-gradient(circle, #2E1C18, #4F2E25);
+form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
     justify-content: space-around;
+    gap: 20px;
+    padding: 10px;
+}
+.filtros {
+    width: 25%;
+    margin: 10px;
+    border-radius: 10px;
+    background-image: radial-gradient(circle, #2E1C18, #4F2E25);
 }
 
 .botao-filtro{

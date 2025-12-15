@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+    var usuarioLogado = Context.Session.GetString("Id_usuario") != null;
 }
 
 <!DOCTYPE html>
@@ -25,19 +26,21 @@
                 <a href="/Produto/ListarProdutos?categoria=Customizacao" class="texto-nav">Customização</a>
             </div>
         </nav>
-        <button class="botao-login">Entrar</button>
+        @if (!usuarioLogado)
+        {
+            <button class="botao-login">Entrar</button>
+        }
     </header>
 
     <div class="banner-mack">
         <div class="container-banner">
-            <h1 class="texto-banner">Tudo para o seu caminhão você encontra aqui</h1>
+            <img src="~/icon/katchau-com-logo.png" alt="">
             <img src="~/Imgs/mack.png" alt="" class="mack-banner">
         </div>
     </div>
 
     <main class="area-produto">
         <section class="lista-produtos">
-            <h1 class="pecas-caminhao">Peças para caminhão</h1>
 
             <ul class="produtos">
                 @foreach (var p in Model)
@@ -108,4 +111,5 @@
     </footer>
 
 </body>
+
 </html>

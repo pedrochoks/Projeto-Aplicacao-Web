@@ -1,9 +1,11 @@
 @{
-    Layout = null; 
+    Layout = null;
+    var usuarioLogado = Context.Session.GetString("Id_usuario") != null;
 }
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,8 +30,10 @@
             <a href="#">Esportivos</a>
             <a href="#">Peças Diversas</a>
         </nav>
-
-        <button class="botao-entrar">Entrar</button>
+        @if (!usuarioLogado)
+        {
+            <button class="botao-entrar">Entrar</button>
+        }
     </header>
 
     <section class="banner"></section>
@@ -38,7 +42,7 @@
 
         <section class="produtos" id="lista-produtos">
             @* Aqui você pode renderizar produtos com Razor:
-               @foreach (var p in Model.Produtos) { ... } *@
+            @foreach (var p in Model.Produtos) { ... } *@
         </section>
 
         <aside class="filtros">
@@ -108,4 +112,5 @@
     <script src="~/scripts/scripts.js"></script>
 
 </body>
+
 </html>

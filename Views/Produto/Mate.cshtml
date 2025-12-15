@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+    var usuarioLogado = Context.Session.GetString("Id_usuario") != null;
 }
 
 <!DOCTYPE html>
@@ -12,14 +13,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pecas Usadas</title>
     
-    <link rel="stylesheet" href="~/styles/mate.css"> 
+    <link rel="stylesheet" href="~/css/mate.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header class="cabecalho">
         <div class="container-cabecalho">
-            <img class="logo-raio" src="~/icon/logo-raio.png" alt="logo-raio" asp-append-version="true">
+            <img class="logo-raio" src="~/icon/Logo-raiozinho.png" alt="logo-raio" asp-append-version="true">
             <nav class="menu">
                 <a  class="texto-nav">Pneus</a>
                 <a  class="texto-nav">Caminhões</a>
@@ -27,7 +28,10 @@
                 <a href="/Produto/ListarPodutos?categoria=Pecas%20usadas" class="texto-nav">Pecas Usadas</a>
                 <a  class="texto-nav">Customizacao</a>
             </nav>
+            @if (!usuarioLogado)
+            {
             <button class="botao-entrar">Entrar</button>
+            }
             <div class="tres-barrinhas">
                 <img src="~/icon/tres-barrinhas.png" alt="tres-barrinhas" asp-append-version="true">
             </div>
@@ -37,10 +41,8 @@
         <div class="img-katchau">
             <img src="~/icon/katchau-com-logo.png" alt="">
         </div>
-        <img class="mate-banner" src="~/icon/Matepng.webp" alt="" >
+        <img class="mate-banner" src="~/Imgs/mate.png" alt="" >
     </div>
-    <h1 class="pneus">Peças Usadas</h1> 
-    
     <main class="conteudo">
         <section class="lista-produtos" id="lista-produtos">
             <ul class="produtos">
@@ -67,7 +69,6 @@
         </section>
 
         <aside class="filtros">
-            <h2>Filtros</h2>
             <form asp-controller="Produto" asp-action="ListarProdutos" method="get">
                 <input type="hidden" name="categoria" value="Pecas usadas" /> 
 
@@ -91,7 +92,6 @@
                         <label><input type="checkbox" value="Lataria">Lataria</label><br>
                     </div>
                 </div>
-                @* Este botão agora submeterá o formulário acima *@
                 <button type="submit" id="filtrar" class="botao-filtro">Aplicar Filtros</button>
             </form>
         </aside>
@@ -114,9 +114,9 @@
             </div>
             <div class="redes">
                 <h1 class="rede">Redes</h1>
-                <img src="~/icon/icone-youtube.png" alt="youtube" asp-append-version="true">
+                <img src="~/icon/icone-youtube2.png" alt="youtube" asp-append-version="true">
                 <img src="~/icon/icone-instagram.png" alt="instagram" asp-append-version="true">
-                <img src="~/icon/icone-tiktok.png" alt="tiktok" asp-append-version="true">
+                <img src="~/icon/ic--baseline-tiktok (1).svg" alt="tiktok" asp-append-version="true">
                 <img src="~/icon/icone-whatsapp.png" alt="whatsapp" asp-append-version="true">
                 <img src="~/icon/icone-facebook.png" alt="facebook" asp-append-version="true">
             </div>

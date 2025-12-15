@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. PEGANDO OS ELEMENTOS DO HTML
     const container = document.getElementById('lista-produtos');
     const botaoFiltrar = document.getElementById('filtrar');
-    const checkboxes = document.querySelectorAll('#opcoes-categorias input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('#opcoes-departamentos input[type="checkbox"]');
     
     // Pegando os inputs de preço
     const inputMin = document.getElementById('min-preco');
@@ -142,4 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Começa mostrando tudo
     renderizar(produtos);
+});
+
+const btnMobile = document.getElementById("btn-mobile");
+const menu = document.getElementById("menu");
+
+btnMobile.addEventListener("click", () => {
+    menu.classList.toggle("lista-aparece");
 });

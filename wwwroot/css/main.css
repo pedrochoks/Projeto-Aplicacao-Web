@@ -131,6 +131,58 @@ body {
 .luigi-card {
     background-color: #FFEF4A;
 }
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #652222d2;
+  padding: 10px 20px;
+
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: white;
+  list-style: none;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+
+.div-esquerda {
+  display: contents;
+  justify-content: space-between;
+  margin: 5px;
+  font-size: 0.7rem
+}
+
+.div-esquerda img {
+  align-items: center;
+
+}
+
+.redes {
+  display: grid;
+  align-items: center;
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+  ;
+}
+
+.linha-footer {
+  height: 2px;
+  width: 95%;
+  margin-bottom: 30px;
+  background-color: white;
+  align-self: center;
+}
+
+.copyright {
+  color: white;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
 
 
 

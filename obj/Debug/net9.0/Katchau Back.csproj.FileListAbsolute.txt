@@ -517,7 +517,6 @@ C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\b
 C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\2i21gz6gq8-hjhisbiykb.gz
 C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\roowmrczl8-ltt4bsftgo.gz
 C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\0qknqg8zd9-rrrymueto6.gz
-C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\vcfwzjdqbg-c5txnjnogh.gz
 C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\ciku3j256b-gjr4or7xi0.gz
 C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\rctu6g02gb-lf0x3q7ir4.gz
 C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\rhn38ssxhg-b9sayid5wm.gz
@@ -542,3 +541,4 @@ C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\refint\Katch
 C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\Katchau Back.pdb
 C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\Katchau Back.genruntimeconfig.cache
 C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\ref\Katchau Back.dll
+C:\Users\49078790830\Desktop\Projeto-Aplicacao-Web\obj\Debug\net9.0\compressed\vcfwzjdqbg-m5tkp8nvza.gz

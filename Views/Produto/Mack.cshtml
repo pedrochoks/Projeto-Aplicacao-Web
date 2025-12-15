@@ -1,0 +1,111 @@
+@model List<Katchau_Back.Models.Produto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Caminhao</title>
+    <link rel="stylesheet" href="~/css/mack.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <img src="~/icon/Logo-raiozinho.png" alt="Logo raio" class="Logo-raiozinho">
+        <nav class="navegacao">
+            <div class="container-navegacao">
+                <a href="" class="texto-nav">Pneus</a>
+                <a href="" class="texto-nav">Peças Diversas</a>
+                <a href="" class="texto-nav">Esportivos</a>
+                <a href="" class="texto-nav">Customização</a>
+            </div>
+        </nav>
+        <button class="botao-login">Entrar</button>
+    </header>
+
+    <div class="banner-mack">
+        <div class="container-banner">
+            <h1 class="texto-banner">Tudo para o seu caminhão você encontra aqui</h1>
+            <img src="~/Imgs/mack.png" alt="" class="mack-banner">
+        </div>
+    </div>
+
+    <main class="area-produto">
+        <section class="lista-produtos">
+            <h1 class="pecas-caminhao">Peças para caminhão</h1>
+
+            <ul class="produtos">
+                @foreach (var p in Model)
+                {
+                    <li class="produto">
+                        <img src="~/@p.foto" alt="@p.Descricao" class="imagem-produto" />
+
+                        <div class="informacoes-produto">
+                            <p>@p.Descricao</p>
+
+                            <button class="botao-carrinho">
+                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho">
+                                Adicionar ao carrinho
+                            </button>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </section>
+
+        <aside class="filtro">
+            <h1 class="Filtros">Filtros</h1>
+
+            <div class="filtro-preco">
+                <h3 class="preco">Preço</h3>
+                <p>Maior que <strong>ADICIONAR FILTRO</strong></p>
+                <p>Menor que <strong>ADICIONAR FILTRO</strong></p>
+            </div>
+
+            <div class="filtro-categoria">
+                <h3 class="categoria">Categorias</h3>
+                <p>Volantes <strong>ADICIONAR FILTRO</strong></p>
+                <p>Macaco <strong>ADICIONAR FILTRO</strong></p>
+                <p>Multimidia</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <img src="~/icon/Logo-completo-marrom.png" alt="" class="logo-footer">
+
+            <div class="explore">
+                <li>Home</li>
+                <li>Pecas Esportivas</li>
+                <li>Pecas Diversas</li>
+                <li>Customizacao</li>
+            </div>
+
+            <div class="suporte">
+                <li>Obtenha Ajuda</li>
+                <li>Registro e Garantia</li>
+                <li>Fale Conosco</li>
+            </div>
+
+            <div class="redes">
+                <h1 class="rede">Redes</h1>
+                <img src="~/icon/mdi--youtube (1).svg" alt="">
+                <img src="~/icon/mdi--instagram (1).svg" alt="">
+                <img src="~/icon/ic--baseline-tiktok (1).svg" alt="">
+                <img src="~/icon/ic--baseline-whatsapp (1).svg" alt="">
+                <img src="~/icon/ic--baseline-facebook (1).svg" alt="">
+            </div>
+        </div>
+
+        <span class="linha-footer"></span>
+        <p class="copyright">Copyright © 2025 Katchau Inc. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

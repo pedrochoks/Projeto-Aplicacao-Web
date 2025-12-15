@@ -30,16 +30,21 @@ body {
     margin-top: 3%;
 }
 
+.logo-completo{
+    width: 60%;
+    height: auto;
+}
+
 .fundo-login {
     display: flex;
     flex-direction: column;
     background-color: #8D1313;
     width: 40%;
     align-items: center;
-    height: 80vh;
+    height: fit-content;
     border-radius: 15px;
     border: 3px solid #F8AB1E;
-
+    padding: 10px;
 }
 
 .logo-completa {
@@ -79,16 +84,16 @@ body {
     background-color: #F8AB1E;
     border: none;
     border-radius: 10px;
-    width: 80%;
-    height: 8%;
-    margin-top: 1%;
+    width: 12vw;
+    height: fit-content;
+    margin: 1vw 0 1vw;
     color: #fff;
-    margin-bottom:3% ;
+    font-size: 1vw;
+    padding: 5px;
 }
 
 p {
     color: #F8AB1E;
-    margin-bottom: 3%;
 }
 
 .cadastro {

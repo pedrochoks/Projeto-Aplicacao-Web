@@ -11,51 +11,71 @@ body {
     background-image: linear-gradient(to bottom, #8D1313 0%, #2C2C2C 90%);
 }
 
-
 .cabecalho {
     background-image: linear-gradient(to bottom, #8D1313 0%, #2C2C2C 150%, #8D1313 200%);
     display: flex;
     justify-content: center;
+    padding: 10px 0;
 }
 
 .container-cabecalho {
     max-width: 1440px;
     width: 90%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 .menu {
     display: flex;
-    justify-content: space-around;
-    gap: 100px;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .texto-nav {
     color: #F8AB1E;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    white-space: nowrap;
 }
 
 .botao-entrar {
     background-color: #F8AB1E;
-    border: none;
     color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
     border-radius: 10px;
-    width: 10%;
-    height: 40%;
-    font-size: 1.5em;
+    padding: 10px 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.botao-entrar:hover {
+    background-color: #e19919;
 }
 
 .tres-barrinhas {
     display: none;
 }
 
+@media (max-width: 1024px) {
+    .menu {
+        display: none;
+    }
+    .tres-barrinhas {
+        display: block;
+        cursor: pointer;
+    }
+}
+
 .banner {
     display: flex;
     background: linear-gradient(to right, #e1a91a -70%, #8d1313 60%, #e1a91a 190%);
-    ;
     justify-content: space-around;
 }
 
@@ -86,22 +106,29 @@ body {
 .informacoes-produto {
     display: flex;
     flex-direction: column;
-    align-items: first baseline;
+    align-items: flex-start;
     margin-top: 14.5%;
-
 }
 
 .botao-carrinho {
     background-color: #F8AB1E;
-    color: #FFF;
+    color: white;
+
     display: flex;
     align-items: center;
-    font-size: 1.5em;
-    font-weight: 700;
-    border: none;
+    gap: 10px;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    padding: 10px 16px;
     border-radius: 10px;
-    margin: 30px;
+    border: none;
+
+    width: fit-content;
+    cursor: pointer;
 }
+
 
 .icone-carrinho {
     width: 10%;
@@ -138,12 +165,12 @@ form {
     color: white;
     font-size: 1.5rem;
     border-radius: 10px;
-    height: 10%;
+    height: 40px;
+    cursor: pointer;
 }
 
 footer {
     background-color: #242323;
-
 }
 
 .logo-footer {

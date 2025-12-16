@@ -45,22 +45,23 @@ body {
 
 .botao-entrar {
     background-color: #F8AB1E;
-    color: black;
-    width: 130px;
-    height: 45px;
-    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
     border: none;
-    font-size: 1rem;
+    border-radius: 10px;
+    padding: 10px 16px;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-.botao-entrar:hover{
-    background-color: black;
-    color: #F8AB1E;
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+.botao-entrar:hover {
+    background-color: #e19919;
 }
-
 .principal {
     display: flex;
     flex-direction: column;

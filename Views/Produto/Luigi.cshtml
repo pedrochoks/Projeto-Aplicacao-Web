@@ -2,7 +2,6 @@
 
 @{
     Layout = null;
-
     var usuarioLogado = Context.Session.GetInt32("UsuarioId") != null;
     var nomeUsuario = Context.Session.GetString("UsuarioNome");
 }
@@ -14,14 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Katchau</title>
-
     <link rel="stylesheet" href="~/css/luigi.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- HEADER -->
     <header class="cabecalho">
         <div class="container-cabecalho">
             <a href="/Home/Index">
@@ -38,7 +35,9 @@
 
             @if (!usuarioLogado)
             {
-                <a href="/Login/Index" class="botao-entrar">Entrar</a>
+                <a href="/Login/Index">
+                    <button class="botao-entrar">Entrar</button>
+                </a>
             }
             else
             {
@@ -47,57 +46,51 @@
         </div>
     </header>
 
-    <!-- BANNER -->
     <section class="banner">
         <img src="~/icon/katchau-com-logo.png" alt="Katchau">
         <img class="luigi-banner" src="~/Imgs/luigi-guido.png" alt="Luigi">
     </section>
 
-    <!-- PRODUTOS -->
     <main class="conteudo">
         <section class="lista-produtos">
-            <ul class="produtos">
+            @if (Model != null && Model.Any())
+            {
+                <ul class="produtos">
+                    @foreach (var p in Model)
+                    {
+                        <li class="produto">
+                            @if (p.foto != null)
+                            {
+                                <img class="imagem-produto"
+                                     src="data:image/jpeg;base64,@Convert.ToBase64String(p.foto)" 
+                                     alt="@p.Nome"
+                                     style="width: 100%; max-width: 380px; height: 260px; object-fit: cover; border-radius: 10px;" />
+                            }
 
-                @foreach (var p in Model)
-                {
-                    <li class="produto">
+                            <div class="informacoes-produto">
+                                <h3>@p.Nome</h3>
+                                <p class="descricao">@p.Descricao</p>
+                                <span class="preco">R$ @string.Format("{0:N2}", p.Preco)</span>
 
-                        <!-- IMAGEM -->
-                        @if (p.foto != null)
-                        {
-                            <img class="imagem-produto"
-                                 src="data:image/jpeg;base64,@Convert.ToBase64String(p.foto)" 
-                                 alt="@p.Nome" />
-                        }
-
-                        <!-- INFO -->
-                        <div class="informacoes-produto">
-                            <h3>@p.Nome</h3>
-                            <p class="descricao">@p.Descricao</p>
-
-                            <span class="preco">
-                                R$ @string.Format("{0:N2}", p.Preco)
-                            </span>
-
-                            <!-- BOTÃO CARRINHO -->
-                            <form asp-controller="Carrinho" asp-action="Adicionar" method="post">
-                                <input type="hidden" name="id" value="@p.id_produto" />
-
-                                <button type="submit" class="botao-carrinho">
-                                    <img src="~/icon/icone-carrinho.svg" alt="Carrinho">
-                                    Adicionar ao carrinho
-                                </button>
-                            </form>
-                        </div>
-
-                    </li>
-                }
-
-            </ul>
+                                <form asp-controller="Carrinho" asp-action="Adicionar" method="post">
+                                    <input type="hidden" name="id" value="@p.id_produto" />
+                                    <button class="botao-carrinho">
+                                        <img src="~/icon/icone-carrinho.svg" alt="Carrinho">
+                                        Adicionar ao carrinho
+                                    </button>
+                                </form>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p class="nenhum-produto">Nenhum produto encontrado.</p>
+            }
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class="rodape">
             <img src="~/icon/Logo-completo-marrom.png" class="logo-footer">

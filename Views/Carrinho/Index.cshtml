@@ -1,0 +1,123 @@
+@model List<Katchau_Back.Models.Carrinho>
+
+@{
+    Layout = null;
+    var usuarioLogado = Context.Session.GetInt32("id_usuario") != null;
+    var nomeUsuario = Context.Session.GetString("UsuarioNome");
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - KATCHAU</title>
+    <link rel="stylesheet" href="~/css/carrinho.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="container-cabecalho">
+            <a href="/Home/Index">
+                <img src="~/icon/Logo-raiozinho.png" alt="Logo Katchau" class="logo">
+            </a>
+
+            <nav class="menu">
+                <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pneus</a>
+                <a href="/Produto/ListarProdutos?categoria=Customizacao" class="texto-nav">Customização</a>
+                <a href="/Produto/ListarProdutos?categoria=Caminhao" class="texto-nav">Caminhão</a>
+                <a href="/Produto/ListarProdutos?categoria=PecasDiversas" class="texto-nav">Peças Diversas</a>
+                <a href="/Produto/ListarProdutos?categoria=Esportivos" class="texto-nav">Esportivos</a>
+            </nav>
+
+            @if (!usuarioLogado)
+            {
+                <a href="/Login/Index" class="botao-entrar">Entrar</a>
+            }
+            else
+            {
+                <a href="/Usuario/Carrinho" class="botao-entrar">Olá, @nomeUsuario 👋</a>
+            }
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <section class="lista-carrinho">
+            <h2>Seu Carrinho</h2>
+            @if (Model != null && Model.Any())
+            {
+                <ul class="carrinho">
+                    @foreach (var item in Model)
+                    {
+                        <li class="produto-carrinho">
+                            @if (item.id_produtoNavigation.foto != null)
+                            {
+                                <img class="imagem-produto" 
+                                     src="data:image/jpeg;base64,@Convert.ToBase64String(item.id_produtoNavigation.foto)"
+                                     alt="@item.id_produtoNavigation.Nome" />
+                            }
+                            <div class="informacoes-carrinho">
+                                <h3>@item.id_produtoNavigation.Nome</h3>
+                                <p>@item.id_produtoNavigation.Descricao</p>
+                                <span class="preco">R$ @(item.id_produtoNavigation.Preco?.ToString("F2") ?? "0,00")</span>
+
+                                <form method="post" action="@Url.Action("Remover", "Carrinho", new { id = item.id_carrinho })">
+                                    <button class="botao-excluir">
+                                        <img src="~/icon/Vector.png" alt="Excluir" class="lixeira"> Remover do Carrinho
+                                    </button>
+                                </form>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p class="nenhum-produto">Seu carrinho está vazio.</p>
+            }
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="div-esquerda">
+                <img src="~/Imgs/Logo-katchau.png" alt="Logo Katchau" class="logo-footer">
+                <div class="explore">
+                    <h1>Explore</h1>
+                    <ul>
+                        <li><a href="/Home/Index">Home</a></li>
+                        <li><a href="/Produto/ListarProdutos?categoria=Esportivos">Peças esportivas</a></li>
+                        <li><a href="/Produto/ListarProdutos?categoria=PecasDiversas">Peças diversas</a></li>
+                        <li><a href="/Produto/ListarProdutos?categoria=Customizacao">Customização</a></li>
+                    </ul>
+                </div>
+                <div class="suporte">
+                    <h1>Suporte</h1>
+                    <ul>
+                        <li>Obtenha Ajuda</li>
+                        <li>Registro e Garantia</li>
+                        <li>Fale Conosco</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="redes">
+                <h1 class="rede">Redes</h1>
+                <div class="img">
+                    <img src="~/icon/icone-youtube2.png" alt="youtube">
+                    <img src="~/icon/icone-instagram.png" alt="instagram">
+                    <img src="~/icon/icone-tiktiok.png" alt="tiktok">
+                    <img src="~/icon/icone-whatsapp.png" alt="whatsapp">
+                    <img src="~/icon/icone-facebook.png" alt="facebook">
+                </div>
+            </div>
+        </div>
+        <span class="linha-footer"></span>
+        <p class="copyright">Copyright © 2025 Katchau Inc. All rights reserved.</p>
+    </footer>
+
+    <script src="~/scripts/scripts.js"></script>
+</body>
+
+</html>

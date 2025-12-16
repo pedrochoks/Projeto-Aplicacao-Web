@@ -2,7 +2,8 @@
 
 @{
     Layout = null;
-    var usuarioLogado = Context.Session.GetString("Id_usuario") != null;
+    var usuarioLogado = Context.Session.GetString("UsuarioId") != null;
+    
 }
 
 <!DOCTYPE html>
@@ -30,6 +31,8 @@
         {
             <button class="botao-login">Entrar</button>
         }
+
+        
     </header>
 
     <div class="banner-mack">

@@ -77,17 +77,24 @@ body {
 }
 
 .botao-entrar {
-  background-color: #F8AB1E;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1.2rem;
-  transition: transform 0.2s;
+    background-color: #F8AB1E;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
+.botao-entrar:hover {
+    background-color: #e19919;
+}
 .botao-entrar:hover {
   transform: scale(1.05);
 }
@@ -187,73 +194,42 @@ body {
 }
 
 .botao-carrinho {
-  background-color: #ffa500;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
-  width: fit-content;
+    background-color: #F8AB1E;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.botao-carrinho img {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0; /* Evita que a imagem encolha */
 }
 
 .botao-carrinho:hover {
-  background-color: #e69400;
+    background-color: #e69400;
+    transform: scale(1.05);
 }
 
-/* ===========================
-   FILTROS
-=========================== */
-.filtros {
-  background-color: #3c2b57;
-  padding: 30px;
-  border-radius: 20px;
-  height: fit-content;
-  position: sticky;
-  top: 20px;
+@media (max-width: 768px) {
+    .botao-carrinho {
+        width: 90%;
+        max-width: 300px;
+        justify-content: center;
+        margin: 0 auto;
+    }
 }
 
-.filtros h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.filtros h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  margin-top: 15px;
-}
-
-.filtros input[type="number"] {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  border: none;
-  outline: none;
-  margin-bottom: 10px;
-}
-
-#filtrar {
-  background-color: #f5a623;
-  width: 100%;
-  padding: 15px;
-  border-radius: 10px;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: background 0.3s;
-}
-
-#filtrar:hover {
-  background-color: #d4880b;
-}
 
 /* ===========================
    RODAPÉ

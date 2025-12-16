@@ -9,6 +9,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,10 +20,12 @@
 </head>
 
 <body>
+
+    <!-- HEADER -->
     <header class="cabecalho">
         <div class="container-cabecalho">
             <a href="/Home/Index">
-                <img class="logo-raio" src="~/icon/Logo-raiozinho.png" alt="logo-raio">
+                <img class="logo-raio" src="~/icon/Logo-raiozinho.png" alt="logo">
             </a>
 
             <nav class="menu">
@@ -41,59 +44,81 @@
             {
                 <span class="texto-nav">Olá, @nomeUsuario 👋</span>
             }
-
-            <div class="tres-barrinhas">
-                <img src="~/img-luigi/tres-barrinhas.png" alt="menu">
-            </div>
         </div>
     </header>
 
-    <div class="banner">
-        <div class="img-katchau">
-            <img src="~/icon/katchau-com-logo.png" alt="">
-        </div>
+    <!-- BANNER -->
+    <section class="banner">
+        <img src="~/icon/katchau-com-logo.png" alt="Katchau">
         <img class="luigi-banner" src="~/Imgs/luigi-guido.png" alt="Luigi">
-    </div>
+    </section>
 
+    <!-- PRODUTOS -->
     <main class="conteudo">
         <section class="lista-produtos">
             <ul class="produtos">
+
                 @foreach (var p in Model)
                 {
                     <li class="produto">
-                        <img src="@p.foto" alt="@p.Descricao" class="imagem-produto">
 
+                        <!-- IMAGEM -->
+                        @if (p.foto != null)
+                        {
+                            <img class="imagem-produto"
+                                 src="data:image/jpeg;base64,@Convert.ToBase64String(p.foto)" 
+                                 alt="@p.Nome" />
+                        }
+
+                        <!-- INFO -->
                         <div class="informacoes-produto">
-                            <p>@p.Descricao</p>
+                            <h3>@p.Nome</h3>
+                            <p class="descricao">@p.Descricao</p>
 
-                            <button class="botao-carrinho">
-                                <img src="~/img-luigi/icone-carrinho.svg" />
-                                Adicionar ao carrinho
-                            </button>
+                            <span class="preco">
+                                R$ @string.Format("{0:N2}", p.Preco)
+                            </span>
+
+                            <!-- BOTÃO CARRINHO -->
+                            <form asp-controller="Carrinho" asp-action="Adicionar" method="post">
+                                <input type="hidden" name="id" value="@p.id_produto" />
+
+                                <button type="submit" class="botao-carrinho">
+                                    <img src="~/icon/icone-carrinho.svg" alt="Carrinho">
+                                    Adicionar ao carrinho
+                                </button>
+                            </form>
                         </div>
+
                     </li>
                 }
+
             </ul>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="rodape">
             <img src="~/icon/Logo-completo-marrom.png" class="logo-footer">
 
             <div class="explore">
                 <h1>Explore</h1>
-                <li><a href="/Home/Index">Home</a></li>
-                <li><a href="/Produto/ListarProdutos?categoria=Esportivos">Peças esportivas</a></li>
-                <li><a href="/Produto/ListarProdutos?categoria=Pecas%20usadas">Peças diversas</a></li>
-                <li><a href="/Produto/ListarProdutos?categoria=Customizacao">Customização</a></li>
+                <ul>
+                    <li><a href="/Home/Index">Home</a></li>
+                    <li><a href="/Produto/ListarProdutos?categoria=Esportivos">Peças esportivas</a></li>
+                    <li><a href="/Produto/ListarProdutos?categoria=Pecas%20usadas">Peças diversas</a></li>
+                    <li><a href="/Produto/ListarProdutos?categoria=Customizacao">Customização</a></li>
+                </ul>
             </div>
 
             <div class="suporte">
                 <h1>Suporte</h1>
-                <li>Obtenha Ajuda</li>
-                <li>Registro e Garantia</li>
-                <li>Fale Conosco</li>
+                <ul>
+                    <li>Obtenha Ajuda</li>
+                    <li>Registro e Garantia</li>
+                    <li>Fale Conosco</li>
+                </ul>
             </div>
         </div>
 
@@ -101,5 +126,6 @@
             © 2025 Katchau Inc. Todos os direitos reservados.
         </p>
     </footer>
+
 </body>
 </html>

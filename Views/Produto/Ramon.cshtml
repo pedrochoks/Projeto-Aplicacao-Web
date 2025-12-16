@@ -2,11 +2,13 @@
 
 @{
     Layout = null;
+    var usuarioLogado = Context.Session.GetInt32("UsuarioId") != null;
+    var nomeUsuario = Context.Session.GetString("UsuarioNome");
+    var isAdmin = Context.Session.GetString("UsuarioAdmin") == "true";
 }
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +16,7 @@
     <link rel="stylesheet" href="~/css/ramon.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
     <header class="cabecalho">
         <button class="tres-barrinhas" id="btn-mobile">
             <img src="~/img-ramon/tres-barrinhas.png" class="icone-tres-barrinhas">
@@ -24,20 +24,30 @@
         <a href="/Home/Index"><img class="logo" src="~/icon/Logo-raiozinho.png" alt="Logo Katchau"></a>
         <nav class="menu" id="menu">
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pneus">Pneus</a>
-            <a asp-controller="Produto" asp-action="ListarProdutos"
-                asp-route-categoria="Pecas para caminhao">Caminhões</a>
+            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas para caminhao">Caminhões</a>
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Customizacao">Esportivos</a>
-            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas usadas">Peças
-                Diversas</a>
+            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas usadas">Peças Diversas</a>
         </nav>
-        <button class="botao-entrar">Entrar</button>
+        @if (!usuarioLogado)
+        {
+            <button class="botao-entrar">Entrar</button>
+        }
+        else
+        {
+            if(isAdmin)
+            {
+                <a href="@Url.Action("AdicionarProduto", "Produto")" class="botao-entrar">Adicionar Produto</a>
+            }
+            else
+            {
+                <a href="@Url.Action("Carrinho", "Usuario", new { id = Context.Session.GetInt32("UsuarioId") })" class="botao-entrar">Olá, @nomeUsuario 👋</a>
+            }
+        }
     </header>
 
     <section class="banner"></section>
 
     <main class="conteudo">
-
-        <!-- LISTA DE PRODUTOS -->
         <section class="produtos" id="lista-produtos">
             @if (Model != null && Model.Any())
             {
@@ -48,8 +58,7 @@
                         <div class="informacoes-produto">
                             <p>@p.Descricao</p>
                             <button class="botao-carrinho">
-                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho"
-                                    asp-append-version="true">Adicionar ao carrinho
+                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho" asp-append-version="true">Adicionar ao carrinho
                             </button>
                         </div>
                     </li>
@@ -60,37 +69,6 @@
                 <p class="nenhum-produto">Nenhum produto encontrado.</p>
             }
         </section>
-
-        <!-- FILTROS -->
-        <aside class="filtros">
-            <h2>Filtros</h2>
-
-            <form asp-controller="Produto" asp-action="ListarProdutos" method="get">
-
-                <input type="hidden" name="categoria" value="Customizacao" />
-
-                <div class="filtro-preco">
-                    <h3>Preço</h3>
-
-                    <h1>Maior que</h1>
-                    <input type="number" name="PrecoMin" placeholder="R$ 0">
-
-                    <h1>Menor que</h1>
-                    <input type="number" name="PrecoMax" placeholder="R$ 10000">
-                </div>
-
-                <div class="filtro-grupo">
-                    <h3>Departamentos</h3>
-                    <label><input type="checkbox" name="depart" value="Low Rider"> Low Rider</label><br>
-                    <label><input type="checkbox" name="depart" value="Adesivos"> Adesivos</label><br>
-                    <label><input type="checkbox" name="depart" value="LEDs"> LEDs</label><br>
-                    <label><input type="checkbox" name="depart" value="Tintas"> Tintas</label>
-                </div>
-
-                <button id="filtrar" type="submit">Aplicar Filtros</button>
-            </form>
-        </aside>
-
     </main>
 
     <footer>
@@ -111,7 +89,6 @@
                     <li>Fale Conosco</li>
                 </div>
             </div>
-
             <div class="redes">
                 <h1 class="rede">Redes</h1>
                 <div class="img">
@@ -123,13 +100,10 @@
                 </div>
             </div>
         </div>
-
         <span class="linha-footer"></span>
         <p class="copyright">Copyright © 2025 Katchau Inc. All rights reserved.</p>
     </footer>
 
     <script src="~/scripts/scripts.js"></script>
-
 </body>
-
 </html>

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(../Icon/imagemBGCCadastroProdutos.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.area-vermelha {
+    background-color: #8D1313;
+    height: 15vh;
+    border-bottom: 3px solid #F8AB1E;
+}
+
+.container-nav {
+    max-width: 1440px;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-raio {
+    height: 90%;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.foto-usuario {
+    height: 90%;
+}
+
+.alinhar-fundo {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    
+}
+
+.area-cadastro {
+    width: 80%;
+    display: flex;
+    background-color: #8D1313;
+    border: 3px solid #F8AB1E;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.lado-imagem {
+    width: 40%;
+}
+
+.informacoes-produto {
+    width: 60%;
+    color: #F8AB1E;
+    display: flex;
+    flex-direction: column;
+}
+
+.preco-categoria {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    height: 6vh;
+    border-radius: 8px;
+    border: none;
+}
+
+.descricao-input {
+    height: 25vh;
+}
+
+.cadastrar {
+    background-color: #F8AB1E;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    width: 50%;
+    height: 14%;
+    margin-top: 10px;
+}

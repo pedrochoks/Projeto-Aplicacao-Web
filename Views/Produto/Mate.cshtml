@@ -3,27 +3,25 @@
 @{
     Layout = null;
     var usuarioLogado = Context.Session.GetInt32("UsuarioId") != null;
+    var nomeUsuario = Context.Session.GetString("UsuarioNome");
+    var isAdmin = Context.Session.GetString("UsuarioAdmin") == "true";
 }
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pecas Usadas</title>
-
     <link rel="stylesheet" href="~/css/mate.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <header class="cabecalho">
         <div class="container-cabecalho">
             <a href="/Home/Index">
                 <img class="logo-raio" src="~/icon/Logo-raiozinho.png" alt="logo-raio">
             </a>
-
             <nav class="menu">
                 <a class="texto-nav">Pneus</a>
                 <a class="texto-nav">Caminhões</a>
@@ -31,14 +29,23 @@
                 <a href="/Produto/ListarProdutos?categoria=Pecas%20usadas" class="texto-nav">Peças Usadas</a>
                 <a class="texto-nav">Customizacao</a>
             </nav>
-
             @if (!usuarioLogado)
             {
                 <a href="/Login/Index">
                     <button class="botao-entrar">Entrar</button>
                 </a>
             }
-
+            else
+            {
+                if(isAdmin)
+                {
+                    <a href="@Url.Action("AdicionarProduto", "Produto")" class="botao-entrar">Adicionar Produto</a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Carrinho", "Usuario", new { id = Context.Session.GetInt32("UsuarioId") })" class="texto-nav">Olá, @nomeUsuario 👋</a>
+                }
+            }
             <div class="tres-barrinhas">
                 <img src="~/icon/tres-barrinhas.png" alt="menu">
             </div>
@@ -77,39 +84,11 @@
                 }
             </ul>
         </section>
-
-        <aside class="filtros">
-            <form asp-controller="Produto" asp-action="ListarProdutos" method="get">
-                <input type="hidden" name="categoria" value="Pecas usadas" />
-
-                <div class="filtro-preco">
-                    <h3>Preço</h3>
-
-                    <h1>Maior que</h1>
-                    <input type="number" name="PrecoMin" placeholder="R$ 0">
-
-                    <h1>Menor que</h1>
-                    <input type="number" name="PrecoMax" placeholder="R$ 10000">
-                </div>
-
-                <div class="filtro-departamentos">
-                    <h3>Departamentos</h3>
-                    <label><input type="checkbox"> Volantes</label><br>
-                    <label><input type="checkbox"> Macaco</label><br>
-                    <label><input type="checkbox"> Multimídia</label><br>
-                    <label><input type="checkbox"> Bancos</label><br>
-                    <label><input type="checkbox"> Lataria</label><br>
-                </div>
-
-                <button type="submit" class="botao-filtro">Aplicar Filtros</button>
-            </form>
-        </aside>
     </main>
 
     <footer>
         <div class="rodape">
-            <img src="~/icon/katchau-rodape.png" class="logo-footer">
-
+            <img src="~/icon/Logo-Katchau.png" class="logo-footer">
             <div class="explore">
                 <h1>Explore</h1>
                 <li>Home</li>
@@ -117,14 +96,12 @@
                 <li>Peças Diversas</li>
                 <li>Customização</li>
             </div>
-
             <div class="suporte">
                 <h1>Suporte</h1>
                 <li>Obtenha Ajuda</li>
                 <li>Registro e Garantia</li>
                 <li>Fale Conosco</li>
             </div>
-
             <div class="redes">
                 <h1>Redes</h1>
                 <img src="~/icon/icone-youtube2.png">
@@ -134,7 +111,6 @@
                 <img src="~/icon/icone-facebook.png">
             </div>
         </div>
-
         <span class="linha-footer"></span>
         <p class="copyright">
             Copyright © 2025 Katchau Inc. All rights reserved.

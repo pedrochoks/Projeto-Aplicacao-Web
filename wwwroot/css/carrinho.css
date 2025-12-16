@@ -209,11 +209,11 @@ body {
     display: block;
     height: 1px;
     background-color: #E1A91A;
-    margin: 10px 0;
 }
 
 footer p {
     text-align: center;
     font-size: 0.9rem;
     color: #E1A91A;
+    background-color: #892D25;
 }

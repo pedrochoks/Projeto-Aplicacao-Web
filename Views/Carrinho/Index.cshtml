@@ -45,7 +45,7 @@
 
     <main class="conteudo">
         <section class="lista-carrinho">
-            <h2>Seu Carrinho</h2>
+            <h2 class="titulo-carri">Seu Carrinho</h2>
             @if (Model != null && Model.Any())
             {
                 <ul class="carrinho">
@@ -65,7 +65,7 @@
 
                                 <form method="post" action="@Url.Action("Remover", "Carrinho", new { id = item.id_carrinho })">
                                     <button class="botao-excluir">
-                                        <img src="~/icon/Vector.png" alt="Excluir" class="lixeira"> Remover do Carrinho
+                                        <img src="~/icon/lixeira.png" alt="Excluir" class="lixeira"> Remover do Carrinho
                                     </button>
                                 </form>
                             </div>
@@ -107,7 +107,7 @@
                 <div class="img">
                     <img src="~/icon/icone-youtube2.png" alt="youtube">
                     <img src="~/icon/icone-instagram.png" alt="instagram">
-                    <img src="~/icon/icone-tiktiok.png" alt="tiktok">
+                    <img src="~/icon/icone-tiktok.png" alt="tiktok">
                     <img src="~/icon/icone-whatsapp.png" alt="whatsapp">
                     <img src="~/icon/icone-facebook.png" alt="facebook">
                 </div>

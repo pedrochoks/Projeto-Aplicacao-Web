@@ -82,7 +82,7 @@ body {
 .produto-carrinho {
     display: flex;
     gap: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #892D25;
     border-radius: 10px;
     padding: 15px;
     align-items: center;
@@ -102,7 +102,7 @@ body {
 }
 
 .informacoes-carrinho h3 {
-    color: #892D25;
+    color: #E1A91A;
     font-size: 1.5rem;
 }
 
@@ -114,6 +114,10 @@ body {
     color: #E1A91A;
     font-weight: 600;
     font-size: 1.2rem;
+}
+
+.titulo-carrinho {
+    color: #E1A91A;
 }
 
 .botao-excluir {

@@ -5,10 +5,11 @@
     var usuarioLogado = Context.Session.GetInt32("UsuarioId") != null;
     var nomeUsuario = Context.Session.GetString("UsuarioNome");
     var isAdmin = Context.Session.GetString("UsuarioAdmin") == "true";
-}
+} 
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 
 <head>
     <meta charset="UTF-8">
@@ -16,14 +17,14 @@
     <title>Customização - KATCHAU</title>
     <link rel="stylesheet" href="~/css/ramon.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
+</head> 
 
 <body>
     <header class="cabecalho">
         <button class="tres-barrinhas" id="btn-mobile">
             <img src="~/img-ramon/tres-barrinhas.png" class="icone-tres-barrinhas">
         </button>
-        <a href="/Home/Index"><img class="logo" src="~/icon/Logo-raiozinho.png" alt="Logo Katchau"></a>
+        <a href="/Home/Index"><img class="logo" src="~/icon/Logo-raiozinho.png" alt="Logo Katchau"></a> 
 
         <nav class="menu" id="menu">
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pneus">Pneus</a>
@@ -31,7 +32,8 @@
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Esportivos">Esportivos</a>
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas usadas">Peças Diversas</a>
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Customizacao">Customização</a>
-        </nav>
+        </nav> 
+
 
         @if (!usuarioLogado)
         {
@@ -43,12 +45,8 @@
             {
                 <a href="@Url.Action("Index", "CadastrarProduto")" class="botao-entrar">Cadastrar Produto</a>
             }
-            else
-            {
-                <a href="@Url.Action("Carrinho", "Usuario", new { id = Context.Session.GetInt32("UsuarioId") })"
-                    class="botao-entrar">Olá, @nomeUsuario 👋</a>
-            }
-        }
+            <a href="@Url.Action("Carrinho", "Usuario", new { id = Context.Session.GetInt32("UsuarioId") })" class="botao-entrar">Olá, @nomeUsuario 👋</a>
+        } 
     </header>
 
     <section class="banner"></section>
@@ -93,9 +91,15 @@
     <footer>
         <div class="footer">
             <div class="div-esquerda">
-                <img src="~/img-ramon/img-katchau.png" alt="" class="logo-footer">
+                <img src="~/img-ramon/img-katchau.png" alt="" class="logo-footer"> 
                 <div class="explore">
                     <h1>Explore</h1>
+                    <ul>
+                        <li>Home</li>
+                        <li>Peças Esportivas</li>
+                        <li>Peças Diversas</li>
+                        <li>Customização</li>
+                    </ul>
                     <ul>
                         <li>Home</li>
                         <li>Peças Esportivas</li>
@@ -105,6 +109,11 @@
                 </div>
                 <div class="suporte">
                     <h1>Suporte</h1>
+                    <ul>
+                        <li>Obtenha Ajuda</li>
+                        <li>Registro e Garantia</li>
+                        <li>Fale Conosco</li>
+                    </ul>
                     <ul>
                         <li>Obtenha Ajuda</li>
                         <li>Registro e Garantia</li>
@@ -129,5 +138,6 @@
 
     <script src="~/scripts/scripts.js"></script>
 </body>
+
 
 </html>

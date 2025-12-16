@@ -10,14 +10,14 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-image: url('/Imgs/BGCRamon.png');
+  background-image: url('/Imgs/Group 78.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: #fff;
   overflow-x: hidden;
   /* Evita rolagem lateral indesejada */
-}
+} 
 
 /* ===========================
    CABEÇALHO
@@ -94,10 +94,8 @@ body {
 
 .botao-entrar:hover {
     background-color: #e19919;
-}
-.botao-entrar:hover {
-  transform: scale(1.05);
-}
+    transform: scale(1.05);
+} 
 
 /* ===========================
    BANNER
@@ -239,37 +237,35 @@ footer {
   flex-direction: column;
   background-color: #431578d2;
   padding: 30px 20px;
-
 }
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   color: white;
   list-style: none;
-  justify-content: space-around;
   margin-top: 25px;
-}
+} 
 
 .div-esquerda {
   display: contents;
   justify-content: space-between;
   margin: 5px;
-  font-size: 0.7rem
+  font-size: 0.7rem;
 }
 
 .div-esquerda img {
-  align-items: center;
-
-}
+  display: block;
+  max-width: 100%;
+  height: auto;
+} 
 
 .redes {
   display: grid;
   align-items: center;
   font-size: 0.7rem;
   margin-bottom: 10px;
-  ;
 }
 
 .linha-footer {

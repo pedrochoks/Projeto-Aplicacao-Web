@@ -45,22 +45,11 @@ body {
 
 .botao-entrar {
     background-color: #F8AB1E;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    color: rgb(255, 255, 255);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
     width: 130px;
     height: 45px;
-    border-radius: 10px;
-=======
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 600;
->>>>>>> c473d5ad8fc844f7e0f6e6e4c2a53b54128f0b7d
-=======
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 600;
->>>>>>> 921c55aeb7aded4b171ee4001fe662d9bd392387
     border: none;
     border-radius: 10px;
     padding: 10px 16px;
@@ -74,7 +63,7 @@ body {
 
 .botao-entrar:hover {
     background-color: #e19919;
-}
+} 
 .principal {
     display: flex;
     flex-direction: column;
@@ -155,32 +144,31 @@ footer {
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   color: white;
   list-style: none;
-  justify-content: space-around;
   margin-top: 25px;
-}
+} 
 
 .div-esquerda {
   display: contents;
   justify-content: space-between;
   margin: 5px;
-  font-size: 0.7rem
-}
+  font-size: 0.7rem;
+} 
 
 .div-esquerda img {
-  align-items: center;
-
-}
+  display: block;
+  max-width: 100%;
+  height: auto;
+} 
 
 .redes {
   display: grid;
   align-items: center;
   font-size: 0.7rem;
   margin-bottom: 10px;
-  ;
 }
 
 .linha-footer { 

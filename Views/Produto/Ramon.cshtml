@@ -1,52 +1,30 @@
 @model List<Katchau_Back.Models.Produto>
 
-@model List<Katchau_Back.Models.Produto>
-
 @{
     Layout = null;
-<<<<<<< HEAD
-    var usuarioLogado = Context.Session.GetInt32("Id_Usuario") != null;
-=======
     var usuarioLogado = Context.Session.GetInt32("UsuarioId") != null;
     var nomeUsuario = Context.Session.GetString("UsuarioNome");
     var isAdmin = Context.Session.GetString("UsuarioAdmin") == "true";
->>>>>>> c473d5ad8fc844f7e0f6e6e4c2a53b54128f0b7d
-}
+} 
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Customização</title>
-=======
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customização - KATCHAU</title>
->>>>>>> c473d5ad8fc844f7e0f6e6e4c2a53b54128f0b7d
     <link rel="stylesheet" href="~/css/ramon.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
+</head> 
 
 <body>
     <header class="cabecalho">
         <button class="tres-barrinhas" id="btn-mobile">
-<<<<<<< HEAD
-            <img src="~/icon/tres-barrinhas.png" class="icone-tres-barrinhas" />
-            <img src="~/icon/tres-barrinhas.png" class="icone-tres-barrinhas" />
-        </button>
-
-        <img class="logo" src="~/icon/-B3EBF2 (1) 1.png" alt="Logo Katchau" />
-        <img class="logo" src="~/icon/-B3EBF2 (1) 1.png" alt="Logo Katchau" />
-=======
             <img src="~/img-ramon/tres-barrinhas.png" class="icone-tres-barrinhas">
         </button>
-        <a href="/Home/Index"><img class="logo" src="~/icon/Logo-raiozinho.png" alt="Logo Katchau"></a>
->>>>>>> c473d5ad8fc844f7e0f6e6e4c2a53b54128f0b7d
+        <a href="/Home/Index"><img class="logo" src="~/icon/Logo-raiozinho.png" alt="Logo Katchau"></a> 
 
         <nav class="menu" id="menu">
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pneus">Pneus</a>
@@ -54,12 +32,7 @@
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Esportivos">Esportivos</a>
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas usadas">Peças Diversas</a>
             <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Customizacao">Customização</a>
-            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pneus">Pneus</a>
-            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas para caminhao">Caminhões</a>
-            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Esportivos">Esportivos</a>
-            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Pecas usadas">Peças Diversas</a>
-            <a asp-controller="Produto" asp-action="ListarProdutos" asp-route-categoria="Customizacao">Customização</a>
-        </nav>
+        </nav> 
 
 
         @if (!usuarioLogado)
@@ -72,73 +45,13 @@
             {
                 <a href="@Url.Action("Index", "CadastrarProduto")" class="botao-entrar">Cadastrar Produto</a>
             }
-            else
-            {
-                <a href="@Url.Action("Carrinho", "Usuario", new { id = Context.Session.GetInt32("UsuarioId") })"
-                    class="botao-entrar">Olá, @nomeUsuario 👋</a>
-            }
-            <a href="/Login/Index" class="botao-entrar">Entrar</a>
-        }
-        else
-        {
-            if (isAdmin)
-            {
-                <a href="@Url.Action("Index", "CadastrarProduto")" class="botao-entrar">Cadastrar Produto</a>
-            }
-            else
-            {
-                <a href="@Url.Action("Carrinho", "Usuario", new { id = Context.Session.GetInt32("UsuarioId") })"
-                    class="botao-entrar">Olá, @nomeUsuario 👋</a>
-            }
-        }
+            <a href="@Url.Action("Carrinho", "Usuario", new { id = Context.Session.GetInt32("UsuarioId") })" class="botao-entrar">Olá, @nomeUsuario 👋</a>
+        } 
     </header>
 
     <section class="banner"></section>
 
     <main class="conteudo">
-<<<<<<< HEAD
-
-        <section class="lista-produtos">
-            <h1 class="pecas-custumizacao">Peças para Customização</h1>
-
-            <ul class="produtos">
-                @foreach (var p in Model)
-                {
-                    <li class="produto">
-                        <img src="~/@p.foto" alt="@p.Descricao" class="imagem-produto" />
-
-                        <div class="informacoes-produto">
-                            <p>@p.Descricao</p>
-
-                            <button class="botao-carrinho">
-                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho">
-                                Adicionar ao carrinho
-                            </button>
-                        </div>
-                    </li>
-                }
-            </ul>
-        </section>
-
-        <aside class="filtro">
-            <h1 class="Filtros">Filtros</h1>
-
-            <div class="filtro-preco">
-                <h3 class="preco">Preço</h3>
-                <p>Maior que <strong>ADICIONAR FILTRO</strong></p>
-                <p>Menor que <strong>ADICIONAR FILTRO</strong></p>
-            </div>
-
-            <div class="filtro-categoria">
-                <h3 class="categoria">Categorias</h3>
-                <p>Low Rider <strong>ADICIONAR FILTRO</strong></p>
-                <p>Adesivo <strong>ADICIONAR FILTRO</strong></p>
-                <p>Leds Automotivos<strong>ADICIONAR FILTRO</strong></p>
-                <p>Tintas<strong>ADICIONAR FILTRO</strong></p>
-            </div>
-        </aside>
-
-=======
         <section class="produtos" id="lista-produtos">
             @if (Model != null && Model.Any())
             {
@@ -173,19 +86,12 @@
                 <p class="nenhum-produto">Nenhum produto encontrado.</p>
             }
         </section>
->>>>>>> c473d5ad8fc844f7e0f6e6e4c2a53b54128f0b7d
     </main>
 
     <footer>
         <div class="footer">
             <div class="div-esquerda">
-<<<<<<< HEAD
-                <img src="~/icon/img-katchau.png" alt="" class="logo-footer" />
-                <img src="~/icon/img-katchau.png" alt="" class="logo-footer" />
-
-=======
-                <img src="~/img-ramon/img-katchau.png" alt="" class="logo-footer">
->>>>>>> c473d5ad8fc844f7e0f6e6e4c2a53b54128f0b7d
+                <img src="~/img-ramon/img-katchau.png" alt="" class="logo-footer"> 
                 <div class="explore">
                     <h1>Explore</h1>
                     <ul>
@@ -218,24 +124,11 @@
             <div class="redes">
                 <h1 class="rede">Redes</h1>
                 <div class="img">
-<<<<<<< HEAD
-                    <img src="~/icon/icone-youtube2.png" alt="youtube" />
-                    <img src="~/icon/icone-instagram.png" alt="instagram" />
-                    <img src="~/icon/icone-tiktiok.png" alt="tiktok" />
-                    <img src="~/icon/icone-whatsapp.png" alt="whatsapp" />
-                    <img src="~/icon/icone-facebook.png" alt="facebook" />
-                    <img src="~/icon/icone-youtube2.png" alt="youtube" />
-                    <img src="~/icon/icone-instagram.png" alt="instagram" />
-                    <img src="~/icon/icone-tiktiok.png" alt="tiktok" />
-                    <img src="~/icon/icone-whatsapp.png" alt="whatsapp" />
-                    <img src="~/icon/icone-facebook.png" alt="facebook" />
-=======
                     <img src="~/icon/icone-youtube2.png" alt="youtube">
                     <img src="~/icon/icone-instagram.png" alt="instagram">
                     <img src="~/icon/icone-tiktiok.png" alt="tiktok">
                     <img src="~/icon/icone-whatsapp.png" alt="whatsapp">
                     <img src="~/icon/icone-facebook.png" alt="facebook">
->>>>>>> c473d5ad8fc844f7e0f6e6e4c2a53b54128f0b7d
                 </div>
             </div>
         </div>

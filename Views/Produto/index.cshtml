@@ -1,127 +1,119 @@
+@model List<Katchau_Back.Models.Produto>
+
 @{
     Layout = null;
-    var usuarioLogado = Context.Session.GetString("UsuarioId") != null;
-
+    var usuarioLogado = Context.Session.GetInt32("UsuarioId") != null;
+    var nomeUsuario = Context.Session.GetString("UsuarioNome");
+    var isAdmin = Context.Session.GetString("UsuarioAdmin") == "true";
 }
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Katchau</title>
     <link rel="stylesheet" href="~/css/mcqueen.css">
-
-
-    <title>Mcqueen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <img src="~/icon/menu-nav" class="menu-navegacao" alt="Menu navegacao">
-        <img src="~/icon/Logo-raiozinho.png" alt="Logo raio" class="Logo-raiozinho">
-        <nav class="navegacao">
-            <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pneus</a>
-            <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pecas para caminhao</a>
-            <a href="/Produto/ListarProdutos?categoria=Pecas%20Usadas" class="texto-nav">Peças Usadas</a>
-            <a href="/Produto/ListarProdutos?categoria=Esportivas" class="texto-nav">Esportivos</a>
-            <a href="/Produto/ListarProdutos?categoria=Customizacao" class="texto-nav">Customização</a>
-        </nav>
-        @if (!usuarioLogado)
-        {
-            <button class="botao-login">Entrar</button>
-        }
+    <header class="cabecalho">
+        <div class="container-cabecalho">
+            <a href="/Home/Index">
+                <img class="logo-raio" src="~/icon/Logo-raiozinho.png" alt="logo-raio">
+            </a>
+            <nav class="menu">
+                <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pneus</a>
+                <a href="/Produto/ListarProdutos?categoria=Pecas%20para%20caminhao" class="texto-nav">Caminhões</a>
+                <a href="/Produto/ListarProdutos?categoria=Esportivos" class="texto-nav">Esportivos</a>
+                <a href="/Produto/ListarProdutos?categoria=Pecas%20usadas" class="texto-nav">Peças Diversas</a>
+                <a href="/Produto/ListarProdutos?categoria=Customizacao" class="texto-nav">Customização</a>
+            </nav>
+            @if (!usuarioLogado)
+            {
+                <a href="/Login/Index" class="botao-entrar">Entrar</a>
+            }
+            else
+            {
+                if (isAdmin)
+                {
+                    <a href="@Url.Action("Index", "CadastroProduto")" class="botao-entrar">Adicionar Produto</a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Carrinho", "Usuario", new { id = Context.Session.GetInt32("UsuarioId") })"
+                        class="texto-nav">Olá, @nomeUsuario 👋</a>
+                }
+            }
+            <div class="tres-barrinhas">
+                <img src="~/img-luigi/tres-barrinhas.png" alt="menu">
+            </div>
+        </div>
     </header>
 
     <div class="banner">
-        <div class="texto-banner">
-            <p class="titulo-banner"> KATCHAU </p>
+        <div class="img-katchau">
+            <img src="~/icon/katchau-com-logo.png" alt="">
         </div>
-        <img class="mcqueen-banner" src="~/Imgs/McQueen.png" alt="">
+        <img class="luigi-banner" src="~/Imgs/McQueen.png" alt="">
     </div>
 
-    <main class="background">
-        <section class="lista-produtos">
-            <h1 class="pecas-esportivas">Peças Esportivas</h1>
-            <button class="alfabeto">
-                <img class="seta" src="~/icon/Seta-filtro.png">
-            </button>
-    <div class="produto">
-        <div class="produto-texto">
-        @if (Model != null)
-            {
-            @foreach (var p in Model)
+    <main class="conteudo">
+        <section class="lista-produtos" id="lista-produtos">
+            <ul class="produtos">
+                @foreach (var p in Model)
                 {
                     <li class="produto">
-                        <img src="@p.foto" alt="@p.Descricao" class="imagem-produto" asp-append-version="true">
+                        @if (p.foto != null)
+                        {
+                            <img class="imagem-produto" src="data:image/jpeg;base64,@Convert.ToBase64String(p.foto)"
+                                alt="@p.Nome"
+                                style="width: 100%; max-width: 380px; height: 260px; object-fit: cover; border-radius: 10px;" />
+                        }
                         <div class="informacoes-produto">
                             <p>@p.Descricao</p>
-
                             <button class="botao-carrinho">
-                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho">
-                                Adicionar ao Carrinho | R$ 1500,00
+                                <img src="~/icon/icone-carrinho.svg" alt="carrinho" class="icone-carrinho">
+                                Adicionar ao carrinho
                             </button>
                         </div>
                     </li>
                 }
-            }
-            else
-            {
-                <p>Nenhum produto encontrado na categoria Esportivos. </p>
-            }
-            
-            </div>
+            </ul>
         </section>
-        <aside class="filtro">
-            <h1 class="titulo-filtro">Filtros</h1>
-
-            <section class="preco" id="preco-filtro">
-                <h3 class="subtitulo-divisoes">Preco</h3>
-                <p class="texto-filtro">Maior que <input class="input-valor" id="precoMax" type="number"
-                        placeholder="Adicionar Valor"></p>
-                <p class="texto-filtro">Menor que <input class="input-valor" id="precoMin" type="number"
-                        placeholder="Adicionar Valor"></p>
-            </section>
-
-            <section class="categoria">
-                <h3 class="subtitulo-divisoes">Categorias</h3>
-                <input class="checkbox" type="checkbox" id="filtro-motor" value="Motor">
-                <label class="texto-filtro" for="filtro1">Motor</label><br>
-                <input class="checkbox" type="checkbox" id="filtro-escapamento" value="Escapamento">
-                <label class="texto-filtro" for="filtro2">Escapamento</label><br>
-                <input class="checkbox" type="checkbox" id="filtro-filtros" value="Filtros">
-                <label class="texto-filtro" for="filtro3">Filtros</label><br>
-            </section>
-        </aside>
     </main>
+
     <footer>
-        <div class="footer">
-            <img src="~/icon/Logo-completo-marrom.png" alt="" class="logo-footer">
+        <div class="rodape">
+            <img src="~/icon/Logo-completo-marrom.png" class="logo-footer">
             <div class="explore">
+                <h1>Explore</h1>
                 <li>Home</li>
-                <li>Pecas Esportivas</li>
-                <li>Pecas Diversas</li>
-                <li>Customizacao</li>
+                <li>Peças Esportivas</li>
+                <li>Peças Diversas</li>
+                <li>Customização</li>
             </div>
             <div class="suporte">
+                <h1>Suporte</h1>
                 <li>Obtenha Ajuda</li>
                 <li>Registro e Garantia</li>
                 <li>Fale Conosco</li>
             </div>
             <div class="redes">
-                <h1 class="rede">Redes</h1>
-                <img class="midia" src="~/icon/mdi--youtube (1).svg" alt="">
-                <img class="midia" src="~/icon/mdi--instagram (1).svg" alt="">
-                <img class="midia" src="~/icon/ic--baseline-tiktok (1).svg" alt="">
-                <img class="midia" src="~/icon/ic--baseline-whatsapp (1).svg" alt="">
-                <img class="midia" src="~/icon/ic--baseline-facebook (1).svg" alt="">
+                <h1>Redes</h1>
+                <img src="~/icon/icone-youtube.png">
+                <img src="~/icon/icone-instagram.png">
+                <img src="~/icon/icone-tiktok.png">
+                <img src="~/icon/icone-whatsapp.png">
+                <img src="~/icon/icone-facebook.png">
             </div>
         </div>
-        <span class="linha-footer"></span>
-        <p class="copyright">Copyright © 2025 Katchau Inc. All rights reserved.</p>
+        <p class="copyright">
+            Copyright © 2025 Katchau Inc. All rights reserved.
+        </p>
     </footer>
-    </div>
-    </div>
-    <script src="script/mcqueen.js"></script>
 </body>
 
 </html>

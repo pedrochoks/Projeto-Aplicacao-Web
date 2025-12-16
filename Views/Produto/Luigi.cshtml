@@ -2,7 +2,8 @@
 
 @{
     Layout = null;
-    var usuarioLogado = Context.Session.GetString("Id_usuario") != null;
+    var usuarioLogado = Context.Session.GetInt32("UsuarioId") != null;
+    var nomeUsuario = Context.Session.GetString("UsuarioNome");
 }
 
 <!DOCTYPE html>
@@ -12,125 +13,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Katchau</title>
-
     <link rel="stylesheet" href="~/css/luigi.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
     <header class="cabecalho">
         <div class="container-cabecalho">
-            <a href="/Home/Index"><img class="logo-raio" src="~/icon/Logo-raiozinho.png" alt="logo-raio" ></a>
+            <a href="/Home/Index">
+                <img class="logo-raio" src="~/icon/Logo-raiozinho.png" alt="logo">
+            </a>
+
             <nav class="menu">
                 <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pneus</a>
                 <a href="/Produto/ListarProdutos?categoria=Pecas%20para%20caminhao" class="texto-nav">Caminhões</a>
                 <a href="/Produto/ListarProdutos?categoria=Esportivos" class="texto-nav">Esportivos</a>
                 <a href="/Produto/ListarProdutos?categoria=Pecas%20usadas" class="texto-nav">Peças Diversas</a>
-                <a href="/Produto/ListarProdutos?categoria=Customizacao" class="texto-nav">Customizacao</a>
+                <a href="/Produto/ListarProdutos?categoria=Customizacao" class="texto-nav">Customização</a>
             </nav>
+
             @if (!usuarioLogado)
             {
-                <button class="botao-entrar">Entrar</button>
+                <a href="/Login/Index">
+                    <button class="botao-entrar">Entrar</button>
+                </a>
             }
-            <div class="tres-barrinhas">
-                <img src="~/img-luigi/tres-barrinhas.png" alt="menu">
-            </div>
+            else
+            {
+                <span class="texto-nav">Olá, @nomeUsuario 👋</span>
+            }
         </div>
     </header>
 
-    <div class="banner">
-        <div class="img-katchau">
-            <img src="~/icon/katchau-com-logo.png" alt="">
-        </div>
+    <section class="banner">
+        <img src="~/icon/katchau-com-logo.png" alt="Katchau">
         <img class="luigi-banner" src="~/Imgs/luigi-guido.png" alt="Luigi">
-    </div>
+    </section>
 
     <main class="conteudo">
-        <section class="lista-produtos" id="lista-produtos">
-            <ul class="produtos">
+        <section class="lista-produtos">
+            @if (Model != null && Model.Any())
+            {
+                <ul class="produtos">
+                    @foreach (var p in Model)
+                    {
+                        <li class="produto">
+                            @if (p.foto != null)
+                            {
+                                <img class="imagem-produto"
+                                     src="data:image/jpeg;base64,@Convert.ToBase64String(p.foto)" 
+                                     alt="@p.Nome"
+                                     style="width: 100%; max-width: 380px; height: 260px; object-fit: cover; border-radius: 10px;" />
+                            }
 
-                @foreach (var p in Model)
-                {
-                    <li class="produto">
-                        <img src="@p.foto" alt="@p.Descricao" class="imagem-produto">
+                            <div class="informacoes-produto">
+                                <h3>@p.Nome</h3>
+                                <p class="descricao">@p.Descricao</p>
+                                <span class="preco">R$ @string.Format("{0:N2}", p.Preco)</span>
 
-                        <div class="informacoes-produto">
-                            <p>@p.Descricao</p>
-
-                            <button class="botao-carrinho">
-                                <img src="~/img-luigi/icone-carrinho.svg" class="icone-carrinho" />
-                                Adicionar ao carrinho
-                            </button>
-                        </div>
-                    </li>
-                }
-            </ul>
+                                <form asp-controller="Carrinho" asp-action="Adicionar" method="post">
+                                    <input type="hidden" name="id" value="@p.id_produto" />
+                                    <button class="botao-carrinho">
+                                        <img src="~/icon/icone-carrinho.svg" alt="Carrinho">
+                                        Adicionar ao carrinho
+                                    </button>
+                                </form>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p class="nenhum-produto">Nenhum produto encontrado.</p>
+            }
         </section>
-
-        <aside class="filtros">
-            <h2>Filtros</h2>
-
-            <div class="filtro-preco">
-                <h3>Preço</h3>
-
-                <h1>Maior que</h1>
-                <input type="number" id="min-preco" placeholder="R$ 0">
-
-                <h1>Menor que</h1>
-                <input type="number" id="max-preco" placeholder="R$ 10000">
-            </div>
-
-            <div class="filtro-grupo">
-                <div class="filtro-departamentos" id="opcoes-departamentos">
-                    <h3>Departamentos</h3>
-
-                    <label><input type="checkbox" value="Volantes"> Volantes</label><br>
-                    <label><input type="checkbox" value="Macaco"> Macaco</label><br>
-                    <label><input type="checkbox" value="Multimidia"> Multimídia</label><br>
-                    <label><input type="checkbox" value="Bancos"> Bancos</label><br>
-                    <label><input type="checkbox" value="Lataria"> Lataria</label><br>
-                </div>
-            </div>
-
-            <button id="filtrar" class="botao-filtro">Aplicar Filtros</button>
-        </aside>
     </main>
 
     <footer>
         <div class="rodape">
-            <img src="~/icon/Logo-completo-marrom.png" alt="" class="logo-footer">
+            <img src="~/icon/Logo-completo-marrom.png" class="logo-footer">
 
             <div class="explore">
                 <h1>Explore</h1>
-                <li><a href="/Home/Index">Home</a></li>
-                <li><a href="/Produto/ListarPodutos?categoria=Customizacao">Pecas esportivas</a></li>
-                <li><a href="/Produto/ListarPodutos?categoria=Pecas%20usadas">Pecas diversas</a></li>
-                <li><a href="/Produto/ListarPodutos?categoria=Customizacao">Customizacao</a></li>
+                <ul>
+                    <li><a href="/Home/Index">Home</a></li>
+                    <li><a href="/Produto/ListarProdutos?categoria=Esportivos">Peças esportivas</a></li>
+                    <li><a href="/Produto/ListarProdutos?categoria=Pecas%20usadas">Peças diversas</a></li>
+                    <li><a href="/Produto/ListarProdutos?categoria=Customizacao">Customização</a></li>
+                </ul>
             </div>
 
             <div class="suporte">
                 <h1>Suporte</h1>
-                <li>Obtenha Ajuda</li>
-                <li>Registro e Garantia</li>
-                <li>Fale Conosco</li>
-            </div>
-
-            <div class="redes">
-                <h1 class="rede">Redes</h1>
-                <img src="~/icon/mdi--youtube (1).svg" alt="youtube">
-                <img src="~/icon/mdi--instagram (1).svg" alt="instagram">
-                <img src="~/icon/ic--baseline-tiktok (1).svg" alt="tiktok">
-                <img src="~/icon/ic--baseline-whatsapp (1).svg" alt="whatsapp">
-                <img src="~/icon/ic--baseline-facebook (1).svg" alt="facebook">
+                <ul>
+                    <li>Obtenha Ajuda</li>
+                    <li>Registro e Garantia</li>
+                    <li>Fale Conosco</li>
+                </ul>
             </div>
         </div>
 
-        <span class="linha-footer"></span>
         <p class="copyright">
-            Copyright © 2025 Katchau Inc. Todos os direitos reservados.
+            © 2025 Katchau Inc. Todos os direitos reservados.
         </p>
     </footer>
 
 </body>
-
 </html>

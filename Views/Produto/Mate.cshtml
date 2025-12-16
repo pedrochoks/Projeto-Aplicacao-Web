@@ -2,61 +2,90 @@
 
 @{
     Layout = null;
-    var usuarioLogado = Context.Session.GetString("Id_usuario") != null;
+    var usuarioLogado = Context.Session.GetInt32("UsuarioId") != null;
+    var nomeUsuario = Context.Session.GetString("UsuarioNome");
+    var isAdmin = Context.Session.GetString("UsuarioAdmin") == "true";
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pecas Usadas</title>
-    
-    <link rel="stylesheet" href="~/css/mate.css"> 
+    <title>Peças Usadas</title>
+    <link rel="stylesheet" href="~/css/mate.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header class="cabecalho">
         <div class="container-cabecalho">
-            <a href="/Home/Index"><img class="logo-raio" src="~/icon/Logo-raiozinho.png" alt="logo-raio" asp-append-version="true"></a>
+            <a href="/Home/Index">
+                <img class="logo-raio" src="~/icon/Logo-raiozinho.png" alt="logo-raio">
+            </a>
             <nav class="menu">
-                <a  class="texto-nav">Pneus</a>
-                <a  class="texto-nav">Caminhões</a>
-                <a  class="texto-nav">Esportivos</a>
-                <a href="/Produto/ListarPodutos?categoria=Pecas%20usadas" class="texto-nav">Pecas Usadas</a>
-                <a  class="texto-nav">Customizacao</a>
+                <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pneus</a>
+                <a href="/Produto/ListarProdutos?categoria=Pecas%20para%20Caminhao" class="texto-nav">Caminhões</a>
+                <a href="/Produto/ListarProdutos?categoria=Esportivas" class="texto-nav">Esportivos</a>
+                <a href="/Produto/ListarProdutos?categoria=Pecas%20usadas" class="texto-nav">Peças Usadas</a>
+                <a href="/Produto/ListarProdutos?categoria=Customizacao" class="texto-nav">Customização</a>
             </nav>
+
             @if (!usuarioLogado)
             {
-            <button class="botao-entrar">Entrar</button>
+                <a href="/Login/Index" class="botao-entrar">Entrar</a>
             }
+            else
+            {
+                if (isAdmin)
+                {
+                    <a href="@Url.Action("Index", "CadastrarProduto")" class="botao-entrar">Cadastrar Produto</a>
+                }
+                else
+                {
+                    <span class="texto-nav">Olá, @nomeUsuario 👋</span>
+                }
+            }
+
             <div class="tres-barrinhas">
-                <img src="~/icon/tres-barrinhas.png" alt="tres-barrinhas" asp-append-version="true">
+                <img src="~/icon/tres-barrinhas.png" alt="menu">
             </div>
         </div>
     </header>
+
     <div class="banner">
         <div class="img-katchau">
             <img src="~/icon/katchau-com-logo.png" alt="">
         </div>
-        <img class="mate-banner" src="~/Imgs/mate.png" alt="" >
+        <img class="mate-banner" src="~/Imgs/mate.png" alt="">
     </div>
+
     <main class="conteudo">
-        <section class="lista-produtos" id="lista-produtos">
+        <section class="lista-produtos">
             <ul class="produtos">
-                @if (Model != null)
+                @if (Model != null && Model.Any())
                 {
-                    @foreach (var p in Model)
+                    foreach (var p in Model)
                     {
                         <li class="produto">
-                            <img src="@p.foto" alt="@p.Descricao" class="imagem-produto" asp-append-version="true">
+                            @if (p.foto != null)
+                            {
+                                <img class="imagem-produto" src="data:image/jpeg;base64,@Convert.ToBase64String(p.foto)"
+                                     alt="@p.Nome"
+                                     style="width: 100%; max-width: 380px; height: 260px; object-fit: cover; border-radius: 10px;" />
+                            }
                             <div class="informacoes-produto">
+                                <h3>@p.Nome</h3>
                                 <p>@p.Descricao</p>
-                                <button class="botao-carrinho">
-                                    <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho" asp-append-version="true">Adicionar ao carrinho
-                                </button>
+                                <span class="preco">R$ @string.Format("{0:F2}", p.Preco ?? 0)</span>
+                                <form asp-controller="Carrinho" asp-action="Adicionar" method="post">
+                                    <input type="hidden" name="id" value="@p.id_produto" />
+                                    <button class="botao-carrinho">
+                                        <img src="~/icon/icone-carrinho.svg" class="icone-carrinho">
+                                        Adicionar ao carrinho
+                                    </button>
+                                </form>
                             </div>
                         </li>
                     }
@@ -67,62 +96,41 @@
                 }
             </ul>
         </section>
-
-        <aside class="filtros">
-            <form asp-controller="Produto" asp-action="ListarProdutos" method="get">
-                <input type="hidden" name="categoria" value="Pecas usadas" /> 
-
-                <div class="filtro-preco">
-                    <h3>Preço</h3>
-                    
-                    <h1>Maior que</h1>
-                    <input type="number" id="min-preco" name="PrecoMin" placeholder="R$ 0">
-
-                    <h1>Menor que</h1>
-                    <input type="number" id="max-preco" name="PrecoMax" placeholder="R$ 10000">
-                </div>
-                
-                <div class="filtro-grupo">
-                    <div class="filtro-departamentos" id="opcoes-departamentos">
-                        <h3>Departamentos</h3>
-                        <label><input type="checkbox" value="Volantes">Volantes</label><br>
-                        <label><input type="checkbox" value="Macaco">Macaco</label><br>
-                        <label><input type="checkbox" value="Multimidia">Multimidia</label><br>
-                        <label><input type="checkbox" value="Bancos">Bancos</label><br>
-                        <label><input type="checkbox" value="Lataria">Lataria</label><br>
-                    </div>
-                </div>
-                <button type="submit" id="filtrar" class="botao-filtro">Aplicar Filtros</button>
-            </form>
-        </aside>
     </main>
+
     <footer>
         <div class="rodape">
-            <img src="~/icon/katchau-rodape.png" alt="" class="logo-footer" asp-append-version="true">
+            <img src="~/Imgs/Logo-katchau.png" class="logo-footer">
             <div class="explore">
                 <h1>Explore</h1>
-                <li>Home</li>
-                <li>Pecas Esportivas</li>
-                <li>Pecas Diversas</li>
-                <li>Customizacao</li>
+                <ul>
+                    <li>Home</li>
+                    <li>Peças Esportivas</li>
+                    <li>Peças Diversas</li>
+                    <li>Customização</li>
+                </ul>
             </div>
             <div class="suporte">
                 <h1>Suporte</h1>
-                <li>Obtenha Ajuda</li>
-                <li>Registro e Garantia</li>
-                <li>Fale Conosco</li>
+                <ul>
+                    <li>Obtenha Ajuda</li>
+                    <li>Registro e Garantia</li>
+                    <li>Fale Conosco</li>
+                </ul>
             </div>
             <div class="redes">
-                <h1 class="rede">Redes</h1>
-                <img src="~/icon/icone-youtube2.png" alt="youtube" asp-append-version="true">
-                <img src="~/icon/icone-instagram.png" alt="instagram" asp-append-version="true">
-                <img src="~/icon/ic--baseline-tiktok (1).svg" alt="tiktok" asp-append-version="true">
-                <img src="~/icon/icone-whatsapp.png" alt="whatsapp" asp-append-version="true">
-                <img src="~/icon/icone-facebook.png" alt="facebook" asp-append-version="true">
+                <h1>Redes</h1>
+                <img src="~/icon/icone-youtube2.png">
+                <img src="~/icon/icone-instagram.png">
+                <img src="~/icon/ic--baseline-tiktok (1).svg">
+                <img src="~/icon/icone-whatsapp.png">
+                <img src="~/icon/icone-facebook.png">
             </div>
         </div>
         <span class="linha-footer"></span>
-        <p class="copyright">Copyright © 2025 Katchau Inc. All rights reserved.</p>
+        <p class="copyright">
+            Copyright © 2025 Katchau Inc. All rights reserved.
+        </p>
     </footer>
 </body>
 

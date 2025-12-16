@@ -1,0 +1,76 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Produto</title>
+    <link rel="stylesheet" href="~/css/cadastroProduto.css">
+</head>
+
+<body>
+    <header>
+        <nav class="area-vermelha">
+            <div class="container-nav">
+                <img src="~/Icon/-B3EBF2 (1) 2.svg" class="logo-raio" alt="Raiozinho-nav">
+                <div class="usuario">
+                    <img src="~/Icon/Group 143.png" class="foto-usuario" alt="">
+                    <p class="usuario">Usuario</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="alinhar-fundo">
+
+            <form asp-controller="CadastroProduto"
+                  asp-action="CadastrarProduto"
+                  method="post"
+                  enctype="multipart/form-data">
+
+                <section class="area-cadastro">
+
+                    <div class="lado-imagem">
+                        <img src="~/Icon/Rectangle 194.png" alt="">
+                        <input type="file" name="fotoProduto" required>
+                    </div>
+
+                    <aside class="informacoes-produto">
+
+                        <h3>Nome Produto :</h3>
+                        <input type="text" name="nomeProduto" required>
+
+                        <div class="preco-categoria">
+                            <div class="preco">
+                                <h3>Preço:</h3>
+                                <input type="number" name="precoProduto" step="0.01" required>
+                            </div>
+
+                            <div class="categoria">
+                                <h3>Categoria:</h3>
+                                <input type="text" name="categoria" required>
+                            </div>
+                        </div>
+
+                        <h3>Descrição</h3>
+                        <input type="text" name="descricaoProduto" class="descricao-input">
+
+                        <button type="submit" class="cadastrar">
+                            Cadastrar Produto
+                        </button>
+
+                    </aside>
+
+                </section>
+            </form>
+
+        </div>
+    </main>
+</body>
+
+</html>

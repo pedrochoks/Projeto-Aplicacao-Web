@@ -14,9 +14,10 @@ namespace Katchau_Back.Controllers
             _context = context;
         }
 
+        // Exibir carrinho
         public IActionResult Index()
         {
-            int? usuarioID = HttpContext.Session.GetInt32("id_usuario");
+            int? usuarioID = HttpContext.Session.GetInt32("UsuarioId");
 
             if (usuarioID == null)
             {
@@ -31,11 +32,11 @@ namespace Katchau_Back.Controllers
             return View(carrinho);
         }
 
-        
+        // Adicionar produto ao carrinho
         [HttpPost]
         public async Task<IActionResult> Adicionar(int id)
         {
-            int? usuarioID = HttpContext.Session.GetInt32("id_usuario");
+            int? usuarioID = HttpContext.Session.GetInt32("UsuarioId");
 
             if (usuarioID == null)
             {
@@ -51,7 +52,6 @@ namespace Katchau_Back.Controllers
                 return RedirectToAction("Index", "Produto");
             }
 
-            
             var jaExiste = await _context.Carrinhos.FirstOrDefaultAsync(c =>
                 c.id_usuario == usuarioID &&
                 c.id_produto == id
@@ -60,7 +60,7 @@ namespace Katchau_Back.Controllers
             if (jaExiste != null)
             {
                 TempData["Erro"] = "Produto já está no carrinho";
-                return RedirectToAction("Index", "Carrinho");
+                return RedirectToAction("Index");
             }
 
             var novoItem = new Carrinho
@@ -74,14 +74,14 @@ namespace Katchau_Back.Controllers
 
             TempData["Sucesso"] = "Produto adicionado ao carrinho";
 
-            return RedirectToAction("Index", "Carrinho");
+            return RedirectToAction("Index");
         }
 
-        
+        // Remover produto do carrinho
         [HttpPost]
         public async Task<IActionResult> Remover(int id)
         {
-            int? usuarioID = HttpContext.Session.GetInt32("id_usuario");
+            int? usuarioID = HttpContext.Session.GetInt32("UsuarioId");
 
             if (usuarioID == null)
             {

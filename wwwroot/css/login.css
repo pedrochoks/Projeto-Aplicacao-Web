@@ -37,6 +37,9 @@ body {
     height: auto;
 }
 
+.logo-header {
+    height: 90%;
+}
 .fundo-login {
     display: flex;
     flex-direction: column;

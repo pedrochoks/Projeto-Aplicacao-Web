@@ -3,6 +3,7 @@
 @{
     Layout = null;
     ViewBag.Title = "Cadastro";
+    var usuarioLogado = Context.Session.GetInt32("id_usuario");
 }
 
 <!DOCTYPE html>
@@ -19,7 +20,7 @@
 
 <body>
     <header class="cabecalho">
-        <img src="~/icon/Logo-raiozinho.png" alt="">
+        <a href="/Home/Index"><img src="~/icon/Logo-raiozinho.png" alt=""></a>
     </header>
 
     <main>
@@ -29,7 +30,7 @@
                 <img class="logo-completo" src="~/icon/Logo-completo-marrom.png" alt="">
                 <p class="texto-cadastro">Cadastre-se e venha fazer parte da rota 66</p>
 
-                @* MENSAGEM DE ERRO *@
+                
                 @if (TempData["Erro"] != null)
                 {
                     <div class="alert alert-danger" style="margin-bottom: 20px;">

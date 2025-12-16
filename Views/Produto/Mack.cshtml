@@ -9,28 +9,29 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
+    <title>Caminhao</title>
+    <link rel="stylesheet" href="~/css/mack.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos - KATCHAU</title>
-    <link rel="stylesheet" href="~/css/mack.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-    <header class="cabecalho">
+    <header>
         <a href="/Home/Index">
-            <img src="~/icon/Logo-raiozinho.png" alt="Logo raio" class="logo-raiozinho">
+            <img src="~/icon/Logo-raiozinho.png" alt="Logo raio" class="Logo-raiozinho">
         </a>
 
         <nav class="navegacao">
             <div class="container-navegacao">
                 <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pneus</a>
+<<<<<<< HEAD
                 
                 <a href="/Produto/ListarProdutos?categoria=Pecas%20usadas" class="texto-nav">Peças Diversas</a>
                 <a href="/Produto/ListarProdutos?categoria=Esportivos" class="texto-nav">Esportivos</a>
+=======
+                <a href="/Produto/ListarProdutos?categoria=Pecas%20Usadas" class="texto-nav">Peças Diversas</a>
+                <a href="/Produto/ListarProdutos?categoria=Esportivas" class="texto-nav">Esportivos</a>
+>>>>>>> 84bccdfc20ffa93cef22e8dec3eda11be9199ec1
                 <a href="/Produto/ListarProdutos?categoria=Customizacao" class="texto-nav">Customização</a>
             </div>
         </nav>
@@ -41,43 +42,37 @@
         }
         else
         {
-            if (isAdmin)
+            if(isAdmin)
             {
-                <a href="@Url.Action("Index", "CadastrarProduto")" class="botao-login">Cadastrar Produto</a>
+                <a href="@Url.Action("AdicionarProduto", "Produto")" class="botao-login">Adicionar Produto</a>
             }
             else
             {
-                <a href="@Url.Action("Carrinho", "Usuario", new { id = Context.Session.GetInt32("UsuarioId") })"
-                    class="botao-login">Olá, @nomeUsuario 👋</a>
+                <a href="@Url.Action("Carrinho", "Usuario", new { id = Context.Session.GetInt32("UsuarioId") })" class="texto-nav">Olá, @nomeUsuario 👋</a>
             }
         }
     </header>
 
-    <main class="area-produto" style="background: url('/icon/Imagem-bgc.png') no-repeat center center; background-size: cover; min-height: 100vh;">
+    <div class="banner-mack">
+        <div class="container-banner">
+            <img src="~/icon/katchau-com-logo.png" alt="">
+            <img src="~/Imgs/mack.png" alt="" class="mack-banner">
+        </div>
+    </div>
+
+    <main class="area-produto">
         <section class="lista-produtos">
             <ul class="produtos">
                 @foreach (var p in Model)
                 {
                     <li class="produto">
-                        @if (p.foto != null)
-                        {
-                            <img class="imagem-produto"
-                                 src="data:image/jpeg;base64,@Convert.ToBase64String(p.foto)" 
-                                 alt="@p.Nome" />
-                        }
-
+                        <img src="~/@p.foto" alt="@p.Descricao" class="imagem-produto" />
                         <div class="informacoes-produto">
-                            <h3>@p.Nome</h3>
-                            <p class="descricao">@p.Descricao</p>
-                            <span class="preco">R$ @string.Format("{0:F2}", p.Preco ?? 0)</span>
-
-                            <form asp-controller="Carrinho" asp-action="Adicionar" method="post">
-                                <input type="hidden" name="id" value="@p.id_produto" />
-                                <button class="botao-carrinho">
-                                    <img src="~/icon/icone-carrinho.svg" class="icone-carrinho">
-                                    Adicionar ao carrinho
-                                </button>
-                            </form>
+                            <p>@p.Descricao</p>
+                            <button class="botao-carrinho">
+                                <img src="~/icon/icone-carrinho.svg" class="icone-carrinho">
+                                Adicionar ao carrinho
+                            </button>
                         </div>
                     </li>
                 }
@@ -89,19 +84,15 @@
         <div class="footer">
             <img src="~/icon/Logo-completo-marrom.png" class="logo-footer">
             <div class="explore">
-                <ul>
-                    <li><a href="/Home/Index">Home</a></li>
-                    <li><a href="/Produto/ListarProdutos?categoria=Esportivos">Peças esportivas</a></li>
-                    <li><a href="/Produto/ListarProdutos?categoria=Pecas%20usadas">Peças diversas</a></li>
-                    <li><a href="/Produto/ListarProdutos?categoria=Customizacao">Customização</a></li>
-                </ul>
+                <li>Home</li>
+                <li>Pecas Esportivas</li>
+                <li>Pecas Diversas</li>
+                <li>Customizacao</li>
             </div>
             <div class="suporte">
-                <ul>
-                    <li>Obtenha Ajuda</li>
-                    <li>Registro e Garantia</li>
-                    <li>Fale Conosco</li>
-                </ul>
+                <li>Obtenha Ajuda</li>
+                <li>Registro e Garantia</li>
+                <li>Fale Conosco</li>
             </div>
             <div class="redes">
                 <h1 class="rede">Redes</h1>
@@ -116,6 +107,5 @@
             Copyright © 2025 Katchau Inc. All rights reserved.
         </p>
     </footer>
-
 </body>
 </html>

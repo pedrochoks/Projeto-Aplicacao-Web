@@ -26,7 +26,6 @@ namespace Katchau_Back.Controllers
             {
                 case "Pneus":
                     return View("Luigi", produto);
-
                 case "Pecas para caminhao":
                     return View("Mack", produto);
                 case "Customizacao":

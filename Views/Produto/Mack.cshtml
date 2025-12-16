@@ -2,7 +2,8 @@
 
 @{
     Layout = null;
-    var usuarioLogado = Context.Session.GetString("Id_usuario") != null;
+    var usuarioLogado = Context.Session.GetInt32("UsuarioId") != null;
+    var nomeUsuario = Context.Session.GetString("UsuarioNome");
 }
 
 <!DOCTYPE html>
@@ -17,7 +18,10 @@
 
 <body>
     <header>
-        <a href="/Home/Index"><img src="~/icon/Logo-raiozinho.png" alt="Logo raio" class="Logo-raiozinho"></a>
+        <a href="/Home/Index">
+            <img src="~/icon/Logo-raiozinho.png" alt="Logo raio" class="Logo-raiozinho">
+        </a>
+
         <nav class="navegacao">
             <div class="container-navegacao">
                 <a href="/Produto/ListarProdutos?categoria=Pneus" class="texto-nav">Pneus</a>
@@ -26,9 +30,14 @@
                 <a href="/Produto/ListarProdutos?categoria=Customizacao" class="texto-nav">Customização</a>
             </div>
         </nav>
+
         @if (!usuarioLogado)
         {
-            <button class="botao-login">Entrar</button>
+            <a href="/Login/Index" class="botao-login">Entrar</a>
+        }
+        else
+        {
+            <span class="texto-nav">Olá, @nomeUsuario 👋</span>
         }
     </header>
 
@@ -41,7 +50,6 @@
 
     <main class="area-produto">
         <section class="lista-produtos">
-
             <ul class="produtos">
                 @foreach (var p in Model)
                 {
@@ -52,7 +60,7 @@
                             <p>@p.Descricao</p>
 
                             <button class="botao-carrinho">
-                                <img src="~/icon/icone-carrinho.svg" alt="" class="icone-carrinho">
+                                <img src="~/icon/icone-carrinho.svg" class="icone-carrinho">
                                 Adicionar ao carrinho
                             </button>
                         </div>
@@ -81,7 +89,7 @@
 
     <footer>
         <div class="footer">
-            <img src="~/icon/Logo-completo-marrom.png" alt="" class="logo-footer">
+            <img src="~/icon/Logo-completo-marrom.png" class="logo-footer">
 
             <div class="explore">
                 <li>Home</li>
@@ -98,18 +106,18 @@
 
             <div class="redes">
                 <h1 class="rede">Redes</h1>
-                <img src="~/icon/mdi--youtube (1).svg" alt="">
-                <img src="~/icon/mdi--instagram (1).svg" alt="">
-                <img src="~/icon/ic--baseline-tiktok (1).svg" alt="">
-                <img src="~/icon/ic--baseline-whatsapp (1).svg" alt="">
-                <img src="~/icon/ic--baseline-facebook (1).svg" alt="">
+                <img src="~/icon/mdi--youtube (1).svg">
+                <img src="~/icon/mdi--instagram (1).svg">
+                <img src="~/icon/ic--baseline-tiktok (1).svg">
+                <img src="~/icon/ic--baseline-whatsapp (1).svg">
+                <img src="~/icon/ic--baseline-facebook (1).svg">
             </div>
         </div>
 
-        <span class="linha-footer"></span>
-        <p class="copyright">Copyright © 2025 Katchau Inc. All rights reserved.</p>
+        <p class="copyright">
+            Copyright © 2025 Katchau Inc. All rights reserved.
+        </p>
     </footer>
-
 </body>
 
 </html>
